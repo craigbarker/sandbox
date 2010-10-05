@@ -1,0 +1,27 @@
+<html>
+<head><title>Blah</title>
+<script src="Core.js" type="text/javascript"></script>
+<script type="text/javascript" src="Core.Web.js"></script>
+<script type="text/javascript" src="Btk.js"></script>
+<script type="text/javascript" src="Panel.js"></script>
+<script type="text/javascript" src="BoxLayout.js"></script>
+<script type="text/javascript" src="Label.js"></script>
+</head>
+<body>
+<div id="thediv" style="height: 300px; width: 600px"/>
+<script type="text/javascript">
+var panel = new Btk.Panel({
+    parent: document.getElementById("thediv"),
+    layout: new Btk.VBoxLayout(),
+    children: [
+        new Btk.Label({text: "Child 1"}),
+        new Btk.Label({text: "Child 2"}),
+        new Btk.Label({text: "Child 3"}),
+        new Btk.Label({text: "Child 4"})
+    ]
+});
+
+panel.doLayout();
+</script>
+</body>
+</html>

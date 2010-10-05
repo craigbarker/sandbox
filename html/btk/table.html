@@ -1,0 +1,55 @@
+<html>
+<head><title>Blah</title>
+<script src="Core.js" type="text/javascript"></script>
+<script type="text/javascript" src="Core.Web.js"></script>
+<script type="text/javascript" src="Btk.js"></script>
+<script type="text/javascript" src="Table.js"></script>
+</head>
+<body>
+<div id="thediv" style="height: 300px; width: 600px"/>
+
+<script type="text/javascript">
+
+var tableModel = new Btk.Table.TableModel();
+
+var data = [];
+
+for (var i = 0; i < 100; i++) {
+    data[i] = [i + "123","234","345","456","567"];
+}
+
+var table = new Btk.Table.Table({
+    parent: document.getElementById("thediv"), 
+    width: 500,
+    columnModel:  new Btk.Table.ColumnModel({
+        columns: [
+            new Btk.Table.Column({
+                title: "col1",
+                width: 100
+            }),
+            new Btk.Table.Column({
+                title: "col2",
+                width: 70
+            }),
+            new Btk.Table.Column({
+                title: "col3",
+                width: 50
+            }),
+            new Btk.Table.Column({
+                title: "col4",
+                width: 40
+            }),
+            new Btk.Table.Column({
+                title: "col5",
+                width: 30
+            }),
+        ]
+    }),
+    tableModel: new Btk.Table.TableModel({
+        data: data
+    })
+});
+
+</script>
+</body>
+</html>

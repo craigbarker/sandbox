@@ -1,0 +1,13 @@
+div {
+    background: #000;
+    border: 1px dotted;
+    padding: 5px
+}
+
+.outer1 .inner1 {
+    background: #eee
+}
+
+.outer2 .inner1 {
+    background: #aaa;
+}

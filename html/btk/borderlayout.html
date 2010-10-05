@@ -1,0 +1,62 @@
+<html>
+<head><title>Border Layout</title>
+<script src="Core.js" type="text/javascript"></script>
+<script type="text/javascript" src="Core.Web.js"></script>
+<script type="text/javascript" src="Btk.js"></script>
+<script type="text/javascript" src="Panel.js"></script>
+<script type="text/javascript" src="Label.js"></script>
+</head>
+<body style="overflow: hidden">
+<div id="thediv" style="height: 100%; width: 100%; background: #eee; overflow: auto">
+<!--
+<div id="north" style="height: 400px; width: 100%; border: 1px dotted">North</div>
+<div id="center" style="height: 100%; width: 100%; border: 1px dotted">Centre</div>
+<div id="south" style="height: 400px; width: 100%; border: 1px dotted">South</div>
+-->
+<table cellspacing=0 cellpadding=0 style="width: 100%;">
+<tr id="northtr"
+    >
+    <td style="background: #ddd">North</td>
+</tr>
+<tr id="centretr"
+    >
+    <td nowrap>
+<script type="text/javascript">
+    for (var i = 0; i < 100; i++) {
+        document.write("Asd ");
+    }
+</script>
+    </td>
+</tr>
+<tr id="southtr"
+    >
+    <td style="background: #ddd">South</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript">
+
+function resizeIt() {
+    var div = document.getElementById("thediv");
+    var width = div.clientWidth;
+    var height = div.clientHeight;
+
+    var northtr = document.getElementById("northtr");
+    var southhtr = document.getElementById("southtr");
+
+    var centreHeight = div.clientHeight - northtr.clientHeight - southtr.clientHeight;
+    document.getElementById("centretr").style.height = centreHeight;
+}
+
+function doOnResize() {
+    resizeIt();
+    //window.setTimeout(resizeIt, 5);
+}
+
+Core.Web.DOM.addEventListener(window, "resize", doOnResize);
+
+resizeIt();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+Layout algorithm.
+
+Each panel has content.  The layout manager creates it and renders the children into it.
+
+Top level code gets the content and adds it to the parent.  But that might not work
+for the top level container - it might need the parent so that dimensions can be ascertained.
+
+Therefore have a sub-class of panel which is the top panel, and it has a property of parent.
+
+Layout algorithm
+================
+If area should size to the child, then ask the child to lay itself out, and then set the
+size of the area based on child's size.
+
+If child should size to the area, then handle all other areas first, set the size of
+this area, then ask the child to lay itself out within that area.
