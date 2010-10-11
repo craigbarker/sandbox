@@ -38,6 +38,7 @@ grails.converters.encoding = "UTF-8"
 grails.views.gsp.sitemesh.preprocess = true
 // scaffolding templates configuration
 grails.scaffolding.templates.domainSuffix = 'Instance'
+grails.sitemesh.default.layout='main'
 
 // Set to false to use the new Grails 1.2 JSONBuilder in the render method
 grails.json.legacy.builder = false
@@ -71,6 +72,9 @@ log4j = {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
 
+    debug 'org.hibernate.SQL',
+            'org.codehaus.groovy.grails'
+    
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
            'org.codehaus.groovy.grails.web.pages', //  GSP
            'org.codehaus.groovy.grails.web.sitemesh', //  layouts
@@ -80,12 +84,11 @@ log4j = {
            'org.codehaus.groovy.grails.plugins', // plugins
            'org.codehaus.groovy.grails.orm.hibernate', // hibernate integration
            'org.springframework',
-           //'org.hibernate',
+           'org.hibernate',
            'net.sf.ehcache.hibernate'
 
     warn   'org.mortbay.log'
 
-    debug 'org.hibernate.SQL'
 }
 
 // Added by the Joda-Time plugin:
