@@ -59,6 +59,7 @@
         <version>1.2</version>
         <configuration>
             <inplace>true</inplace>
+            <runTarget>org.sgodden.gwt.Gwttest/gwttest.html</runTarget>
         </configuration>
         <executions>
             <execution>
