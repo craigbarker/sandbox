@@ -1,7 +1,7 @@
 package org.sgodden.tom.domain;
 
-import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestConfig;
-import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import javax.validation.ConstraintViolation;
@@ -13,8 +13,6 @@ import org.sgodden.tom.domain.acceptance.TestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 
 import static org.testng.Assert.assertEquals;
 
@@ -26,20 +24,15 @@ import static org.testng.Assert.assertEquals;
 @ContextConfiguration(locations="/org/sgodden/tom/domain/beans.xml")
 public class CustomerOrderRepositoryTest extends AbstractTestNGSpringContextTests {
 
-    private final LocalServiceTestHelper helper = new LocalServiceTestHelper(
-            new LocalDatastoreServiceTestConfig());
-
     @Autowired
     private CustomerOrderRepository rep;
 
-    @BeforeTest
+    @BeforeMethod
     public void setUp() {
-        helper.setUp();
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown() {
-        helper.tearDown();
     }
 
     public void testValidation() {

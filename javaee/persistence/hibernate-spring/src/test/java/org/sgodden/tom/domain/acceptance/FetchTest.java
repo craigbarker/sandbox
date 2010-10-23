@@ -1,7 +1,5 @@
 package org.sgodden.tom.domain.acceptance;
 
-import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestConfig;
-import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
 import javax.persistence.EntityManager;
 
 import org.sgodden.tom.domain.CustomerOrder;
@@ -26,9 +24,6 @@ import org.testng.annotations.BeforeMethod;
 @ContextConfiguration(locations="/org/sgodden/tom/domain/beans.xml")
 public class FetchTest extends AbstractTestNGSpringContextTests {
 
-    private final LocalServiceTestHelper helper = new LocalServiceTestHelper(
-            new LocalDatastoreServiceTestConfig());
-
     @Autowired
     private CustomerOrderRepository rep;
     
@@ -39,7 +34,6 @@ public class FetchTest extends AbstractTestNGSpringContextTests {
 
     @BeforeMethod
     public void setUp() {
-        helper.setUp();
         id1 = createOrder("A", 2);
         createOrder("B", 4);
         createOrder("C", 6);
@@ -47,7 +41,6 @@ public class FetchTest extends AbstractTestNGSpringContextTests {
 
     @AfterMethod
     public void tearDown() {
-        helper.tearDown();
     }
 
     public void testLazyLoad() {
