@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWeb", "TestWeb\TestWeb.csproj", "{00EC3ED9-1A03-466F-B056-ECC43A0066CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLibrary", "TestLibrary\TestLibrary.csproj", "{F8E942FD-C78C-4A86-8BB7-77ED7DC8E65A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00EC3ED9-1A03-466F-B056-ECC43A0066CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00EC3ED9-1A03-466F-B056-ECC43A0066CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00EC3ED9-1A03-466F-B056-ECC43A0066CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00EC3ED9-1A03-466F-B056-ECC43A0066CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8E942FD-C78C-4A86-8BB7-77ED7DC8E65A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8E942FD-C78C-4A86-8BB7-77ED7DC8E65A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8E942FD-C78C-4A86-8BB7-77ED7DC8E65A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8E942FD-C78C-4A86-8BB7-77ED7DC8E65A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		version = 0.1
+		StartupItem = TestWeb\TestWeb.csproj
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<project name="Test Library" default="build" basedir=".">
+
+    <description>Test Library.</description>
+
+    <property name="debug" value="true" overwrite="false" />
+
+    <loadtasks path="nant-tasks"/>
+
+    <assemblyfileset id="dependencies">
+        <include name="Npgsql.dll"/>
+        <include name="System.dll"/>
+        <include name="System.Data.dll"/>
+    </assemblyfileset>
+
+    <target name="clean" description="remove all generated files">
+        <delete file="bin/Debug/TestLibrary.dll" failonerror="false" />
+    </target>
+
+    <target name="build" description="compiles the source code">
+        <csc target="library" output="bin/Debug/TestLibrary.dll" debug="${debug}">
+            <sources>
+                <include name="*.cs" />
+            </sources>
+            <references refid="dependencies"/>
+        </csc>
+    </target>
+
+    <target name="postsharp">
+        <postsharp input="bin/Debug/TestLibrary.dll"/>
+    </target>
+
+</project>

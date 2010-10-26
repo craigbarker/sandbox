@@ -1,0 +1,44 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ctype="Workspace" />
+  <MonoDevelop.Ide.DebuggingService>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService>
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestWeb/Default.aspx" ctype="Workbench">
+    <Files>
+      <File FileName="TestWeb/Default.aspx" Line="11" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="TestLibrary" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="sql" expanded="True" />
+          </Node>
+          <Node name="TestWeb" expanded="True">
+            <Node name="Default.aspx" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True">
+          <Node name="TestLibrary" expanded="True">
+            <Node name="TestLibrary" expanded="True">
+              <Node name="TestLibrary.OrderController" expanded="True">
+                <Node name="connectionString" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+          <Node name="TestWeb" expanded="True">
+            <Node name="TestWeb" expanded="True">
+              <Node name="TestWeb.Global" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches ctype="PinnedWatchStore" />
+</Properties>
