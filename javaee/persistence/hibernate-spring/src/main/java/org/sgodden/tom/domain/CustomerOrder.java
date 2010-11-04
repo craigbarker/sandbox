@@ -16,10 +16,13 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 import javax.validation.constraints.NotNull;
 
 import org.sgodden.tom.domain.listener.ValidatorEntityListener;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
 
 /**
  * An order from a customer to transport goods from an origin
@@ -33,6 +36,7 @@ import org.sgodden.tom.domain.listener.ValidatorEntityListener;
     @NamedQuery(name=CustomerOrder.QUERY_COUNT, query="select count(o) from CustomerOrder o"),
     @NamedQuery(name=CustomerOrder.QUERY_FIND_ALL, query="select o from CustomerOrder o")
 })
+@Configurable
 public class CustomerOrder implements Serializable {
 
     public static final String QUERY_COUNT = "customerOrder.count";
@@ -57,6 +61,10 @@ public class CustomerOrder implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     @JoinColumn(name = "fk_orderid")
     private Set<CustomerOrderLine> orderLines = new HashSet<CustomerOrderLine>();
+
+    @Autowired
+    @Transient
+    private SomeInterface someInterface;
 
     public String getCustomerReference() {
         return customerReference;
@@ -116,6 +124,7 @@ public class CustomerOrder implements Serializable {
      */
     public void addOrderLine(CustomerOrderLine line) {
         orderLines.add(line);
+        someInterface.doSomething();
     }
 
     /**

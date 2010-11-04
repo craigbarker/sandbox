@@ -10,6 +10,7 @@
        " >
 
     <context:annotation-config/>
+    <context:spring-configured/>
     <tx:annotation-driven/>
     
     <bean id="myEmf" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
@@ -21,5 +22,7 @@
     </bean>
 
     <bean id="customerOrderRepository" class="org.sgodden.tom.domain.CustomerOrderJpaRepository"/>
+
+    <bean id="someInterface" class="org.sgodden.tom.domain.SomeInterfaceImpl"/>
 
 </beans>
