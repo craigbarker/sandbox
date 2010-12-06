@@ -5,7 +5,8 @@
   </MonoDevelop.Ide.DebuggingService>
   <MonoDevelop.Ide.Workbench ActiveDocument="TestWeb/Default.aspx" ctype="Workbench">
     <Files>
-      <File FileName="TestWeb/Default.aspx" Line="11" Column="1" />
+      <File FileName="TestWeb/Default.aspx" Line="17" Column="1" />
+      <File FileName="TestWeb/web.config" Line="6" Column="46" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +16,9 @@
             <Node name="sql" expanded="True" />
           </Node>
           <Node name="TestWeb" expanded="True">
-            <Node name="Default.aspx" expanded="True" selected="True" />
+            <Node name="References" expanded="True" />
+            <Node name="Default.aspx" expanded="True" />
+            <Node name="Global.asax" expanded="True" />
           </Node>
         </State>
       </Pad>

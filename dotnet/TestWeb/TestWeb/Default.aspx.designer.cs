@@ -18,5 +18,9 @@ namespace TestWeb {
 		protected System.Web.UI.WebControls.Button button1;
 		
 		protected System.Web.UI.WebControls.HiddenField hidden1;
+		
+		protected System.Web.UI.WebControls.Calendar calendar1;
+		
+		protected System.Web.UI.WebControls.TextBox textBox1;
 	}
 }
