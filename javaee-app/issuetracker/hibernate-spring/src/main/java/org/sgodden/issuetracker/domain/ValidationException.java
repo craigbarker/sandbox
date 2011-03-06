@@ -1,4 +1,4 @@
-package org.sgodden.tom.domain;
+package org.sgodden.issuetracker.domain;
 
 import java.io.Serializable;
 import java.util.Set;

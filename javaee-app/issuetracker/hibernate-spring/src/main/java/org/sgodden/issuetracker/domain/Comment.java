@@ -1,4 +1,4 @@
-package org.sgodden.tom.domain;
+package org.sgodden.issuetracker.domain;
 
 import java.io.Serializable;
 
@@ -14,7 +14,7 @@ import javax.persistence.Id;
  */
 @SuppressWarnings("serial")
 @Entity
-public class CustomerOrderLine implements Serializable {
+public class Comment implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,4 +1,4 @@
-package org.sgodden.tom.domain.listener;
+package org.sgodden.issuetracker.domain.listener;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -9,7 +9,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 
-import org.sgodden.tom.domain.ValidationException;
+import org.sgodden.issuetracker.domain.ValidationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

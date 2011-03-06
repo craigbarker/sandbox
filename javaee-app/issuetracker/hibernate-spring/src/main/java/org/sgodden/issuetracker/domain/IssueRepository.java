@@ -1,4 +1,4 @@
-package org.sgodden.tom.domain;
+package org.sgodden.issuetracker.domain;
 
 import java.io.Serializable;
 import java.util.List;
@@ -7,31 +7,31 @@ import java.util.List;
  * Repository for the {@link CustomerOrder} entity.
  * @author sgodden
  */
-public interface CustomerOrderRepository {
+public interface IssueRepository {
 
     /**
      * Removes the passed order from the repository.
      * @param order the order to remove.
      */
-    void remove(CustomerOrder order);
+    void remove(Issue issue);
 
     /**
      * Returns all customer orders.
      * @return all customer orders.
      */
-    List<CustomerOrder> findAll();
+    List<Issue> findAll();
 
     /**
      * Persists the passed order.
      * @param order the order to persist.
      */
-    void persist(CustomerOrder order);
+    void persist(Issue issue);
     
     /**
      * Merges the passed order in to the persistent state.
      * @param order the order to merge.
      */
-    void merge(CustomerOrder order);
+    void merge(Issue issue);
 
     /**
      * Returns the {@link CustomerOrder} instance
@@ -39,7 +39,7 @@ public interface CustomerOrderRepository {
      * @param id the id.
      * @return the customer order instance, or <code>null</code> if one does not exist.
      */
-    CustomerOrder findById(Serializable id);
+    Issue findById(Serializable id);
 
     /**
      * Returns the number of customer orders.

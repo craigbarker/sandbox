@@ -1,4 +1,4 @@
-package org.sgodden.tom.domain;
+package org.sgodden.issuetracker.domain;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public class CustomerOrderJpaRepository implements CustomerOrderRepository {
+public class IssueJpaRepository implements IssueRepository {
 
     private EntityManager em;
 
@@ -20,35 +20,35 @@ public class CustomerOrderJpaRepository implements CustomerOrderRepository {
     }
 
     @Transactional
-    public void persist(final CustomerOrder order) {
-        em.persist(order);
+    public void persist(final Issue issue) {
+        em.persist(issue);
     }
 
     @Transactional
-    public CustomerOrder findById(final Serializable id) {
-        return em.find(CustomerOrder.class, id);
+    public Issue findById(final Serializable id) {
+        return em.find(Issue.class, id);
     }
 
     @Transactional
     public long count() {
-        Query q = em.createNamedQuery(CustomerOrder.QUERY_COUNT);
+        Query q = em.createNamedQuery(Issue.QUERY_COUNT);
         return (Long) q.getSingleResult();
     }
 
     @SuppressWarnings("unchecked")
     @Transactional
-    public List<CustomerOrder> findAll() {
-        Query q = em.createNamedQuery(CustomerOrder.QUERY_FIND_ALL);
+    public List<Issue> findAll() {
+        Query q = em.createNamedQuery(Issue.QUERY_FIND_ALL);
         return q.getResultList();
     }
 
     @Transactional
-    public void remove(final CustomerOrder order) {
-        em.remove(em.find(CustomerOrder.class, order.getId()));
+    public void remove(final Issue issue) {
+        em.remove(em.find(Issue.class, issue.getId()));
     }
 
     @Transactional
-    public void merge(final CustomerOrder order) {
-        em.merge(order);
+    public void merge(final Issue issue) {
+        em.merge(issue);
     }
 }

@@ -1,4 +1,4 @@
-package org.sgodden.tom.domain;
+package org.sgodden.issuetracker.domain;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
