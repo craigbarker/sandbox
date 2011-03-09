@@ -59,11 +59,11 @@ public class Issue implements Serializable {
     @Transient
     private SomeInterface someInterface;
 
-    public String getCustomerReference() {
+    public String getIssueNumber() {
         return issueNumber;
     }
 
-    public void setCustomerReference(String customerReference) {
+    public void setIssueNumber(String customerReference) {
         this.issueNumber = customerReference;
     }
 
@@ -79,11 +79,11 @@ public class Issue implements Serializable {
      * Returns the company's order number.
      * @return the company's order number.
      */
-    public String getOrderNumber() {
+    public String getSummary() {
         return summary;
     }
 
-    public void setOrderNumber(String orderNumber) {
+    public void setSummary(String orderNumber) {
         this.summary = orderNumber;
     }
 

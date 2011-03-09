@@ -29,7 +29,7 @@ public class IssueJpaRepository implements IssueRepository {
         return em.find(Issue.class, id);
     }
 
-    @Transactional
+    @Transactional(readOnly=true)
     public long count() {
         Query q = em.createNamedQuery(Issue.QUERY_COUNT);
         return (Long) q.getSingleResult();

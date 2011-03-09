@@ -21,7 +21,7 @@ import static org.testng.Assert.assertEquals;
  * @author sgodden
  */
 @Test(groups = "integration")
-@ContextConfiguration(locations="/org/sgodden/tom/domain/beans.xml")
+@ContextConfiguration(locations="/org/sgodden/issuetracker/domain/beans.xml")
 public class IssueRepositoryTest extends AbstractTestNGSpringContextTests {
 
     @Autowired
@@ -51,8 +51,8 @@ public class IssueRepositoryTest extends AbstractTestNGSpringContextTests {
 
     public void testPersistIssue() {
         Issue order = new Issue();
-        order.setOrderNumber("ORD1");
-        order.setCustomerReference("REF1");
+        order.setSummary("ORD1");
+        order.setIssueNumber("REF1");
 
         rep.persist(order);
         assertEquals(rep.count(), 1, "Wrong number of customer orders");
