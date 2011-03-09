@@ -42,7 +42,7 @@ public class Issue implements Serializable {
     public static final String QUERY_FIND_ALL = "issue.findAll";
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @NotNull
