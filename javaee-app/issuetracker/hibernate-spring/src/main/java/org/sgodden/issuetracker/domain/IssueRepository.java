@@ -2,6 +2,7 @@ package org.sgodden.issuetracker.domain;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Repository for the {@link CustomerOrder} entity.
@@ -26,6 +27,8 @@ public interface IssueRepository {
      * @param order the order to persist.
      */
     void persist(Issue issue);
+    
+    void persist(Set<Issue> issues);
     
     /**
      * Merges the passed order in to the persistent state.

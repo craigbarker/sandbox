@@ -2,6 +2,8 @@ package org.sgodden.issuetracker.domain;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -22,6 +24,13 @@ public class IssueJpaRepository implements IssueRepository {
     @Transactional
     public void persist(final Issue issue) {
         em.persist(issue);
+    }
+    
+    @Transactional
+    public void persist(Set<Issue> issues) {
+    	for (Issue issue : issues) {
+    		persist(issue);
+    	}
     }
 
     @Transactional

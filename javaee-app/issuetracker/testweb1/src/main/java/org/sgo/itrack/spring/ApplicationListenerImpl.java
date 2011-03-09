@@ -27,12 +27,7 @@ public class ApplicationListenerImpl implements
 	}
 
 	private void createIssues() {
-		if (issueRepository.count() == 0) {
-			Issue i = new Issue();
-			i.setIssueNumber("I001");
-			i.setSummary("The first issue");
-			issueRepository.persist(i);
-		}
+		new ListenerGroovy().createIssues(issueRepository);
 	}
 
 }
