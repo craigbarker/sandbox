@@ -15,7 +15,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.sgodden.itrack</groupId>
-			<artifactId>issue-domain</artifactId>
+			<artifactId>itrack-service</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>

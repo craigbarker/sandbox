@@ -5,6 +5,9 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/groovy"/>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/itrack-service/itrack-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/issue-domain/issue-domain">
             <dependency-type>uses</dependency-type>
         </dependent-module>

@@ -43,6 +43,13 @@ public interface IssueRepository {
      * @return the customer order instance, or <code>null</code> if one does not exist.
      */
     Issue findById(Serializable id);
+    
+    /**
+     * Finds an issue by its issue number.
+     * @param issueNumber the issue number.
+     * @return the issue, or <code>null</code> if no issue could be found.
+     */
+    Issue findByIssueNumber(String issueNumber);
 
     /**
      * Returns the number of customer orders.

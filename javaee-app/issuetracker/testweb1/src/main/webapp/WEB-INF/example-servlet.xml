@@ -10,13 +10,13 @@
     <!-- -->
     <context:annotation-config/>
 
-	<import resource="classpath:org/sgodden/issuetracker/domain/beans.xml" />
+	<import resource="classpath:org/sgodden/itrack/service/beans.xml" />
 
-	<bean id="applicationListener" class="org.sgo.itrack.spring.ApplicationListenerImpl" />
+	<bean class="org.sgo.itrack.spring.ApplicationListenerImpl" />
 
-	<bean id="helloWorldController" class="org.sgo.itrackweb.controller.HelloWorldController" />
-	
-	<bean id="issuesController" class="org.sgo.itrackweb.controller.IssuesController"/>
+	<bean class="org.sgo.itrackweb.controller.HelloWorldController" />
+	<bean class="org.sgo.itrackweb.controller.IssueListController"/>
+	<bean class="org.sgo.itrackweb.controller.IssueController"/>
 
 	<!-- 
 	<bean id="viewResolver"

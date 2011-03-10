@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
+
+import freemarker.template.TemplateModelException;
 
 public class ApplicationListenerImpl implements
 		ApplicationListener<ApplicationEvent> {
@@ -22,6 +26,16 @@ public class ApplicationListenerImpl implements
 		if (event instanceof ContextRefreshedEvent) {
 			LOG.info("Context started!");
 			createIssues();
+			WebApplicationContext wac = (WebApplicationContext) ((ContextRefreshedEvent) event)
+			.getApplicationContext();
+			
+			FreeMarkerConfigurer fmc = wac
+					.getBean(FreeMarkerConfigurer.class);
+			try {
+				fmc.getConfiguration().setSharedVariable("contextPath",	"/issueweb");
+			} catch (TemplateModelException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	}
 

@@ -1,6 +1,6 @@
 package org.sgo.itrackweb.controller;
 
-import org.sgodden.issuetracker.domain.IssueRepository;
+import org.sgodden.itrack.service.IssueListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,14 +11,14 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Simon
  */
 @Controller
-public class IssuesController {
+public class IssueListController {
 	
 	@Autowired
-	private IssueRepository rep;
+	private IssueListService service;
 
     @RequestMapping("/issues")
     public ModelAndView listIssues() {
-        return new ModelAndView("issues", "issues", rep.findAll());
+        return new ModelAndView("issues", "issues", service.listIssuesByIssueIdDescending());
     }
 
 }

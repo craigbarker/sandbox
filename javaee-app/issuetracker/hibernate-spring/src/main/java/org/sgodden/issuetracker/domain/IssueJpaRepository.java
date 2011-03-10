@@ -33,10 +33,17 @@ public class IssueJpaRepository implements IssueRepository {
     	}
     }
 
-    @Transactional
+    @Transactional(readOnly=true)
     public Issue findById(final Serializable id) {
         return em.find(Issue.class, id);
     }
+
+    @Transactional(readOnly = true)
+	public Issue findByIssueNumber(String issueNumber) {
+        Query q = em.createNamedQuery(Issue.QUERY_FIND_BY_ISSUE_NUMBER);
+        q.setParameter("issueNumber", issueNumber);
+        return (Issue) q.getSingleResult();
+	}
 
     @Transactional(readOnly=true)
     public long count() {
@@ -45,7 +52,7 @@ public class IssueJpaRepository implements IssueRepository {
     }
 
     @SuppressWarnings("unchecked")
-    @Transactional
+    @Transactional(readOnly = true)
     public List<Issue> findAll() {
         Query q = em.createNamedQuery(Issue.QUERY_FIND_ALL);
         return q.getResultList();
