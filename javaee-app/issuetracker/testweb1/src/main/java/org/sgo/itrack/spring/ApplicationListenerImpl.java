@@ -2,7 +2,6 @@ package org.sgo.itrack.spring;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.sgodden.issuetracker.domain.Issue;
 import org.sgodden.issuetracker.domain.IssueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEvent;
