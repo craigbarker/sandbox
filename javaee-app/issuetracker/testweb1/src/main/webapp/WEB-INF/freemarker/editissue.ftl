@@ -1,3 +1,4 @@
+<#import "spring.ftl" as spring />
 <html>
 <head>
     <title>Issue ${issue.issueNumber}</title>

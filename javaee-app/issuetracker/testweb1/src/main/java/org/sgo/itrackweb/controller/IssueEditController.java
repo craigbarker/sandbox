@@ -12,8 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Simon
  */
 @Controller
-@RequestMapping("/issue")
-public class IssueController {
+@RequestMapping("/editissue")
+public class IssueEditController {
 	
 	@Autowired
 	private IssueService service;
@@ -22,5 +22,7 @@ public class IssueController {
     public ModelAndView getIssue(@PathVariable String issueNumber) {
     	return new ModelAndView("viewissue", "issue", service.findByIssueNumber(issueNumber));
     }
+    
+    
 
 }
