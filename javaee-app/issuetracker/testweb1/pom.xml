@@ -89,6 +89,8 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<configuration>
 					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<stopKey>JETTY</stopKey>
+					<stopPort>9999</stopPort>
 				</configuration>
 			</plugin>
 		</plugins>
