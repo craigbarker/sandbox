@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Version;
 
 /**
  * A line on a customer order.
@@ -20,12 +21,19 @@ public class CustomerOrderLine implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+    @Version
+    private Long version;
+
 	private String packageType;
 	private String descriptionOfGoods;
 	
 	public Serializable getId() {
 		return id;
 	}
+
+    public Long getVersion() {
+        return version;
+    }
         
 	public String getPackageType() {
 		return packageType;
