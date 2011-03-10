@@ -63,6 +63,29 @@ public class OptimisticLockTest extends AbstractTestNGSpringContextTests {
         em.close();
     }
 
+    @Test(expectedExceptions = {RollbackException.class})
+    public void testOptimisticLockIgnoresOverwrittenVersion() {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+
+        CustomerOrder ord = em.find(CustomerOrder.class, id1);
+        updateVersionOutsideOfTx(ord.getId(), ord.getVersion());
+        ord.setOrderNumber("THIS SHOULD FAIL OPTIMISTIC LOCK");
+        /*
+         * Increment the version in an attempt
+         * to pretend that we are not stale.
+         * This should have no effect.  the JPA implementation
+         * should ignore it and should compare the version it
+         * retrieved from the database with the version now
+         * on the database.
+         */
+        ord.setVersion(ord.getVersion() + 1);
+        em.merge(ord);
+
+        em.getTransaction().commit();
+        em.close();
+    }
+
     private void updateVersionOutsideOfTx(long orderId, long currentVersion) {
         Connection conn = null;
         PreparedStatement stm = null;

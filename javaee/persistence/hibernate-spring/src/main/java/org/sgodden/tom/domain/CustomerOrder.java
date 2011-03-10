@@ -95,6 +95,18 @@ public class CustomerOrder implements Serializable {
     }
 
     /**
+     * Sets the version.  Note that you should NOT supply a setter for
+     * version as the JPA implementation manages it, and ignores
+     * whatever you set on it in an attached entity within a
+     * transaction.  I have added this to facilitate some unit tests
+     * proving the previous assertion.
+     * @param version the version to set.
+     */
+    public void setVersion(long version) {
+        this.version = version;
+    }
+
+    /**
      * Returns the company's order number.
      * @return the company's order number.
      */
