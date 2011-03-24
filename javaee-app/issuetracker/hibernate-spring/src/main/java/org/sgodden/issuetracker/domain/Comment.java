@@ -17,7 +17,7 @@ import javax.persistence.Id;
 public class Comment implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 
 	private String packageType;

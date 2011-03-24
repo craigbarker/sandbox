@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<portlet-app xmlns='http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd' version='2.0'>
+    <portlet>
+        <description>PortalTest1</description>
+        <portlet-name>PortalTest1</portlet-name>
+        <display-name>PortalTest1</display-name>
+        <portlet-class>com.test.PortalTest1</portlet-class>
+        <expiration-cache>0</expiration-cache>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+        </supports>
+        <resource-bundle>com.test.messages</resource-bundle>
+        <portlet-info>
+            <title>PortalTest1</title>
+            <short-title>PortalTest1</short-title>
+        </portlet-info>
+        <supported-publishing-event>
+            <qname xmlns:mycomp='http://test.com/events'>mycomp:TestEvent</qname>
+        </supported-publishing-event>
+    </portlet>
+    <portlet>
+        <description>Portlet2</description>
+        <portlet-name>Portlet2</portlet-name>
+        <display-name>Portlet2</display-name>
+        <portlet-class>com.test.Portlet2</portlet-class>
+        <expiration-cache>0</expiration-cache>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+        </supports>
+        <resource-bundle>com.test.messages</resource-bundle>
+        <portlet-info>
+            <title>Portlet2</title>
+            <short-title>Portlet2</short-title>
+        </portlet-info>
+        <supported-processing-event>
+            <qname xmlns:mycomp='http://test.com/events'>mycomp:TestEvent</qname>
+        </supported-processing-event>
+    </portlet>
+    <event-definition>
+        <qname xmlns:mycomp='http://test.com/events'>mycomp:TestEvent</qname>
+        <value-type>com.test.event.TestEvent</value-type>
+    </event-definition>
+</portlet-app>

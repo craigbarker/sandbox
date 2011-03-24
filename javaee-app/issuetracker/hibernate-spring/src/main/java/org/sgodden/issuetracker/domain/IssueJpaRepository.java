@@ -2,6 +2,8 @@ package org.sgodden.issuetracker.domain;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -23,20 +25,34 @@ public class IssueJpaRepository implements IssueRepository {
     public void persist(final Issue issue) {
         em.persist(issue);
     }
-
+    
     @Transactional
+    public void persist(Set<Issue> issues) {
+    	for (Issue issue : issues) {
+    		persist(issue);
+    	}
+    }
+
+    @Transactional(readOnly=true)
     public Issue findById(final Serializable id) {
         return em.find(Issue.class, id);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
+	public Issue findByIssueNumber(String issueNumber) {
+        Query q = em.createNamedQuery(Issue.QUERY_FIND_BY_ISSUE_NUMBER);
+        q.setParameter("issueNumber", issueNumber);
+        return (Issue) q.getSingleResult();
+	}
+
+    @Transactional(readOnly=true)
     public long count() {
         Query q = em.createNamedQuery(Issue.QUERY_COUNT);
         return (Long) q.getSingleResult();
     }
 
     @SuppressWarnings("unchecked")
-    @Transactional
+    @Transactional(readOnly = true)
     public List<Issue> findAll() {
         Query q = em.createNamedQuery(Issue.QUERY_FIND_ALL);
         return q.getResultList();

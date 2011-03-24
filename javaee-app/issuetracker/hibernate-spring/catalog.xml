@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+<<<<<<< HEAD
     <nextCatalog catalog="file:/C:/Users/Simon/.netbeans/6.9/var/cache/mavencachedirs/632717537//retriever/catalog.xml"/>
+=======
+    <nextCatalog catalog="file:/C:/Documents%20and%20Settings/g106ahe/.netbeans/6.9/var/cache/mavencachedirs/202345423//retriever/catalog.xml"/>
+>>>>>>> fa2407c16db3d74606cb881264cc770b87bd97e6
 </catalog>

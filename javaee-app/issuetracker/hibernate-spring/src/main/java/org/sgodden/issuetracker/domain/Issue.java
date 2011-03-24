@@ -19,6 +19,7 @@ import javax.persistence.Transient;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.NaturalId;
 import org.sgodden.issuetracker.domain.listener.ValidatorEntityListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -33,19 +34,22 @@ import org.springframework.beans.factory.annotation.Configurable;
 @EntityListeners({ValidatorEntityListener.class})
 @NamedQueries({
     @NamedQuery(name=Issue.QUERY_COUNT, query="select count(o) from Issue o"),
+    @NamedQuery(name=Issue.QUERY_FIND_BY_ISSUE_NUMBER, query="select o from Issue o where issueNumber=:issueNumber"),
     @NamedQuery(name=Issue.QUERY_FIND_ALL, query="select o from Issue o")
 })
 @Configurable
 public class Issue implements Serializable {
 
     public static final String QUERY_COUNT = "issue.count";
+    public static final String QUERY_FIND_BY_ISSUE_NUMBER = "issue.findByIssueNumber";
     public static final String QUERY_FIND_ALL = "issue.findAll";
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @NotNull
+    @NaturalId
     private String issueNumber;
 
     @NotNull
@@ -73,6 +77,14 @@ public class Issue implements Serializable {
      */
     public Long getId() {
         return id;
+    }
+    
+    /**
+     * @deprecated should not be here.
+     * @param id
+     */
+    public void setId(Long id) {
+    	this.id = id;
     }
 
     /**

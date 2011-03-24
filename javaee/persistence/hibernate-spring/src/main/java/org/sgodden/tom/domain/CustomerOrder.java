@@ -17,6 +17,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
+import javax.persistence.Version;
 
 import javax.validation.constraints.NotNull;
 
@@ -45,6 +46,9 @@ public class CustomerOrder implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Version
+    private Long version;
 
     @NotNull
     private String customerReference;
@@ -80,6 +84,26 @@ public class CustomerOrder implements Serializable {
      */
     public Long getId() {
         return id;
+    }
+
+    /**
+     * Returns the version used for optimistic locking.
+     * @return the version.
+     */
+    public Long getVersion() {
+        return version;
+    }
+
+    /**
+     * Sets the version.  Note that you should NOT supply a setter for
+     * version as the JPA implementation manages it, and ignores
+     * whatever you set on it in an attached entity within a
+     * transaction.  I have added this to facilitate some unit tests
+     * proving the previous assertion.
+     * @param version the version to set.
+     */
+    public void setVersion(long version) {
+        this.version = version;
     }
 
     /**
