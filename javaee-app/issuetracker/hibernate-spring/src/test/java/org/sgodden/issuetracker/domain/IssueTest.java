@@ -18,11 +18,11 @@ public class IssueTest {
 
         assertNull(instance.getId());
 
-        instance.setCustomerReference("C");
-        assertEquals("C", instance.getCustomerReference());
+        instance.setIssueNumber("C");
+        assertEquals("C", instance.getIssueNumber());
 
-        instance.setOrderNumber("O");
-        assertEquals("O", instance.getOrderNumber());
+        instance.setIssueNumber("O");
+        assertEquals("O", instance.getIssueNumber());
     }
 
 }

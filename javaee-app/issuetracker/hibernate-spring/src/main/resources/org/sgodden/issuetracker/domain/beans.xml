@@ -31,8 +31,8 @@
         <property name="entityManagerFactory" ref="myEmf"/>
     </bean>
 
-    <bean id="customerOrderRepository" class="org.sgodden.tom.domain.CustomerOrderJpaRepository"/>
+    <bean id="issueRepository" class="org.sgodden.issuetracker.domain.IssueJpaRepository"/>
 
-    <bean id="someInterface" class="org.sgodden.tom.domain.SomeInterfaceImpl"/>
+    <bean id="someInterface" class="org.sgodden.issuetracker.domain.SomeInterfaceImpl"/>
 
 </beans>

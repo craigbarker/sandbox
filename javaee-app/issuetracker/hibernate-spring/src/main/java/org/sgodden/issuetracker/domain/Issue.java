@@ -53,17 +53,17 @@ public class Issue implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     @JoinColumn(name = "fk_customerorder")
-    private Set<Issue> orderLines = new HashSet<Issue>();
+    private Set<Comment> comments = new HashSet<Comment>();
 
     @Autowired
     @Transient
     private SomeInterface someInterface;
 
-    public String getCustomerReference() {
+    public String getIssueNumber() {
         return issueNumber;
     }
 
-    public void setCustomerReference(String customerReference) {
+    public void setIssueNumber(String customerReference) {
         this.issueNumber = customerReference;
     }
 
@@ -79,11 +79,11 @@ public class Issue implements Serializable {
      * Returns the company's order number.
      * @return the company's order number.
      */
-    public String getOrderNumber() {
+    public String getSummary() {
         return summary;
     }
 
-    public void setOrderNumber(String orderNumber) {
+    public void setSummary(String orderNumber) {
         this.summary = orderNumber;
     }
 
@@ -91,16 +91,16 @@ public class Issue implements Serializable {
      * Returns an immutable set of the lines on this order.
      * @return an immutable set of the lines on this order.
      */
-    public Set<Issue> getOrderLines() {
-        return Collections.unmodifiableSet(orderLines);
+    public Set<Comment> getComments() {
+        return Collections.unmodifiableSet(comments);
     }
 
     /**
      * Adds a line to this order.
      * @param line the line to add.
      */
-    public void addOrderLine(Issue line) {
-        orderLines.add(line);
+    public void addComment(Comment line) {
+        comments.add(line);
         someInterface.doSomething();
     }
 
@@ -108,7 +108,7 @@ public class Issue implements Serializable {
      * Removes a line from this order.
      * @param line the line to remove.
      */
-    public void removeOrderLine(Issue line) {
-        orderLines.remove(line);
+    public void removeComment(Comment line) {
+        comments.remove(line);
     }
 }
