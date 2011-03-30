@@ -4,3 +4,14 @@ project --topLevelPackage org.sgo.rootest --projectName roo-test --java 6
 // Spring Roo 1.1.2.RELEASE [rev fbc33bb] log opened at 2011-03-30 20:23:18
 hint
 persistence setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
+hint
+ent --class ~.domain.Issue
+// [failed] ent --class ~.domain.Issue --testAutomatically 
+ent --class ~.domain.Issue --testAutomatically 
+hint
+field string --fieldName summary
+field date --fieldName raisedDate --type java.util.Calendar
+hint
+hint gwt
+gwt setup
+// Spring Roo 1.1.2.RELEASE [rev fbc33bb] log closed at 2011-03-30 21:22:19
