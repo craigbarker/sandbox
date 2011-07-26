@@ -1,29 +1,36 @@
 package org.sgodden.tom.domain;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
  * An order from a customer to transport goods from an origin
  * to a destination.
+ *
  * @author sgodden
  */
 @Entity
 @SuppressWarnings("serial")
 public class CustomerOrder implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
 
+    @Basic
+    @NotNull
     private String customerReference;
 
+    @Basic
+    @NotNull
     private String orderNumber;
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.TABLE)
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<CustomerOrderLine> lines = new ArrayList<CustomerOrderLine>();
+
     public long getId() {
         return id;
     }
@@ -32,7 +39,6 @@ public class CustomerOrder implements Serializable {
         this.id = id;
     }
 
-    @NotNull
     public String getOrderNumber() {
         return orderNumber;
     }
@@ -41,7 +47,6 @@ public class CustomerOrder implements Serializable {
         this.orderNumber = orderNumber;
     }
 
-    @NotNull
     public String getCustomerReference() {
         return customerReference;
     }
@@ -50,4 +55,7 @@ public class CustomerOrder implements Serializable {
         this.customerReference = customerReference;
     }
 
+    public List<CustomerOrderLine> getLines() {
+        return lines;
+    }
 }

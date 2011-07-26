@@ -35,6 +35,7 @@
             <version>2.0</version>
         </dependency>
         <!-- Hibernate -->
+        <!--
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -45,6 +46,7 @@
             <artifactId>hibernate-annotations</artifactId>
             <version>3.5.1-Final</version>
         </dependency>
+        -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>

@@ -17,7 +17,7 @@ import static org.testng.Assert.*;
  * A basic stand-up test to see that persistence is working.
  * @author sgodden
  */
-@Test(groups="acceptance")
+@Test
 public class StandupTest {
     
     private EntityManager em;
@@ -40,11 +40,11 @@ public class StandupTest {
         em.persist(order);
         em.getTransaction().commit();
         
-        Query q = em.createQuery("from CustomerOrder obj");
+        Query q = em.createQuery("select obj from CustomerOrder obj");
         System.out.println(q.getSingleResult());
     }
 
-    @Test(enabled=true)
+    @Test
     public void testSimpleCreate() {
         em.getTransaction().begin();
         CustomerOrder order = new CustomerOrder();
