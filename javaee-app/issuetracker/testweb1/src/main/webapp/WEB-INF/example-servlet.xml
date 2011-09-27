@@ -14,9 +14,8 @@
 
 	<bean class="org.sgo.itrack.spring.ApplicationListenerImpl" />
 
-	<bean class="org.sgo.itrackweb.controller.HelloWorldController" />
 	<bean class="org.sgo.itrackweb.controller.IssueListController"/>
-	<bean class="org.sgo.itrackweb.controller.IssueController"/>
+	<bean class="org.sgo.itrackweb.controller.IssueEditController"/>
 
 	<!-- 
 	<bean id="viewResolver"

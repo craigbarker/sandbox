@@ -12,13 +12,12 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Simon
  */
 @Controller
-@RequestMapping("/editissue")
 public class IssueEditController {
 	
 	@Autowired
 	private IssueService service;
 
-    @RequestMapping("/{issueNumber}")
+    @RequestMapping("/app/editissue/{issueNumber}")
     public ModelAndView getIssue(@PathVariable String issueNumber) {
     	return new ModelAndView("viewissue", "issue", service.findByIssueNumber(issueNumber));
     }

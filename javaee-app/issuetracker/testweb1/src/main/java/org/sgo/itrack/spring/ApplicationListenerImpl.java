@@ -2,6 +2,7 @@ package org.sgo.itrack.spring;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.sgodden.issuetracker.domain.Issue;
 import org.sgodden.issuetracker.domain.IssueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEvent;
@@ -40,7 +41,17 @@ public class ApplicationListenerImpl implements
 	}
 
 	private void createIssues() {
-		new ListenerGroovy().createIssues(issueRepository);
+		if (issueRepository.count() == 0) {
+			issueRepository.persist(createIssue("I001", "Issue 1"));
+			issueRepository.persist(createIssue("I002", "Issue 2"));
+		}
+	}
+	
+	private Issue createIssue(String issueNumber, String summary) {
+		Issue issue = new Issue();
+		issue.setIssueNumber(issueNumber);
+		issue.setSummary(issueNumber);
+		return issue;
 	}
 
 }

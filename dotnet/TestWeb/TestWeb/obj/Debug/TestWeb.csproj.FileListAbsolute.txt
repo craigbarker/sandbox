@@ -1,0 +1,1 @@
+C:\workspaces\sandbox\dotnet\TestWeb\TestWeb\obj\Debug\ResolveAssemblyReference.cache

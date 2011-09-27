@@ -10,15 +10,15 @@ import org.springframework.roo.addon.gwt.RooGwtMirroredFrom;
 @ProxyForName("org.sgo.rootest.domain.Issue")
 public interface IssueProxy extends EntityProxy {
 
-    abstract Long getId();
-
-    abstract Integer getVersion();
-
     abstract String getSummary();
+
+    abstract void setSummary(String summary);
+
+    abstract Long getId();
 
     abstract void setId(Long id);
 
-    abstract void setVersion(Integer version);
+    abstract Integer getVersion();
 
-    abstract void setSummary(String summary);
+    abstract void setVersion(Integer version);
 }

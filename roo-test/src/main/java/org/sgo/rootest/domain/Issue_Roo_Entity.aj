@@ -93,11 +93,11 @@ privileged aspect Issue_Roo_Entity {
     }
     
     public static long Issue.countIssues() {
-        return entityManager().createQuery("select count(o) from Issue o", Long.class).getSingleResult();
+        return entityManager().createQuery("SELECT COUNT(o) FROM Issue o", Long.class).getSingleResult();
     }
     
     public static List<Issue> Issue.findAllIssues() {
-        return entityManager().createQuery("select o from Issue o", Issue.class).getResultList();
+        return entityManager().createQuery("SELECT o FROM Issue o", Issue.class).getResultList();
     }
     
     public static Issue Issue.findIssue(Long id) {
@@ -106,7 +106,7 @@ privileged aspect Issue_Roo_Entity {
     }
     
     public static List<Issue> Issue.findIssueEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("select o from Issue o", Issue.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+        return entityManager().createQuery("SELECT o FROM Issue o", Issue.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

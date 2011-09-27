@@ -27,6 +27,21 @@ public abstract class IssueListView_Roo_Gwt extends AbstractProxyListView<IssueP
     protected Set<String> paths = new HashSet<String>();
 
     public void init() {
+        paths.add("summary");
+        table.addColumn(new TextColumn<IssueProxy>() {
+
+            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
+
+                public String render(java.lang.String obj) {
+                    return obj == null ? "" : String.valueOf(obj);
+                }
+            };
+
+            @Override
+            public String getValue(IssueProxy object) {
+                return renderer.render(object.getSummary());
+            }
+        }, "Summary");
         paths.add("id");
         table.addColumn(new TextColumn<IssueProxy>() {
 
@@ -57,20 +72,5 @@ public abstract class IssueListView_Roo_Gwt extends AbstractProxyListView<IssueP
                 return renderer.render(object.getVersion());
             }
         }, "Version");
-        paths.add("summary");
-        table.addColumn(new TextColumn<IssueProxy>() {
-
-            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
-
-                public String render(java.lang.String obj) {
-                    return obj == null ? "" : String.valueOf(obj);
-                }
-            };
-
-            @Override
-            public String getValue(IssueProxy object) {
-                return renderer.render(object.getSummary());
-            }
-        }, "Summary");
     }
 }

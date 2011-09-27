@@ -14,9 +14,9 @@
   </ui:style>
 
   <g:HTMLPanel id="boundElementHolder" styleName='{style.outer}'>
+    <div id='summary'><div class='{style.label}'>Summary</div><div class='{style.value}' ui:field='summary'></div></div>
     <div id='id'><div class='{style.label}'>Id</div><div class='{style.value}' ui:field='id'></div></div>
     <div id='version'><div class='{style.label}'>Version</div><div class='{style.value}' ui:field='version'></div></div>
-    <div id='summary'><div class='{style.label}'>Summary</div><div class='{style.value}' ui:field='summary'></div></div>
 
     <g:Button ui:field='delete'>Delete</g:Button>
   </g:HTMLPanel>

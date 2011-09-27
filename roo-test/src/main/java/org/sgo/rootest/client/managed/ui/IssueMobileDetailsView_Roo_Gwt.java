@@ -20,20 +20,20 @@ import org.sgo.rootest.client.scaffold.place.ProxyDetailsView;
 public abstract class IssueMobileDetailsView_Roo_Gwt extends Composite implements ProxyDetailsView<IssueProxy> {
 
     @UiField
+    Element summary;
+
+    @UiField
     Element id;
 
     @UiField
     Element version;
 
-    @UiField
-    Element summary;
-
     IssueProxy proxy;
 
     public void setValue(IssueProxy proxy) {
         this.proxy = proxy;
+        summary.setInnerText(proxy.getSummary() == null ? "" : String.valueOf(proxy.getSummary()));
         id.setInnerText(proxy.getId() == null ? "" : String.valueOf(proxy.getId()));
         version.setInnerText(proxy.getVersion() == null ? "" : String.valueOf(proxy.getVersion()));
-        summary.setInnerText(proxy.getSummary() == null ? "" : String.valueOf(proxy.getSummary()));
     }
 }

@@ -80,7 +80,6 @@ public class Issue implements Serializable {
     }
     
     /**
-     * @deprecated should not be here.
      * @param id
      */
     public void setId(Long id) {

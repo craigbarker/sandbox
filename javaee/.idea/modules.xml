@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/persistence/tom-domain-appengine/appengine-domain.iml" filepath="$PROJECT_DIR$/persistence/tom-domain-appengine/appengine-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/persistence/appengine-spring/appengine-domain-spring.iml" filepath="$PROJECT_DIR$/persistence/appengine-spring/appengine-domain-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/persistence/eclipselink/eclipselink-domain.iml" filepath="$PROJECT_DIR$/persistence/eclipselink/eclipselink-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web/gwt-maven-sample/gwt-maven-sample.iml" filepath="$PROJECT_DIR$/web/gwt-maven-sample/gwt-maven-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/persistence/hibernate/hibernate-domain.iml" filepath="$PROJECT_DIR$/persistence/hibernate/hibernate-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web/jsf-webapp/jsf-webapp.iml" filepath="$PROJECT_DIR$/web/jsf-webapp/jsf-webapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aspects/spring-configurable/spring-configurable.iml" filepath="$PROJECT_DIR$/aspects/spring-configurable/spring-configurable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-hibernate/spring-hibernate.iml" filepath="$PROJECT_DIR$/spring-hibernate/spring-hibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/persistence/hibernate-spring/spring-hibernate-domain (1) (org.sgodden.tom).iml" filepath="$PROJECT_DIR$/persistence/hibernate-spring/spring-hibernate-domain (1) (org.sgodden.tom).iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-hibernate/domain/spring-hibernate-domain (2) (org.sgodden.spring-hibernate).iml" filepath="$PROJECT_DIR$/spring-hibernate/domain/spring-hibernate-domain (2) (org.sgodden.spring-hibernate).iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-hibernate/webapp/spring-hibernate-webapp.iml" filepath="$PROJECT_DIR$/spring-hibernate/webapp/spring-hibernate-webapp.iml" />
+    </modules>
+  </component>
+</project>
+

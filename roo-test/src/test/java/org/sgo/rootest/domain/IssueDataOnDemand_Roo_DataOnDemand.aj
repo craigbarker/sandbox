@@ -18,9 +18,19 @@ privileged aspect IssueDataOnDemand_Roo_DataOnDemand {
     
     public Issue IssueDataOnDemand.getNewTransientIssue(int index) {
         org.sgo.rootest.domain.Issue obj = new org.sgo.rootest.domain.Issue();
-        obj.setSummary("summary_" + index);
-        obj.setRaisedDate(java.util.Calendar.getInstance());
+        setSummary(obj, index);
+        setRaisedDate(obj, index);
         return obj;
+    }
+    
+    private void IssueDataOnDemand.setSummary(Issue obj, int index) {
+        java.lang.String summary = "summary_" + index;
+        obj.setSummary(summary);
+    }
+    
+    private void IssueDataOnDemand.setRaisedDate(Issue obj, int index) {
+        java.util.Calendar raisedDate = java.util.Calendar.getInstance();
+        obj.setRaisedDate(raisedDate);
     }
     
     public Issue IssueDataOnDemand.getSpecificIssue(int index) {

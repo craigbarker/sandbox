@@ -33,9 +33,9 @@
     </div>
 
     <table id='boundElementHolder' class='{style.fields}'>
+      <tr id='summary'><td><span class='{style.label}'>Summary:</span></td><td><span ui:field='summary'></span></td></tr>
       <tr id='id'><td><span class='{style.label}'>Id:</span></td><td><span ui:field='id'></span></td></tr>
       <tr id='version'><td><span class='{style.label}'>Version:</span></td><td><span ui:field='version'></span></td></tr>
-      <tr id='summary'><td><span class='{style.label}'>Summary:</span></td><td><span ui:field='summary'></span></td></tr>
     </table>
 
   <div class="{style.bar}">

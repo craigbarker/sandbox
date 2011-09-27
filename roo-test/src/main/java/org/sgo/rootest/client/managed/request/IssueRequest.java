@@ -12,15 +12,15 @@ import org.springframework.roo.addon.gwt.RooGwtMirroredFrom;
 @ServiceName("org.sgo.rootest.domain.Issue")
 public interface IssueRequest extends RequestContext {
 
+    abstract InstanceRequest<org.sgo.rootest.client.managed.request.IssueProxy, java.lang.Void> persist();
+
+    abstract InstanceRequest<org.sgo.rootest.client.managed.request.IssueProxy, java.lang.Void> remove();
+
     abstract Request<java.lang.Long> countIssues();
 
     abstract Request<java.util.List<org.sgo.rootest.client.managed.request.IssueProxy>> findAllIssues();
 
-    abstract Request<java.util.List<org.sgo.rootest.client.managed.request.IssueProxy>> findIssueEntries(int firstResult, int maxResults);
-
     abstract Request<org.sgo.rootest.client.managed.request.IssueProxy> findIssue(Long id);
 
-    abstract InstanceRequest<org.sgo.rootest.client.managed.request.IssueProxy, java.lang.Void> remove();
-
-    abstract InstanceRequest<org.sgo.rootest.client.managed.request.IssueProxy, java.lang.Void> persist();
+    abstract Request<java.util.List<org.sgo.rootest.client.managed.request.IssueProxy>> findIssueEntries(int firstResult, int maxResults);
 }

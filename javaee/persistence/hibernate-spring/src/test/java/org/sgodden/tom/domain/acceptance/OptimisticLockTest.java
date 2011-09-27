@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import org.sgodden.tom.domain.CustomerOrder;
 import org.sgodden.tom.domain.CustomerOrderLine;
 import org.sgodden.tom.domain.CustomerOrderRepository;
+import org.springframework.orm.jpa.JpaSystemException;
 import org.testng.annotations.Test;
 
 import java.io.Serializable;
@@ -49,7 +50,7 @@ public class OptimisticLockTest extends AbstractTestNGSpringContextTests {
     public void tearDown() {
     }
 
-    @Test(expectedExceptions = {RollbackException.class})
+    @Test(expectedExceptions = {JpaSystemException.class})
     public void testOptimisticLock() {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -63,7 +64,7 @@ public class OptimisticLockTest extends AbstractTestNGSpringContextTests {
         em.close();
     }
 
-    @Test(expectedExceptions = {RollbackException.class})
+    @Test(expectedExceptions = {JpaSystemException.class})
     public void testOptimisticLockIgnoresOverwrittenVersion() {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();

@@ -9,8 +9,8 @@ privileged aspect Issue_Roo_ToString {
     
     public String Issue.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Summary: ").append(getSummary()).append(", ");
-        sb.append("RaisedDate: ").append(getRaisedDate() == null ? "null" : getRaisedDate().getTime());
+        sb.append("RaisedDate: ").append(getRaisedDate() == null ? "null" : getRaisedDate().getTime()).append(", ");
+        sb.append("Summary: ").append(getSummary());
         return sb.toString();
     }
     

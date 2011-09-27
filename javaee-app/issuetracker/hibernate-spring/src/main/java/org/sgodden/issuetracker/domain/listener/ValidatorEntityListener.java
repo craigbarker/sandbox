@@ -10,12 +10,12 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 
 import org.sgodden.issuetracker.domain.ValidationException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 public class ValidatorEntityListener {
 	
-	private static final Logger LOG = LoggerFactory.getLogger(ValidatorEntityListener.class);
+	//private static final Logger LOG = LoggerFactory.getLogger(ValidatorEntityListener.class);
 
 	private static Validator validator = Validation
 			.buildDefaultValidatorFactory().getValidator();

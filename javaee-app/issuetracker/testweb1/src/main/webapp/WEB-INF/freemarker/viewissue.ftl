@@ -8,5 +8,6 @@
 <tr><td>Description</td><td>${issue.summary}</td></tr>
 </table>
 <a href="<@spring.url "/editissue/${issue.issueNumber}"/>">Edit this issue</a>
+<a href="<@spring.url "/issues"/>">Back to list</a>
 </body>
 </html>

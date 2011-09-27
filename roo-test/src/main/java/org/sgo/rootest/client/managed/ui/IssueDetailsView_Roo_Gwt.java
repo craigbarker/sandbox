@@ -21,13 +21,13 @@ import org.sgo.rootest.client.scaffold.place.ProxyListView;
 public abstract class IssueDetailsView_Roo_Gwt extends Composite implements ProxyDetailsView<IssueProxy> {
 
     @UiField
+    SpanElement summary;
+
+    @UiField
     SpanElement id;
 
     @UiField
     SpanElement version;
-
-    @UiField
-    SpanElement summary;
 
     IssueProxy proxy;
 
@@ -36,9 +36,9 @@ public abstract class IssueDetailsView_Roo_Gwt extends Composite implements Prox
 
     public void setValue(IssueProxy proxy) {
         this.proxy = proxy;
+        summary.setInnerText(proxy.getSummary() == null ? "" : String.valueOf(proxy.getSummary()));
         id.setInnerText(proxy.getId() == null ? "" : String.valueOf(proxy.getId()));
         version.setInnerText(proxy.getVersion() == null ? "" : String.valueOf(proxy.getVersion()));
-        summary.setInnerText(proxy.getSummary() == null ? "" : String.valueOf(proxy.getSummary()));
         displayRenderer.setInnerText(org.sgo.rootest.client.managed.ui.IssueProxyRenderer.instance().render(proxy));
     }
 }
