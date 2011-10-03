@@ -1,28 +1,25 @@
 package org.sgodden.tom.domain.acceptance;
 
-import javax.persistence.EntityManager;
-
 import org.sgodden.tom.domain.CustomerOrder;
 import org.sgodden.tom.domain.CustomerOrderLine;
 import org.sgodden.tom.domain.CustomerOrderRepository;
-import org.springframework.orm.jpa.JpaSystemException;
-import org.testng.annotations.Test;
-
-import java.io.Serializable;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
-import javax.persistence.RollbackException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.ExpectedException;
+import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
+import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 /**
  * Test using fetch in JPA-QL.
