@@ -33,6 +33,6 @@
 
     <bean id="customerOrderRepository" class="org.sgodden.tom.domain.CustomerOrderJpaRepository"/>
 
-    <bean id="someInterface" class="org.sgodden.tom.domain.SomeInterfaceImpl"/>
+    <bean id="someInterfaceImpl" class="org.sgodden.tom.domain.SomeInterfaceImpl"/>
 
 </beans>

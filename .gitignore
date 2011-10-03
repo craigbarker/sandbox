@@ -4,3 +4,4 @@ target
 .hg
 *.dll
 *.dll.mdb
+.idea
