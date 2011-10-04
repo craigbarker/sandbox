@@ -1,29 +1,14 @@
 package org.sgodden.tom.domain;
 
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Transient;
-import javax.persistence.Version;
-
-import javax.validation.constraints.NotNull;
-
 import org.sgodden.tom.domain.listener.ValidatorEntityListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * An order from a customer to transport goods from an origin
@@ -56,6 +41,9 @@ public class CustomerOrder implements Identity {
     @NotNull
     private String orderNumber;
 
+    @NotNull
+    private CustomerOrderStatus status;
+
     @OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     private CollectionDetails collectionDetails;
 
@@ -69,6 +57,10 @@ public class CustomerOrder implements Identity {
     @Autowired
     @Transient
     private SomeInterface someInterface;
+
+    public CustomerOrder() {
+        status = CustomerOrderStatus.NEW;
+    }
 
     public String getCustomerReference() {
         return customerReference;
@@ -157,5 +149,9 @@ public class CustomerOrder implements Identity {
      */
     public void removeOrderLine(CustomerOrderLine line) {
         orderLines.remove(line);
+    }
+
+    public CustomerOrderStatus getStatus() {
+        return status;
     }
 }
