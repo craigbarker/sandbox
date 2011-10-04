@@ -7,16 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- */
-@Entity
-public class CollectionDetails implements Serializable {
+public class CollectionDetails {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Embedded
     private Address address;
 
     public Address getAddress() {

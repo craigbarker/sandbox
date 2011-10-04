@@ -9,7 +9,6 @@ import javax.validation.constraints.NotNull;
  * A geographical address.
  */
 @SuppressWarnings("serial")
-@Embeddable
 public class Address implements Serializable {
 
     @NotNull

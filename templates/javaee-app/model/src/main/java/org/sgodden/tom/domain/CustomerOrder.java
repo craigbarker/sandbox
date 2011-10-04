@@ -16,24 +16,8 @@ import java.util.Set;
  * @author sgodden
  */
 @SuppressWarnings("serial")
-@Entity
-@EntityListeners({ValidatorEntityListener.class})
-@NamedQueries({
-    @NamedQuery(name=CustomerOrder.QUERY_COUNT, query="select count(o) from CustomerOrder o"),
-    @NamedQuery(name=CustomerOrder.QUERY_FIND_ALL, query="select o from CustomerOrder o")
-})
 @Configurable
-public class CustomerOrder implements Identity {
-
-    public static final String QUERY_COUNT = "customerOrder.count";
-    public static final String QUERY_FIND_ALL = "customerOrder.findAll";
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Version
-    private Long version;
+public class CustomerOrder extends AbstractIdentity {
 
     @NotNull
     private String customerReference;
@@ -44,14 +28,10 @@ public class CustomerOrder implements Identity {
     @NotNull
     private CustomerOrderStatus status;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     private CollectionDetails collectionDetails;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     private DeliveryDetails deliveryDetails;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinColumn(name = "fk_customerorder")
     private Set<CustomerOrderLine> orderLines = new HashSet<CustomerOrderLine>();
 
     @Autowired
@@ -68,34 +48,6 @@ public class CustomerOrder implements Identity {
 
     public void setCustomerReference(String customerReference) {
         this.customerReference = customerReference;
-    }
-
-    /**
-     * Returns the id of the customer order.
-     * @return the id of the customer order
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /**
-     * Returns the version used for optimistic locking.
-     * @return the version.
-     */
-    public Long getVersion() {
-        return version;
-    }
-
-    /**
-     * Sets the version.  Note that you should NOT supply a setter for
-     * version as the JPA implementation manages it, and ignores
-     * whatever you set on it in an attached entity within a
-     * transaction.  I have added this to facilitate some unit tests
-     * proving the previous assertion.
-     * @param version the version to set.
-     */
-    public void setVersion(long version) {
-        this.version = version;
     }
 
     /**

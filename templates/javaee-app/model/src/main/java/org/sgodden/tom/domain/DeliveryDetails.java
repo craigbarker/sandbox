@@ -9,14 +9,7 @@ import javax.persistence.Id;
 
 /**
  */
-@Entity
 public class DeliveryDetails implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    @Embedded
     private Address address;
 
     public Address getAddress() {
@@ -25,9 +18,5 @@ public class DeliveryDetails implements Serializable {
 
     public void setAddress(Address address) {
         this.address = address;
-    }
-
-    public Long getId() {
-        return id;
     }
 }
