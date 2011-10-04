@@ -36,22 +36,22 @@
         <attributes>
             <embedded name="address">
                 <attribute-override name="line1">
-                    <column name="deliveryAddressLine1"/>
+                    <column name="collectionAddressLine1"/>
                 </attribute-override>
                 <attribute-override name="line2">
-                    <column name="deliveryAddressLine2"/>
+                    <column name="collectionAddressLine2"/>
                 </attribute-override>
                 <attribute-override name="line3">
-                    <column name="deliveryAddressLine3"/>
+                    <column name="collectionAddressLine3"/>
                 </attribute-override>
                 <attribute-override name="line4">
-                    <column name="deliveryAddressLine4"/>
+                    <column name="collectionAddressLine4"/>
                 </attribute-override>
                 <attribute-override name="town">
-                    <column name="deliveryTown"/>
+                    <column name="collectionTown"/>
                 </attribute-override>
                 <attribute-override name="postalCode">
-                    <column name="deliveryPostalCode"/>
+                    <column name="collectionPostalCode"/>
                 </attribute-override>
             </embedded>
         </attributes>
