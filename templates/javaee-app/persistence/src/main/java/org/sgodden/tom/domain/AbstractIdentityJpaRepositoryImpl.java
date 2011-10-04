@@ -8,7 +8,7 @@ import javax.persistence.Query;
 import java.io.Serializable;
 import java.util.List;
 
-public abstract class AbstractJpaRepositoryImpl<T extends Identity> {
+public abstract class AbstractIdentityJpaRepositoryImpl<T extends Identity> {
 
     private EntityManager em;
 
