@@ -38,7 +38,7 @@ import org.springframework.beans.factory.annotation.Configurable;
     @NamedQuery(name=CustomerOrder.QUERY_FIND_ALL, query="select o from CustomerOrder o")
 })
 @Configurable
-public class CustomerOrder implements Serializable {
+public class CustomerOrder implements Identity {
 
     public static final String QUERY_COUNT = "customerOrder.count";
     public static final String QUERY_FIND_ALL = "customerOrder.findAll";

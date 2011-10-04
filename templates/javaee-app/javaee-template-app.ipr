@@ -34,6 +34,19 @@
     <entry_points version="2.0" />
   </component>
   <component name="IdProvider" IDEtalkID="2BC9D8FFF36A512E6DCE24D5C2C6328F" />
+  <component name="InspectionProjectProfileManager">
+    <profiles>
+      <profile version="1.0" is_locked="false">
+        <option name="myName" value="Project Default" />
+        <option name="myLocal" value="false" />
+        <inspection_tool class="HibernateMappingDatasourceDomInspection" enabled="false" level="ERROR" enabled_by_default="false" />
+        <inspection_tool class="JpaQlInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+      </profile>
+    </profiles>
+    <option name="PROJECT_PROFILE" value="Project Default" />
+    <option name="USE_PROJECT_PROFILE" value="true" />
+    <version value="1.0" />
+  </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="-target 1.5" />
   </component>
