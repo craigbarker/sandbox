@@ -8,4 +8,6 @@ interface CustomerOrderState {
 
     void cancel(CustomerOrder order);
 
+    void save(CustomerOrder order);
+
 }
