@@ -1,11 +1,12 @@
 package org.sgodden.tom.model;
 
-/**
- * Created by IntelliJ IDEA.
- * User: simon
- * Date: 05/10/11
- * Time: 17:41
- * To change this template use File | Settings | File Templates.
- */
+import org.springframework.stereotype.Component;
+
+@Component
 public class CustomerOrderConfirmCommand {
+
+    void execute(CustomerOrder order) {
+        order.setStatus(CustomerOrderStatus.CONFIRMED);
+    }
+
 }

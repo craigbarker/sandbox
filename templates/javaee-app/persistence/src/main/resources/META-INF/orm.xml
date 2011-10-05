@@ -4,7 +4,7 @@
                  http://java.sun.com/xml/ns/persistence/orm/orm_2_0.xsd"
                  version="2.0">
 
-    <mapped-superclass class="org.sgodden.tom.domain.AbstractIdentity" access="FIELD" metadata-complete="true">
+    <mapped-superclass class="org.sgodden.tom.model.AbstractIdentity" access="FIELD" metadata-complete="true">
         <attributes>
             <id name="id">
                 <generated-value strategy="IDENTITY"/>
@@ -13,9 +13,9 @@
         </attributes>
     </mapped-superclass>
 
-    <entity class="org.sgodden.tom.domain.CustomerOrder" access="FIELD" metadata-complete="true">
+    <entity class="org.sgodden.tom.model.CustomerOrder" access="FIELD" metadata-complete="true">
         <entity-listeners>
-            <entity-listener class="org.sgodden.tom.domain.listener.ValidatorEntityListener"/>
+            <entity-listener class="org.sgodden.tom.model.listener.ValidatorEntityListener"/>
         </entity-listeners>
         <attributes>
             <one-to-many name="orderLines" fetch="LAZY">
@@ -28,11 +28,11 @@
         </attributes>
     </entity>
 
-    <entity class="org.sgodden.tom.domain.CustomerOrderLine" access="FIELD" metadata-complete="true"></entity>
+    <entity class="org.sgodden.tom.model.CustomerOrderLine" access="FIELD" metadata-complete="true"></entity>
 
-    <embeddable class="org.sgodden.tom.domain.Address" access="FIELD" metadata-complete="true"></embeddable>
+    <embeddable class="org.sgodden.tom.model.Address" access="FIELD" metadata-complete="true"></embeddable>
 
-    <embeddable class="org.sgodden.tom.domain.CollectionDetails" access="FIELD" metadata-complete="true">
+    <embeddable class="org.sgodden.tom.model.CollectionDetails" access="FIELD" metadata-complete="true">
         <attributes>
             <embedded name="address">
                 <attribute-override name="line1">
@@ -57,7 +57,7 @@
         </attributes>
     </embeddable>
 
-    <embeddable class="org.sgodden.tom.domain.DeliveryDetails" access="FIELD" metadata-complete="true">
+    <embeddable class="org.sgodden.tom.model.DeliveryDetails" access="FIELD" metadata-complete="true">
         <attributes>
             <embedded name="address">
                 <attribute-override name="line1">

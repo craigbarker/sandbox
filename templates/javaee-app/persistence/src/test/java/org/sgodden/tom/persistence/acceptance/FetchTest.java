@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import org.sgodden.tom.model.CustomerOrderLine;
 import org.sgodden.tom.model.CustomerOrder;
 import org.sgodden.tom.model.CustomerOrderRepository;
+import org.sgodden.tom.persistence.AbstractIntegrationTest;
 import org.testng.annotations.Test;
 
 import java.io.Serializable;
@@ -23,8 +24,7 @@ import org.testng.annotations.BeforeMethod;
  * @author sgodden
  */
 @Test(groups = "acceptance")
-@ContextConfiguration(locations="/org/sgodden/tom/domain/beans.xml")
-public class FetchTest extends AbstractTestNGSpringContextTests {
+public class FetchTest extends AbstractIntegrationTest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FetchTest.class);
 

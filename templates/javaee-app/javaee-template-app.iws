@@ -2,22 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a051938-416e-4455-996f-387874ffb76f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/AbstractIdentity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrderState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/persistence/orm.xsd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/orm.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CollectionDetails.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderCancelCommand.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderConfirmCommand.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderNewState.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderState.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/DeliveryDetails.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/src/test/java/org/sgodden/tom/model/AbstractIntegrationTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/src/test/java/org/sgodden/tom/model/CustomerOrderTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/AbstractIntegrationTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CollectionDetails.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrderState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/DeliveryDetails.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/src/main/resources/org/sgodden/tom/domain/beans.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/AbstractIdentity.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/AbstractIdentity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/Address.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/Address.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrder.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrder.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrderLine.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderLine.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrderRepository.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrderStatus.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderStatus.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/Identity.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/Identity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/SomeInterface.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/SomeInterface.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/ValidationException.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/ValidationException.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/listener/ValidatorEntityListener.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/listener/ValidatorEntityListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/listener/ValidatorEntityListener.java" afterPath="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/persistence/listener/ValidatorEntityListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/resources/org/sgodden/tom/domain/beans.xml" afterPath="$PROJECT_DIR$/model/src/main/resources/org/sgodden/tom/model/beans.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/domain/AbstractIdentityJpaRepositoryImpl.java" afterPath="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/persistence/AbstractIdentityJpaRepositoryImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/domain/CustomerOrderJpaRepository.java" afterPath="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/persistence/CustomerOrderJpaRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/domain/SomeInterfaceImpl.java" afterPath="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/persistence/SomeInterfaceImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/domain/listener/ValidatorEntityListener.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/listener/ValidatorEntityListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/persistence/src/main/resources/org/sgodden/tom/domain/beans.xml" afterPath="$PROJECT_DIR$/persistence/src/main/resources/org/sgodden/tom/persistence/beans.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/domain/CustomerOrderRepositoryTest.java" afterPath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/CustomerOrderRepositoryTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/domain/CustomerOrderTest.java" afterPath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/CustomerOrderTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/domain/acceptance/FetchTest.java" afterPath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/acceptance/FetchTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/domain/acceptance/OptimisticLockTest.java" afterPath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/acceptance/OptimisticLockTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/domain/acceptance/TestUtils.java" afterPath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/acceptance/TestUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/domain/acceptance/VersionIncrementTest.java" afterPath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/acceptance/VersionIncrementTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.ipr" afterPath="$PROJECT_DIR$/javaee-template-app.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.iws" afterPath="$PROJECT_DIR$/javaee-template-app.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/model.iml" afterPath="$PROJECT_DIR$/model/model.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/pom.xml" afterPath="$PROJECT_DIR$/model/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/Address.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/Address.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CollectionDetails.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CollectionDetails.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrder.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrderLine.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrderLine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/DeliveryDetails.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/DeliveryDetails.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/persistence.iml" afterPath="$PROJECT_DIR$/persistence/persistence.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/domain/acceptance/OptimisticLockTest.java" afterPath="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/domain/acceptance/OptimisticLockTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/orm.xml" afterPath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/orm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="javaee-template-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,6 +61,21 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrder.java" line="126" class="org.sgodden.tom.model.CustomerOrder" package="org.sgodden.tom.model">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -75,26 +115,7 @@
     <favorites_list name="javaee-template-app" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="orm.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/persistence/src/main/resources/META-INF/orm.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="42" selection-start="2858" selection-end="2858" vertical-scroll-proportion="0.15254237">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Address.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/Address.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -108,22 +129,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/domain/AbstractJpaRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/domain/AbstractIdentityJpaRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/TODO.txt" />
-        <option value="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrderStatus.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrderState.java" />
-        <option value="$PROJECT_DIR$/persistence/orm.xsd" />
         <option value="$PROJECT_DIR$/model/pom.xml" />
-        <option value="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/AbstractIdentity.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrderLine.java" />
+        <option value="$PROJECT_DIR$/model/src/test/java/org/sgodden/tom/domain/AbstractIntegrationTest.java" />
+        <option value="$PROJECT_DIR$/model/src/test/java/org/sgodden/tom/domain/CustomerOrderTest.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrder.java" />
-        <option value="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/domain/acceptance/OptimisticLockTest.java" />
-        <option value="$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/DeliveryDetails.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/Address.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CollectionDetails.java" />
-        <option value="$PROJECT_DIR$/persistence/src/main/resources/META-INF/orm.xml" />
+        <option value="$PROJECT_DIR$/model/src/main/resources/org/sgodden/tom/domain/beans.xml" />
+        <option value="$PROJECT_DIR$/model/src/test/java/org/sgodden/tom/model/AbstractIntegrationTest.java" />
+        <option value="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/AbstractIntegrationTest.java" />
+        <option value="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/CustomerOrderRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/acceptance/FetchTest.java" />
+        <option value="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/acceptance/OptimisticLockTest.java" />
+        <option value="$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/acceptance/VersionIncrementTest.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderConfirmCommand.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderNewState.java" />
+        <option value="$PROJECT_DIR$/model/src/main/resources/org/sgodden/tom/model/beans.xml" />
+        <option value="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderCancelCommand.java" />
+        <option value="$PROJECT_DIR$/model/src/test/java/org/sgodden/tom/model/CustomerOrderTest.java" />
       </list>
     </option>
   </component>
@@ -144,30 +165,7 @@
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Hibernate Issues</id>
-          </State>
-          <State>
-            <id>Java EE issues</id>
-          </State>
-          <State>
-            <id>Probable bugs</id>
-          </State>
-          <State>
-            <id>SQL Inspections</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>HibernateConfigDomInspection</id>
-          </State>
-        </selected-state>
-      </profile-state>
+      <profile-state />
     </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -248,6 +246,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -306,7 +306,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
+              <option name="myItemId" value="persistence" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -321,6 +321,102 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="persistence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="persistence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acceptance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-template-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="persistence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-template-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-template-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-template-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -335,34 +431,8 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="javaee-template-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javaee-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="persistence" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="META-INF" />
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -376,7 +446,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="persistence" />
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -385,17 +455,23 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="109" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="122" />
     <property name="OverrideImplement.combined" value="true" />
@@ -424,18 +500,21 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="Errors" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Java" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.sgodden.tom.persistence" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.sgodden.tom.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.org.sgodden.tom.domain">
+  <component name="RunManager" selected="TestNG.org.sgodden.tom.model">
     <configuration default="false" name="CustomerOrderTest" type="TestNG" factoryName="TestNG" temporary="true">
       <extension name="coverage" enabled="false" merge="false">
         <pattern>
@@ -443,7 +522,7 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="persistence" />
+      <module name="model" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
@@ -467,7 +546,13 @@
       <envs />
       <properties />
       <listeners />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="43246" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -506,10 +591,10 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="org.sgodden.tom.domain" type="TestNG" factoryName="TestNG" temporary="true">
+    <configuration default="false" name="org.sgodden.tom.persistence" type="TestNG" factoryName="TestNG" temporary="true">
       <extension name="coverage" enabled="false" merge="false">
         <pattern>
-          <option name="PATTERN" value="org.sgodden.tom.domain.*" />
+          <option name="PATTERN" value="org.sgodden.tom.persistence.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -517,7 +602,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="org.sgodden.tom.domain" />
+      <option name="PACKAGE_NAME" value="org.sgodden.tom.persistence" />
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
@@ -578,6 +663,41 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="org.sgodden.tom.model" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false">
+        <pattern>
+          <option name="PATTERN" value="org.sgodden.tom.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="model" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="org.sgodden.tom.model" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
@@ -751,11 +871,12 @@
         <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="TestNG.CustomerOrderTest" />
       <item index="1" class="java.lang.String" itemvalue="TestNG.CustomerOrderRepositoryTest" />
       <item index="2" class="java.lang.String" itemvalue="TestNG.org.sgodden.tom.domain" />
       <item index="3" class="java.lang.String" itemvalue="TestNG.FetchTest" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.org.sgodden.tom.model" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -773,7 +894,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="-1" width="1370" height="747" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.35402685" order="2" side_tool="true" content_ui="tabs" />
@@ -791,8 +912,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24924012" sideWeight="0.6409396" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3590604" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24924012" sideWeight="0.6409396" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3590604" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -849,116 +970,126 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.0.Final/hibernate-jpa-2.0-api-1.0.0.Final-sources.jar!/javax/persistence/GenerationType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.0.Final/hibernate-jpa-2.0-api-1.0.0.Final-sources.jar!/javax/persistence/GeneratedValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/domain/AbstractIdentityJpaRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="32" selection-start="1439" selection-end="1439" vertical-scroll-proportion="0.8360656">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.4/commons-lang-2.4-sources.jar!/org/apache/commons/lang/builder/HashCodeBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="22" selection-start="2266" selection-end="2266" vertical-scroll-proportion="0.5246479">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="35" selection-start="3568" selection-end="3568" vertical-scroll-proportion="0.63380283">
+        <state line="99" column="0" selection-start="3640" selection-end="3640" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.4/commons-lang-2.4-sources.jar!/org/apache/commons/lang/builder/EqualsBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.9471831">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/domain/acceptance/OptimisticLockTest.java">
+    <entry file="file://$PROJECT_DIR$/persistence/src/main/resources/org/sgodden/tom/persistence/beans.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrderLine.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/3.0.5.RELEASE/spring-context-3.0.5.RELEASE.jar!/org/springframework/context/annotation/Bean.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.5645161">
+        <state line="9" column="27" selection-start="425" selection-end="425" vertical-scroll-proportion="0.34985423">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.0.5.RELEASE/spring-beans-3.0.5.RELEASE.jar!/org/springframework/beans/factory/xml/spring-beans-2.5.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="42" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0">
+        <state line="344" column="8" selection-start="13089" selection-end="13089" vertical-scroll-proportion="0.9212598">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/AbstractIdentity.java">
+    <entry file="file://$PROJECT_DIR$/model/src/test/java/org/sgodden/tom/model/AbstractIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="49" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
+        <state line="8" column="0" selection-start="326" selection-end="326" vertical-scroll-proportion="0.31496063">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/orm.xsd">
+    <entry file="file://$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/AbstractIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1313" column="62" selection-start="54459" selection-end="54459" vertical-scroll-proportion="-11.96">
+        <state line="5" column="61" selection-start="243" selection-end="243" vertical-scroll-proportion="0.15748031">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/DeliveryDetails.java">
+    <entry file="file://$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/CustomerOrderRepositoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="14" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CustomerOrder.java">
+    <entry file="file://$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/acceptance/OptimisticLockTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="20" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0">
+        <state line="29" column="63" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.35433072">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/CollectionDetails.java">
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderConfirmCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="31" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
+        <state line="8" column="55" selection-start="232" selection-end="232" vertical-scroll-proportion="0.33898306">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/domain/Address.java">
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderCancelCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
+        <state line="6" column="10" selection-start="160" selection-end="160" vertical-scroll-proportion="0.2542373">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="24" selection-start="470" selection-end="470" vertical-scroll-proportion="0.24858756">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/src/main/resources/META-INF/orm.xml">
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderNewState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="42" selection-start="2858" selection-end="2858" vertical-scroll-proportion="0.15254237">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/resources/org/sgodden/tom/model/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/acceptance/FetchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="24" selection-start="260" selection-end="260" vertical-scroll-proportion="0.29661018">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence/src/test/java/org/sgodden/tom/persistence/acceptance/VersionIncrementTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="45" selection-start="331" selection-end="331" vertical-scroll-proportion="0.32768363">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/test/java/org/sgodden/tom/model/CustomerOrderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.12711865">
           <folding />
         </state>
       </provider>
@@ -980,7 +1111,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>JPA (persistence)|JPA</last-edited>
+          <last-edited>Flex (flex-ui)|Flex</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1015,7 +1146,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>javaee-template-app</last-edited>
+          <last-edited>model</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

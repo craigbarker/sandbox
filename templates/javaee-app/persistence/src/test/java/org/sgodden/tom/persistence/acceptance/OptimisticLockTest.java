@@ -3,6 +3,7 @@ package org.sgodden.tom.persistence.acceptance;
 import org.sgodden.tom.model.CustomerOrderLine;
 import org.sgodden.tom.model.CustomerOrder;
 import org.sgodden.tom.model.CustomerOrderRepository;
+import org.sgodden.tom.persistence.AbstractIntegrationTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,7 @@ import java.sql.PreparedStatement;
  * @author sgodden
  */
 @Test(groups = "acceptance")
-@ContextConfiguration(locations = "/org/sgodden/tom/domain/beans.xml")
-public class OptimisticLockTest extends AbstractTestNGSpringContextTests {
+public class OptimisticLockTest extends AbstractIntegrationTest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OptimisticLockTest.class);
     @Autowired

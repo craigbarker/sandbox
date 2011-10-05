@@ -22,8 +22,7 @@ import static org.testng.Assert.assertEquals;
  * @author sgodden
  */
 @Test(groups = "integration")
-@ContextConfiguration(locations="/org/sgodden/tom/domain/beans.xml")
-public class CustomerOrderRepositoryTest extends AbstractTestNGSpringContextTests {
+public class CustomerOrderRepositoryTest extends AbstractIntegrationTest {
 
     @Autowired
     private CustomerOrderRepository rep;

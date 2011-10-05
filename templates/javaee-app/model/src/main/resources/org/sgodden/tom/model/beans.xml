@@ -20,15 +20,15 @@
     -->
     <context:spring-configured/>
 
+    <context:component-scan base-package="org.sgodden.tom.model"/>
+
     <!-- begin and end transactions depending on annotations -->
     <tx:annotation-driven/>
-
-    <bean name="customerOrderNewState" class="org.sgodden.tom.domain.CustomerOrderNewState"/>
 
     <util:map id="stateObjects">
         <entry key="NEW" value-ref="customerOrderNewState"/>
     </util:map>
 
-    <bean name="org.sgodden.tom.domain.CustomerOrder" class="org.sgodden.tom.domain.CustomerOrder" autowire="byName"/>
+    <bean name="org.sgodden.tom.model.CustomerOrder" class="org.sgodden.tom.model.CustomerOrder" autowire="byName"/>
 
 </beans>
