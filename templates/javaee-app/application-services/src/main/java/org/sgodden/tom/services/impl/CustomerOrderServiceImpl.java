@@ -1,4 +1,4 @@
-package org.sgodden.tom.model.services.impl;
+package org.sgodden.tom.services.impl;
 
 import org.sgodden.tom.model.CustomerOrderRepository;
 import org.sgodden.tom.model.ICustomerOrder;
