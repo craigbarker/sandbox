@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a051938-416e-4455-996f-387874ffb76f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application-services-api/application-services-api.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application-services-api/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/model.services/CustomerOrderService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application-services/application-services.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application-services/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/model.services.impl/CustomerOrderServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderRepository.java" afterPath="$PROJECT_DIR$/model-api/src/main/java/org/sgodden/tom/model/CustomerOrderRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.ipr" afterPath="$PROJECT_DIR$/javaee-template-app.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.iws" afterPath="$PROJECT_DIR$/javaee-template-app.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model-api/model-api.iml" afterPath="$PROJECT_DIR$/model-api/model-api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model-api/pom.xml" afterPath="$PROJECT_DIR$/model-api/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/persistence.iml" afterPath="$PROJECT_DIR$/persistence/persistence.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="javaee-template-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -902,7 +890,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored to implement model interfaces, and remove all unnecessary dependencies except for strange JPA one which I don't understand why aspectj still needs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Introduction of a simple application service." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -918,6 +906,7 @@
     <MESSAGE value="Renamed abstract repository to indicate that it depends on identity." />
     <MESSAGE value="Provide status to CustomerOrder" />
     <MESSAGE value="refactored to implement model interfaces, and remove all unnecessary dependencies except for strange JPA one which I don't understand why aspectj still needs." />
+    <MESSAGE value="Introduction of a simple application service." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1025,9 +1014,7 @@
     <entry file="file://$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/model.services/CustomerOrderService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
