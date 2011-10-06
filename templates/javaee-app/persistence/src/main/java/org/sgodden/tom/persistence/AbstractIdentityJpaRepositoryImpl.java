@@ -43,7 +43,7 @@ public abstract class AbstractIdentityJpaRepositoryImpl<T extends Identity> {
         return em.find(getEntityClass(), id);
     }
 
-    protected abstract Class<T> getEntityClass();
+    protected abstract Class<? extends T> getEntityClass();
 
     @Transactional
     public long count() {

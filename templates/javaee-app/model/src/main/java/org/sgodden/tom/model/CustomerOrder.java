@@ -3,7 +3,6 @@ package org.sgodden.tom.model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Collections;
 import java.util.HashSet;
@@ -17,7 +16,7 @@ import java.util.Set;
  */
 @SuppressWarnings("serial")
 @Configurable
-public class CustomerOrder extends AbstractIdentity {
+public class CustomerOrder extends AbstractIdentity implements ICustomerOrder {
 
     @NotNull
     private String customerReference;
@@ -73,43 +72,45 @@ public class CustomerOrder extends AbstractIdentity {
         this.orderNumber = orderNumber;
     }
 
-    public CollectionDetails getCollectionDetails() {
+    public ICollectionDetails getCollectionDetails() {
         return collectionDetails;
     }
 
-    public void setCollectionDetails(CollectionDetails collectionDetails) {
-        this.collectionDetails = collectionDetails;
+    public void setCollectionDetails(ICollectionDetails collectionDetails) {
+        this.collectionDetails = (CollectionDetails) collectionDetails;
     }
 
-    public DeliveryDetails getDeliveryDetails() {
+    public IDeliveryDetails getDeliveryDetails() {
         return deliveryDetails;
     }
 
-    public void setDeliveryDetails(DeliveryDetails deliveryDetails) {
-        this.deliveryDetails = deliveryDetails;
+    public void setDeliveryDetails(IDeliveryDetails deliveryDetails) {
+        this.deliveryDetails = (DeliveryDetails) deliveryDetails;
     }
 
     /**
      * Returns an immutable set of the lines on this order.
      * @return an immutable set of the lines on this order.
      */
-    public Set<CustomerOrderLine> getOrderLines() {
-        return Collections.unmodifiableSet(orderLines);
+    public Set<ICustomerOrderLine> getOrderLines() {
+        Set<ICustomerOrderLine> ret = new HashSet<ICustomerOrderLine>();
+        ret.addAll(orderLines);
+        return Collections.unmodifiableSet(ret);
     }
 
     /**
      * Adds a line to this order.
      * @param line the line to add.
      */
-    public void addOrderLine(CustomerOrderLine line) {
-        orderLines.add(line);
+    public void addOrderLine(ICustomerOrderLine line) {
+        orderLines.add((CustomerOrderLine)line);
     }
 
     /**
      * Removes a line from this order.
      * @param line the line to remove.
      */
-    public void removeOrderLine(CustomerOrderLine line) {
+    public void removeOrderLine(ICustomerOrderLine line) {
         orderLines.remove(line);
     }
 

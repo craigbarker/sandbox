@@ -2,7 +2,7 @@ package org.sgodden.tom.model;
 
 import java.util.Set;
 
-public interface ICustomerOrder {
+public interface ICustomerOrder extends Identity {
 
     void cancel();
 
@@ -19,7 +19,7 @@ public interface ICustomerOrder {
     ICollectionDetails getCollectionDetails();
     void setCollectionDetails(ICollectionDetails collectionDetails);
 
-    IDeliveryDetails getDeliverDetails();
+    IDeliveryDetails getDeliveryDetails();
     void setDeliveryDetails(IDeliveryDetails deliveryDetails);
 
     Set<ICustomerOrderLine> getOrderLines();

@@ -1,15 +1,13 @@
 package org.sgodden.tom.model;
 
-import java.io.Serializable;
-import javax.persistence.Embeddable;
-
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * A geographical address.
  */
 @SuppressWarnings("serial")
-public class Address implements Serializable {
+public class Address implements Serializable, IAddress {
 
     @NotNull
     private String line1;

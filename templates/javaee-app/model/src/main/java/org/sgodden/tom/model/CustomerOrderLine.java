@@ -6,7 +6,7 @@ package org.sgodden.tom.model;
  * @author Simon Godden
  */
 @SuppressWarnings("serial")
-public class CustomerOrderLine extends AbstractIdentity {
+public class CustomerOrderLine extends AbstractIdentity implements ICustomerOrderLine {
 
 	private String packageType;
 	private String descriptionOfGoods;

@@ -3,7 +3,7 @@ package org.sgodden.tom.model;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-public abstract class AbstractIdentity implements Identity {
+public abstract class AbstractIdentity {
 
     private Long id;
 

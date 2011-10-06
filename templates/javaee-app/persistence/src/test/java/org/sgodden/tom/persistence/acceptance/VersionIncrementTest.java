@@ -1,24 +1,23 @@
 package org.sgodden.tom.persistence.acceptance;
 
-import javax.persistence.EntityManager;
-
-import org.sgodden.tom.model.CustomerOrderLine;
 import org.sgodden.tom.model.CustomerOrder;
+import org.sgodden.tom.model.CustomerOrderLine;
 import org.sgodden.tom.model.CustomerOrderRepository;
+import org.sgodden.tom.model.ICustomerOrderLine;
 import org.sgodden.tom.persistence.AbstractIntegrationTest;
-import org.testng.annotations.Test;
-
-import java.io.Serializable;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import static org.testng.Assert.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
+import java.io.Serializable;
+
+import static org.testng.Assert.assertEquals;
 
 /**
  * Test using fetch in JPA-QL.
@@ -49,7 +48,7 @@ public class VersionIncrementTest extends AbstractIntegrationTest {
 
         CustomerOrder ord = em.find(CustomerOrder.class, id1);
         Long version = ord.getVersion();
-        CustomerOrderLine line = ord.getOrderLines().iterator().next();
+        ICustomerOrderLine line = ord.getOrderLines().iterator().next();
         Long childVersion = line.getVersion();
         String updatedDescriptionOfGoods = line.getDescriptionOfGoods() + " updated";
         line.setDescriptionOfGoods(updatedDescriptionOfGoods);

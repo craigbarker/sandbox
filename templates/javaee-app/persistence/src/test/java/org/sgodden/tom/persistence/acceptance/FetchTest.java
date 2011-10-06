@@ -1,23 +1,21 @@
 package org.sgodden.tom.persistence.acceptance;
 
-import javax.persistence.EntityManager;
-
-import org.sgodden.tom.model.CustomerOrderLine;
 import org.sgodden.tom.model.CustomerOrder;
+import org.sgodden.tom.model.CustomerOrderLine;
 import org.sgodden.tom.model.CustomerOrderRepository;
+import org.sgodden.tom.model.ICustomerOrderLine;
 import org.sgodden.tom.persistence.AbstractIntegrationTest;
-import org.testng.annotations.Test;
-
-import java.io.Serializable;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
+import java.io.Serializable;
 
 /**
  * Test using fetch in JPA-QL.
@@ -52,7 +50,7 @@ public class FetchTest extends AbstractIntegrationTest {
         //em.getTransaction().begin();
         LOGGER.info(id1.toString());
         CustomerOrder co = em.find(CustomerOrder.class, id1);
-        for (CustomerOrderLine line : co.getOrderLines()) {
+        for (ICustomerOrderLine line : co.getOrderLines()) {
             LOGGER.info(line.getDescriptionOfGoods());
         }
         //em.getTransaction().rollback();

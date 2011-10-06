@@ -6,4 +6,6 @@ public interface Identity extends Serializable {
 
     Serializable getId();
 
+    Long getVersion();
+
 }

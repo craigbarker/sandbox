@@ -2,16 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.sgodden.template.javaee</groupId>
+        <artifactId>javaee-template-app</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <groupId>org.sgodden.template.javaee</groupId>
     <artifactId>persistence</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
     <name>persistence</name>
+
     <url>http://maven.apache.org</url>
-    <properties>
-        <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
-        <org.hibernate.version>3.6.7.Final</org.hibernate.version>
-    </properties>
+
     <repositories>
         <repository>
             <id>Central</id>
@@ -22,12 +26,15 @@
             <url>http://repository.jboss.org/nexus/content/groups/public</url>
         </repository>
     </repositories>
+
     <dependencies>
+
         <dependency>
             <groupId>org.sgodden.template.javaee</groupId>
             <artifactId>model</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${parent.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>

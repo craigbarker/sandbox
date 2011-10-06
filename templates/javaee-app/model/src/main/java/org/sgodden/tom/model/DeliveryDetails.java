@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 /**
  */
-public class DeliveryDetails implements Serializable {
+public class DeliveryDetails implements Serializable, IDeliveryDetails {
     private Address address;
 
     public Address getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddress(IAddress address) {
+        this.address = (Address) address;
     }
 }

@@ -11,11 +11,12 @@
     <properties>
         <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
         <org.hibernate.version>3.6.7.Final</org.hibernate.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <modules>
         <module>model-api</module>
         <module>model</module>
         <module>persistence</module>
-        <module>flex-ui</module>
+	<!--<module>flex-ui</module>-->
     </modules>
 </project>

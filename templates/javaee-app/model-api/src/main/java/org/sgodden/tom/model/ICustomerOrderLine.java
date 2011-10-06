@@ -1,6 +1,6 @@
 package org.sgodden.tom.model;
 
-public interface ICustomerOrderLine {
+public interface ICustomerOrderLine extends Identity {
 
     String getPackageType();
     void setPackageType(String packageType);

@@ -13,25 +13,25 @@ public interface CustomerOrderRepository {
      * Removes the passed order from the repository.
      * @param order the order to remove.
      */
-    void remove(CustomerOrder order);
+    void remove(ICustomerOrder order);
 
     /**
      * Returns all customer orders.
      * @return all customer orders.
      */
-    List<CustomerOrder> findAll();
+    List<ICustomerOrder> findAll();
 
     /**
      * Persists the passed order.
      * @param order the order to persist.
      */
-    void persist(CustomerOrder order);
+    void persist(ICustomerOrder order);
     
     /**
      * Merges the passed order in to the persistent state.
      * @param order the order to merge.
      */
-    void merge(CustomerOrder order);
+    void merge(ICustomerOrder order);
 
     /**
      * Returns the {@link CustomerOrder} instance
@@ -39,7 +39,7 @@ public interface CustomerOrderRepository {
      * @param id the id.
      * @return the customer order instance, or <code>null</code> if one does not exist.
      */
-    CustomerOrder findById(Serializable id);
+    ICustomerOrder findById(Serializable id);
 
     /**
      * Returns the number of customer orders.

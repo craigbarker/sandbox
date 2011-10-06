@@ -1,6 +1,6 @@
 package org.sgodden.tom.model;
 
-public class CollectionDetails {
+public class CollectionDetails implements ICollectionDetails {
 
     private Address address;
 
@@ -8,7 +8,7 @@ public class CollectionDetails {
         return address;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddress(IAddress address) {
+        this.address = (Address) address;
     }
 }

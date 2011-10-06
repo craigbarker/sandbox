@@ -2,6 +2,7 @@ package org.sgodden.tom.persistence.acceptance;
 
 import org.sgodden.tom.model.CustomerOrder;
 import org.sgodden.tom.model.CustomerOrderRepository;
+import org.sgodden.tom.model.ICustomerOrder;
 
 /**
  * Provides utility methods to test classes.
@@ -17,7 +18,7 @@ public class TestUtils {
      * @param rep the repository.
      */
     public static void removeAllCustomerOrders(CustomerOrderRepository rep) {
-        for (CustomerOrder order : rep.findAll()) {
+        for (ICustomerOrder order : rep.findAll()) {
             rep.remove(order);
         }
     }
