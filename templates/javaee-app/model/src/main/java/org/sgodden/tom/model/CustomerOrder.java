@@ -35,7 +35,6 @@ public class CustomerOrder extends AbstractIdentity {
     private Set<CustomerOrderLine> orderLines = new HashSet<CustomerOrderLine>();
 
     @Autowired
-    @Transient
     private Map<String, CustomerOrderState> stateObjects;
 
     public CustomerOrder() {

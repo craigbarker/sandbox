@@ -17,6 +17,7 @@ import org.testng.annotations.Test;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
+import javax.persistence.RollbackException;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -47,7 +48,7 @@ public class OptimisticLockTest extends AbstractIntegrationTest {
     public void tearDown() {
     }
 
-    @Test(expectedExceptions = {JpaSystemException.class})
+    @Test(expectedExceptions = {RollbackException.class})
     public void testOptimisticLock() {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();

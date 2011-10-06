@@ -24,7 +24,7 @@
             </one-to-many>
             <embedded name="collectionDetails"/>
             <embedded name="deliveryDetails"/>
-            <transient name="someInterface"/>
+            <transient name="stateObjects"/>
         </attributes>
     </entity>
 
