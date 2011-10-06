@@ -17,6 +17,8 @@
         <module>model-api</module>
         <module>model</module>
         <module>persistence</module>
+        <module>application-services</module>
+        <module>application-services-api</module>
 	<!--<module>flex-ui</module>-->
     </modules>
 </project>

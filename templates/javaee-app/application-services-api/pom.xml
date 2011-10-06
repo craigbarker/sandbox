@@ -11,9 +11,17 @@
     </parent>
 
     <groupId>org.sgodden.template.javaee</groupId>
-    <artifactId>model-api</artifactId>
-    <name>model-api</name>
+    <artifactId>application-services-api</artifactId>
+    <name>Application Services API</name>
 
     <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.sgodden.template.javaee</groupId>
+            <artifactId>model-api</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

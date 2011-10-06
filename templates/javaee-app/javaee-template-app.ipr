@@ -215,6 +215,8 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/application-services/application-services.iml" filepath="$PROJECT_DIR$/application-services/application-services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/application-services-api/application-services-api.iml" filepath="$PROJECT_DIR$/application-services-api/application-services-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaee-template-app.iml" filepath="$PROJECT_DIR$/javaee-template-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/model/model.iml" filepath="$PROJECT_DIR$/model/model.iml" />
       <module fileurl="file://$PROJECT_DIR$/model-api/model-api.iml" filepath="$PROJECT_DIR$/model-api/model-api.iml" />

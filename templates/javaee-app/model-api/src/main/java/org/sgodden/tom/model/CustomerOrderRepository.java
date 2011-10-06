@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Repository for the {@link CustomerOrder} entity.
+ * Repository for the {@link ICustomerOrder} entity.
  * @author sgodden
  */
 public interface CustomerOrderRepository {
@@ -34,7 +34,7 @@ public interface CustomerOrderRepository {
     void merge(ICustomerOrder order);
 
     /**
-     * Returns the {@link CustomerOrder} instance
+     * Returns the {@link ICustomerOrder} instance
      * having the passed id.
      * @param id the id.
      * @return the customer order instance, or <code>null</code> if one does not exist.
