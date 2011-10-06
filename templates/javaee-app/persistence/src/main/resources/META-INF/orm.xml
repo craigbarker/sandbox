@@ -15,7 +15,7 @@
 
     <entity class="org.sgodden.tom.model.CustomerOrder" access="FIELD" metadata-complete="true">
         <entity-listeners>
-            <entity-listener class="org.sgodden.tom.model.listener.ValidatorEntityListener"/>
+            <entity-listener class="org.sgodden.tom.persistence.listener.ValidatorEntityListener"/>
         </entity-listeners>
         <attributes>
             <one-to-many name="orderLines" fetch="LAZY">
