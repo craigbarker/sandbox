@@ -11,32 +11,25 @@
     </parent>
 
     <groupId>org.sgodden.template.javaee</groupId>
-    <artifactId>application-services</artifactId>
-    <name>Application Services</name>
+    <artifactId>integration-tests</artifactId>
+    <name>Integration Tests</name>
 
     <url>http://maven.apache.org</url>
 
     <dependencies>
         <dependency>
             <groupId>org.sgodden.template.javaee</groupId>
-            <artifactId>model-api</artifactId>
-            <version>${parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.sgodden.template.javaee</groupId>
             <artifactId>model</artifactId>
             <version>${parent.version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.sgodden.template.javaee</groupId>
             <artifactId>persistence</artifactId>
             <version>${parent.version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.sgodden.template.javaee</groupId>
-            <artifactId>application-services-api</artifactId>
+            <artifactId>application-services</artifactId>
             <version>${parent.version}</version>
         </dependency>
         <dependency>
@@ -72,6 +65,13 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
             <version>${org.springframework.version}</version>
+        </dependency>
+        <!-- h2 db for testing -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.2.124</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

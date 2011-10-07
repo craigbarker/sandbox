@@ -52,6 +52,9 @@
         <inspection_tool class="JpaDataSourceORMInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
         <inspection_tool class="JpaORMDomInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
         <inspection_tool class="JpaQlInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+        <inspection_tool class="SpringBeanAutowiringInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+        <inspection_tool class="SpringBeanDepedencyCheckInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+        <inspection_tool class="SpringJavaAutowiringInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
       </profile>
     </profiles>
     <option name="PROJECT_PROFILE" value="Project Default" />
@@ -217,7 +220,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/application-services/application-services.iml" filepath="$PROJECT_DIR$/application-services/application-services.iml" />
       <module fileurl="file://$PROJECT_DIR$/application-services-api/application-services-api.iml" filepath="$PROJECT_DIR$/application-services-api/application-services-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/flex-ui/flex-ui.iml" filepath="$PROJECT_DIR$/flex-ui/flex-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/integration-tests/integration-tests.iml" filepath="$PROJECT_DIR$/integration-tests/integration-tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaee-template-app.iml" filepath="$PROJECT_DIR$/javaee-template-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/model/model.iml" filepath="$PROJECT_DIR$/model/model.iml" />
       <module fileurl="file://$PROJECT_DIR$/model-api/model-api.iml" filepath="$PROJECT_DIR$/model-api/model-api.iml" />
@@ -227,7 +230,7 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="VcsDirectoryMappings">
@@ -299,281 +302,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/0.9.15/logback-core-0.9.15-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:advancedgrids:rb.swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/advancedgrids/4.5.1.21328/advancedgrids-4.5.1.21328-en_US.rb.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/advancedgrids/4.5.1.21328/advancedgrids-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/advancedgrids/4.5.1.21328/advancedgrids-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:advancedgrids:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/advancedgrids/4.5.1.21328/advancedgrids-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/advancedgrids/4.5.1.21328/advancedgrids-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/advancedgrids/4.5.1.21328/advancedgrids-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:authoringsupport:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/authoringsupport/4.5.1.21328/authoringsupport-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/authoringsupport/4.5.1.21328/authoringsupport-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/authoringsupport/4.5.1.21328/authoringsupport-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:charts:rb.swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/charts/4.5.1.21328/charts-4.5.1.21328-en_US.rb.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/charts/4.5.1.21328/charts-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/charts/4.5.1.21328/charts-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:charts:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/charts/4.5.1.21328/charts-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/charts/4.5.1.21328/charts-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/charts/4.5.1.21328/charts-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:core:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/core/4.5.1.21328/core-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/core/4.5.1.21328/core-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/core/4.5.1.21328/core-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:flash-integration:rb.swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/flash-integration/4.5.1.21328/flash-integration-4.5.1.21328-en_US.rb.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/flash-integration/4.5.1.21328/flash-integration-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/flash-integration/4.5.1.21328/flash-integration-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:flash-integration:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/flash-integration/4.5.1.21328/flash-integration-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/flash-integration/4.5.1.21328/flash-integration-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/flash-integration/4.5.1.21328/flash-integration-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:framework:rb.swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/framework/4.5.1.21328/framework-4.5.1.21328-en_US.rb.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/framework/4.5.1.21328/framework-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/framework/4.5.1.21328/framework-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:framework:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/framework/4.5.1.21328/framework-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/framework/4.5.1.21328/framework-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/framework/4.5.1.21328/framework-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:mx:rb.swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/mx/4.5.1.21328/mx-4.5.1.21328-en_US.rb.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/mx/4.5.1.21328/mx-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/mx/4.5.1.21328/mx-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:mx:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/mx/4.5.1.21328/mx-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/mx/4.5.1.21328/mx-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/mx/4.5.1.21328/mx-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:osmf:rb.swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/osmf/4.5.1.21328/osmf-4.5.1.21328-en_US.rb.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/osmf/4.5.1.21328/osmf-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/osmf/4.5.1.21328/osmf-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:osmf:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/osmf/4.5.1.21328/osmf-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/osmf/4.5.1.21328/osmf-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/osmf/4.5.1.21328/osmf-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:playerglobal:rb.swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/playerglobal/4.5.1.21328/playerglobal-4.5.1.21328-en_US.rb.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/playerglobal/4.5.1.21328/playerglobal-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/playerglobal/4.5.1.21328/playerglobal-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:playerglobal:swc:10.2:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/playerglobal/4.5.1.21328/playerglobal-4.5.1.21328-10.2.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/playerglobal/4.5.1.21328/playerglobal-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/playerglobal/4.5.1.21328/playerglobal-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:rpc:rb.swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/rpc/4.5.1.21328/rpc-4.5.1.21328-en_US.rb.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/rpc/4.5.1.21328/rpc-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/rpc/4.5.1.21328/rpc-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:rpc:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/rpc/4.5.1.21328/rpc-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/rpc/4.5.1.21328/rpc-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/rpc/4.5.1.21328/rpc-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:spark:rb.swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/spark/4.5.1.21328/spark-4.5.1.21328-en_US.rb.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/spark/4.5.1.21328/spark-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/spark/4.5.1.21328/spark-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:spark:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/spark/4.5.1.21328/spark-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/spark/4.5.1.21328/spark-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/spark/4.5.1.21328/spark-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:spark_dmv:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/spark_dmv/4.5.1.21328/spark_dmv-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/spark_dmv/4.5.1.21328/spark_dmv-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/spark_dmv/4.5.1.21328/spark_dmv-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:sparkskins:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/sparkskins/4.5.1.21328/sparkskins-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/sparkskins/4.5.1.21328/sparkskins-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/sparkskins/4.5.1.21328/sparkskins-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:textLayout:rb.swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/textLayout/4.5.1.21328/textLayout-4.5.1.21328-en_US.rb.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/textLayout/4.5.1.21328/textLayout-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/textLayout/4.5.1.21328/textLayout-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flex.framework:textLayout:swc:4.5.1.21328">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/textLayout/4.5.1.21328/textLayout-4.5.1.21328.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/textLayout/4.5.1.21328/textLayout-4.5.1.21328-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flex/framework/textLayout/4.5.1.21328/textLayout-4.5.1.21328-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.adobe.flexunit:flexunit:swc:0.85">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flexunit/flexunit/0.85/flexunit-0.85.swc!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flexunit/flexunit/0.85/flexunit-0.85-asdoc.zip!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/adobe/flexunit/flexunit/0.85/flexunit-0.85-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.beust:jcommander:1.12">

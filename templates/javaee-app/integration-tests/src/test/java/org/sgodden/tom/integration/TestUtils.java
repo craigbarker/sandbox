@@ -1,4 +1,4 @@
-package org.sgodden.tom.persistence.acceptance;
+package org.sgodden.tom.integration;
 
 import org.sgodden.tom.model.CustomerOrder;
 import org.sgodden.tom.model.CustomerOrderRepository;

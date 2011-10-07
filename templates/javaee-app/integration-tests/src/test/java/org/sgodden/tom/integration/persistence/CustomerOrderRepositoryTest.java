@@ -1,6 +1,9 @@
-package org.sgodden.tom.persistence;
+package org.sgodden.tom.integration.persistence;
 
+import org.sgodden.tom.integration.AbstractIntegrationTest;
+import org.sgodden.tom.integration.TestUtils;
 import org.sgodden.tom.model.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -10,10 +13,6 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import java.util.Set;
-import org.sgodden.tom.persistence.acceptance.TestUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 
 import static org.testng.Assert.assertEquals;
 

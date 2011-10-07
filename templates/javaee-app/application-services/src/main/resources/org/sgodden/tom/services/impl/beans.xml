@@ -12,9 +12,9 @@
     <!-- -->
     <context:annotation-config/>
 
-    <context:component-scan base-package="org.sgodden.tom.services.impl"/>
-
     <!-- begin and end transactions depending on annotations -->
     <tx:annotation-driven/>
+
+    <bean class="org.sgodden.tom.services.impl.CustomerOrderServiceImpl"/>
 
 </beans>

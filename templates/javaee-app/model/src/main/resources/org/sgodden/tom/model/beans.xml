@@ -31,4 +31,6 @@
 
     <bean name="org.sgodden.tom.model.CustomerOrder" class="org.sgodden.tom.model.CustomerOrder" autowire="byName"/>
 
+    <bean class="org.sgodden.tom.model.CustomerOrderFactoryImpl"/>
+
 </beans>

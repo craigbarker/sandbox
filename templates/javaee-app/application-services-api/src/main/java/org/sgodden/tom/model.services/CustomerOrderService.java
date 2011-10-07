@@ -7,6 +7,12 @@ import java.util.List;
 public interface CustomerOrderService {
 
     /**
+     * Initialises a new customer order and returns it.
+     * @return the new customer order.
+     */
+    ICustomerOrder create();
+
+    /**
      * Persists a new unsaved customer order and returns its id.
      * @param customerOrder the order to persist.
      * @return the id of the order.
