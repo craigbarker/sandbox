@@ -15,9 +15,17 @@ public class CustomerServiceTest extends AbstractIntegrationTest {
     @Autowired
     private CustomerOrderService customerOrderService;
 
-    public void testPersist() {
+    public void testCreate() {
         ICustomerOrder order = customerOrderService.create();
         assertEquals(CustomerOrderStatus.NEW, order.getStatus());
+    }
+
+    public void testPersist() {
+        ICustomerOrder order = customerOrderService.create();
+        order.setCustomerReference("ASD");
+        order.setOrderNumber("WER");
+        Long id = customerOrderService.persist(order);
+        assertEquals(1, customerOrderService.findAll().size(), "Wrong number of orders");
     }
 
 }
