@@ -2,6 +2,7 @@ package org.sgodden.tom.model.services;
 
 import org.sgodden.tom.model.ICustomerOrder;
 
+import java.io.Serializable;
 import java.util.List;
 
 public interface CustomerOrderService {
@@ -23,7 +24,7 @@ public interface CustomerOrderService {
      * Removes the passed order from the repository.
      * @param id the id of the order to remove.
      */
-    void remove(Long id);
+    void remove(Serializable id);
 
     /**
      * Returns all customer orders.

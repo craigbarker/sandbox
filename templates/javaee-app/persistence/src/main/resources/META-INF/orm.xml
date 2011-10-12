@@ -14,10 +14,18 @@
     </mapped-superclass>
 
     <entity class="org.sgodden.tom.model.CustomerOrder" access="FIELD" metadata-complete="true">
+        <named-query name="CustomerOrder.findAll">
+            <query>select o from CustomerOrder o order by o.bookingDate</query>
+        </named-query>
         <entity-listeners>
             <entity-listener class="org.sgodden.tom.persistence.listener.ValidatorEntityListener"/>
         </entity-listeners>
         <attributes>
+            <basic name="customerReference"/>
+            <basic name="orderNumber"/>
+            <basic name="bookingDate">
+                <temporal>DATE</temporal>
+            </basic>
             <one-to-many name="orderLines" fetch="LAZY">
                 <join-column name="fk_customerorder"/>
                 <cascade><cascade-all/></cascade>

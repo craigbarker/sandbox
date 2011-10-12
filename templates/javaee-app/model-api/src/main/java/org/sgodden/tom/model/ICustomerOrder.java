@@ -1,5 +1,8 @@
 package org.sgodden.tom.model;
 
+import org.joda.time.LocalDate;
+
+import java.util.Calendar;
 import java.util.Set;
 
 public interface ICustomerOrder extends Identity {
@@ -9,6 +12,9 @@ public interface ICustomerOrder extends Identity {
     void confirm();
 
     void ship();
+
+    Calendar getBookingDate();
+    void setBookingDate(Calendar bookingDate);
 
     String getCustomerReference();
     void setCustomerReference(String customerReference);
