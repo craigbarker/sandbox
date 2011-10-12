@@ -6,6 +6,25 @@
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
   </component>
+  <component name="ArtifactManager">
+    <artifact type="war" name="webapp:war">
+      <output-path>$PROJECT_DIR$/webapp/target</output-path>
+      <root id="archive" name="webapp.war">
+        <element id="artifact" artifact-name="webapp:war exploded" />
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="webapp:war exploded">
+      <output-path>$PROJECT_DIR$/webapp/target/webapp</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="webapp/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="webapp" />
+          </element>
+        </element>
+      </root>
+    </artifact>
+  </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="ajc" />
     <resourceExtensions />
@@ -38,6 +57,11 @@
       <facet-type id="flex">
         <modules>
           <module name="flex-ui" />
+        </modules>
+      </facet-type>
+      <facet-type id="web">
+        <modules>
+          <module name="webapp" />
         </modules>
       </facet-type>
     </autodetection-disabled>
@@ -225,6 +249,7 @@
       <module fileurl="file://$PROJECT_DIR$/model/model.iml" filepath="$PROJECT_DIR$/model/model.iml" />
       <module fileurl="file://$PROJECT_DIR$/model-api/model-api.iml" filepath="$PROJECT_DIR$/model-api/model-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/persistence/persistence.iml" filepath="$PROJECT_DIR$/persistence/persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp/webapp.iml" filepath="$PROJECT_DIR$/webapp/webapp.iml" />
     </modules>
   </component>
   <component name="ProjectResources">

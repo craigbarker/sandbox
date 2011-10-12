@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a051938-416e-4455-996f-387874ffb76f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/integration-tests/src/test/resources/logback-test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services-api/application-services-api.iml" afterPath="$PROJECT_DIR$/application-services-api/application-services-api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/model.services/CustomerOrderService.java" afterPath="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/model.services/CustomerOrderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services/application-services.iml" afterPath="$PROJECT_DIR$/application-services/application-services.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/impl/CustomerOrderServiceImpl.java" afterPath="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/impl/CustomerOrderServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/integration-tests/integration-tests.iml" afterPath="$PROJECT_DIR$/integration-tests/integration-tests.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/AbstractIntegrationTest.java" afterPath="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/AbstractIntegrationTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java" afterPath="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/webapp.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.iml" afterPath="$PROJECT_DIR$/javaee-template-app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.ipr" afterPath="$PROJECT_DIR$/javaee-template-app.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.iws" afterPath="$PROJECT_DIR$/javaee-template-app.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model-api/model-api.iml" afterPath="$PROJECT_DIR$/model-api/model-api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model-api/pom.xml" afterPath="$PROJECT_DIR$/model-api/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model-api/src/main/java/org/sgodden/tom/model/ICustomerOrder.java" afterPath="$PROJECT_DIR$/model-api/src/main/java/org/sgodden/tom/model/ICustomerOrder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/model.iml" afterPath="$PROJECT_DIR$/model/model.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrder.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/persistence.iml" afterPath="$PROJECT_DIR$/persistence/persistence.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/pom.xml" afterPath="$PROJECT_DIR$/persistence/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/orm.xml" afterPath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/orm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="javaee-template-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,28 +66,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CustomerServiceTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java">
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webapp/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="36" selection-start="827" selection-end="827" vertical-scroll-proportion="0.5508475">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractIntegrationTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/AbstractIntegrationTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="53" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logback-test.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/integration-tests/src/test/resources/logback-test.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="19" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
+            <state line="33" column="21" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.91525424">
               <folding />
             </state>
           </provider>
@@ -119,7 +89,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/services/integration/CustomerServiceTest.java" />
         <option value="$PROJECT_DIR$/integration-tests/pom.xml" />
         <option value="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/persistence/AbstractIdentityJpaRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/persistence/CustomerOrderRepositoryTest.java" />
@@ -135,6 +104,7 @@
         <option value="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/AbstractIntegrationTest.java" />
         <option value="$PROJECT_DIR$/integration-tests/src/test/resources/logback-test.xml" />
         <option value="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java" />
+        <option value="$PROJECT_DIR$/webapp/pom.xml" />
       </list>
     </option>
   </component>
@@ -228,7 +198,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="integration-tests" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -242,7 +212,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="integration-tests" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -250,33 +220,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javaee-template-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javaee-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integration-tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -774,6 +718,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -839,16 +784,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.0.Final/hibernate-jpa-2.0-api-1.0.0.Final-sources.jar!/javax/persistence/TemporalType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="12" selection-start="341" selection-end="341" vertical-scroll-proportion="0.23767605" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.0.Final/hibernate-jpa-2.0-api-1.0.0.Final-sources.jar!/javax/persistence/Temporal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="10" selection-start="1226" selection-end="1226" vertical-scroll-proportion="0.7887324" />
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/Hibernate/lib/hibernate.jar!/resources/schemas/hibernate-mapping-3.0.dtd">
       <provider selected="true" editor-type-id="text-editor">
         <state line="560" column="0" selection-start="24017" selection-end="24017" vertical-scroll-proportion="0.027985075" />
@@ -922,23 +857,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/AbstractIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="53" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
+        <state line="17" column="53" selection-start="655" selection-end="655" vertical-scroll-proportion="0.5084746">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/integration-tests/src/test/resources/logback-test.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="19" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
+        <state line="10" column="19" selection-start="349" selection-end="349" vertical-scroll-proportion="0.42372882">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="36" selection-start="827" selection-end="827" vertical-scroll-proportion="0.5508475">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="21" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.91525424">
           <folding />
         </state>
       </provider>
