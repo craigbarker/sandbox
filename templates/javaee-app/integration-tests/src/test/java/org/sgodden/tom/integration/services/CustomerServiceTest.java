@@ -3,10 +3,9 @@ package org.sgodden.tom.integration.services;
 import org.sgodden.tom.integration.AbstractIntegrationTest;
 import org.sgodden.tom.model.CustomerOrderStatus;
 import org.sgodden.tom.model.ICustomerOrder;
-import org.sgodden.tom.model.services.CustomerOrderService;
+import org.sgodden.tom.services.customerorder.CustomerOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;

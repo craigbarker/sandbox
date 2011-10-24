@@ -15,6 +15,7 @@
     <!-- begin and end transactions depending on annotations -->
     <tx:annotation-driven/>
 
-    <bean class="org.sgodden.tom.services.impl.CustomerOrderServiceImpl"/>
+    <bean class="org.sgodden.tom.services.customerorder.impl.CustomerOrderServiceImpl"/>
+    <bean class="org.sgodden.tom.services.customerorder.impl.CustomerOrderListServiceImpl"/>
 
 </beans>

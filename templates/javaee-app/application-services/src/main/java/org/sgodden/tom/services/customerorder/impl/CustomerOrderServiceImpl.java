@@ -1,9 +1,9 @@
-package org.sgodden.tom.services.impl;
+package org.sgodden.tom.services.customerorder.impl;
 
 import org.sgodden.tom.model.CustomerOrderFactory;
 import org.sgodden.tom.model.CustomerOrderRepository;
 import org.sgodden.tom.model.ICustomerOrder;
-import org.sgodden.tom.model.services.CustomerOrderService;
+import org.sgodden.tom.services.customerorder.CustomerOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

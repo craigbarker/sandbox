@@ -2,25 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a051938-416e-4455-996f-387874ffb76f" name="Default" comment="Introduction of a simple application service.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderListController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/beans-servlet.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/app/model/User.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/app/store/Users.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/app/view/user/Edit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderListEntry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderListService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/customerorder/impl/CustomerOrderListServiceImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/model.services/CustomerOrderService.java" afterPath="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/impl/CustomerOrderServiceImpl.java" afterPath="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/customerorder/impl/CustomerOrderServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services-api/application-services-api.iml" afterPath="$PROJECT_DIR$/application-services-api/application-services-api.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services/application-services.iml" afterPath="$PROJECT_DIR$/application-services/application-services.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services/src/main/resources/org/sgodden/tom/services/impl/beans.xml" afterPath="$PROJECT_DIR$/application-services/src/main/resources/org/sgodden/tom/services/impl/beans.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/integration-tests/integration-tests.iml" afterPath="$PROJECT_DIR$/integration-tests/integration-tests.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java" afterPath="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.iml" afterPath="$PROJECT_DIR$/javaee-template-app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.ipr" afterPath="$PROJECT_DIR$/javaee-template-app.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.iws" afterPath="$PROJECT_DIR$/javaee-template-app.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model-api/model-api.iml" afterPath="$PROJECT_DIR$/model-api/model-api.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/model.iml" afterPath="$PROJECT_DIR$/model/model.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/persistence.iml" afterPath="$PROJECT_DIR$/persistence/persistence.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/pom.xml" afterPath="$PROJECT_DIR$/webapp/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/webapp/app/controller/Users.js" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/app/controller/Users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/webapp/app/view/user/List.js" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/app/view/user/List.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderListController.java" afterPath="$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderListController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webapp.iml" afterPath="$PROJECT_DIR$/webapp/webapp.iml" />
     </list>
     <ignored path="javaee-template-app.iws" />
@@ -80,40 +77,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="CustomerServiceTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="1974" selection-end="1974" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beans-servlet.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/beans-servlet.xml">
-          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="64" selection-start="840" selection-end="840" vertical-scroll-proportion="0.41133454">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="26" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/persistence/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="139" column="0" selection-start="4683" selection-end="4883" vertical-scroll-proportion="0.0">
+            <state line="13" column="13" selection-start="479" selection-end="479" vertical-scroll-proportion="0.09640103">
               <folding />
             </state>
           </provider>
@@ -133,22 +100,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/view/Viewport.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/TOM/model/OrdersList.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/TOM/view/OrdersList.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/TOM/store/OrdersListStore.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/view/user/Edit.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/view/user/List.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/model/User.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/store/Users.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/controller/Users.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderListController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/webapp/pom.xml" />
         <option value="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/beans-servlet.xml" />
+        <option value="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/model.services/CustomerOrderListService.java" />
+        <option value="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/CustomerOrderListService.java" />
+        <option value="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/CustomerOrderService.java" />
+        <option value="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/customerservice/impl/CustomerOrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/customerorder/impl/CustomerOrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderListService.java" />
+        <option value="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderListEntry.java" />
+        <option value="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/customerorder/impl/CustomerOrderListServiceImpl.java" />
+        <option value="$PROJECT_DIR$/application-services/src/main/resources/org/sgodden/tom/services/impl/beans.xml" />
+        <option value="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderService.java" />
+        <option value="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/model.services/CustomerOrderService.java" />
+        <option value="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java" />
       </list>
     </option>
   </component>
@@ -166,6 +133,9 @@
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />
     <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="Not ExtJs" pattern="src[webapp]:org.sgodden.tom.web.*||src[persistence]:*..*||src[application-services]:*..*||src[application-services-api]:*..*||src[integration-tests]:*..*||src[model]:*..*||src[model-api]:*..*" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -264,6 +234,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -272,10 +244,96 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-template-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-template-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application-services-api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-template-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application-services-api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="customerorder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-template-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaee-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application-services-api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,6 +382,7 @@
       <recent name="$PROJECT_DIR$/application-services/src/main/resources/org/sgodden/tom/services/impl" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.sgodden.tom" />
       <recent name="org.sgodden.tom.integration" />
       <recent name="org.sgodden.tom.services.impl" />
       <recent name="org.sgodden.tom.domain" />
@@ -722,18 +781,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="-1" width="1370" height="747" extended-state="6" />
+    <frame x="-2" y="-1" width="1924" height="957" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.35402685" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3137584" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -741,12 +802,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32978722" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22887701" sideWeight="0.6712159" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3590604" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -802,113 +861,101 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="23" selection-start="133" selection-end="133" vertical-scroll-proportion="0.13786764" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/store/Users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="27" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0528169" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/controller/Users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="715" selection-end="715" vertical-scroll-proportion="0.818662" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="37" selection-start="276" selection-end="276" vertical-scroll-proportion="0.3697183" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/user/Edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="3" selection-start="704" selection-end="704" vertical-scroll-proportion="0.60387325" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/user/List.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="22" selection-start="328" selection-end="328" vertical-scroll-proportion="0.29049295" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/model/User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="3" selection-start="93" selection-end="93" vertical-scroll-proportion="0.079225354" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application-services/src/main/resources/org/sgodden/tom/services/impl/beans.xml">
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderListController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="42" selection-start="246" selection-end="246" vertical-scroll-proportion="0.15845071">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application-services/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="33" selection-start="2022" selection-end="2022" vertical-scroll-proportion="0.9471831">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/web.xml">
       <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="22" selection-start="527" selection-end="527" vertical-scroll-proportion="0.38391224">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
-        <state />
+        <state line="14" column="22" selection-start="527" selection-end="527" vertical-scroll-proportion="0.38391224" />
       </provider>
       <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1974" selection-end="1974" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="50" column="0" selection-start="1974" selection-end="1974" vertical-scroll-proportion="0.8457584" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/pom.xml">
+    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/beans-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="0" selection-start="4683" selection-end="4883" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="11" column="0" selection-start="560" selection-end="560" vertical-scroll-proportion="0.21208227" />
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="48" selection-start="800" selection-end="800" vertical-scroll-proportion="0.44344473" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="26" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.0">
+        <state line="43" column="26" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.5372751" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="139" column="0" selection-start="4683" selection-end="4883" vertical-scroll-proportion="0.13239075" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/AbstractIdentity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="22" selection-start="165" selection-end="165" vertical-scroll-proportion="0.077120826" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/customerorder/impl/CustomerOrderListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="49" selection-start="920" selection-end="920" vertical-scroll-proportion="0.6725146" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderListService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="47" selection-start="165" selection-end="165" vertical-scroll-proportion="0.1754386" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model-api/src/main/java/org/sgodden/tom/model/CustomerOrderRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="23" selection-start="491" selection-end="491" vertical-scroll-proportion="0.6680162" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/customerorder/impl/CustomerOrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="61" selection-start="586" selection-end="586" vertical-scroll-proportion="0.4385965" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application-services/src/main/resources/org/sgodden/tom/services/impl/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="78" selection-start="891" selection-end="891" vertical-scroll-proportion="0.51829267" />
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderListEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="50" selection-start="611" selection-end="611" vertical-scroll-proportion="0.61403507" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="26" selection-start="166" selection-end="166" vertical-scroll-proportion="0.077120826">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/beans-servlet.xml">
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="64" selection-start="840" selection-end="840" vertical-scroll-proportion="0.41133454">
+        <state line="13" column="13" selection-start="479" selection-end="479" vertical-scroll-proportion="0.09640103">
           <folding />
         </state>
       </provider>
@@ -967,11 +1014,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Web|webapp</last-edited>
+          <last-edited>webapp</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -998,6 +1046,21 @@
               </list>
             </option>
           </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>Not ExtJs</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+          <order>
+            <scope name="Not ExtJs" />
+          </order>
         </settings>
       </state>
     </states>
