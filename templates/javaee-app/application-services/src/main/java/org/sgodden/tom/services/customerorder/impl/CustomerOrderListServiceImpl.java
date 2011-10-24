@@ -21,7 +21,7 @@ public class CustomerOrderListServiceImpl implements CustomerOrderListService {
     public List<CustomerOrderListEntry> list() {
         List<CustomerOrderListEntry> ret = new ArrayList<CustomerOrderListEntry>();
         for (ICustomerOrder order : repository.findAll()) {
-                        ret.add(new CustomerOrderListEntry(order));
+            ret.add(new CustomerOrderListEntry(order));
         }
         return Collections.unmodifiableList(ret);
     }
