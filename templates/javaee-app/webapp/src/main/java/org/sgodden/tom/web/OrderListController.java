@@ -1,8 +1,9 @@
 package org.sgodden.tom.web;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.sgodden.tom.model.ICustomerOrder;
+import org.sgodden.tom.services.customerorder.CustomerOrderListEntry;
+import org.sgodden.tom.services.customerorder.CustomerOrderListService;
 import org.sgodden.tom.services.customerorder.CustomerOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,28 +17,39 @@ import java.util.List;
 public class OrderListController {
 
     @Autowired
-    private CustomerOrderService service;
+    private CustomerOrderListService listService;
+    @Autowired
+    private CustomerOrderService orderService;
+
+    private int count = 1;
 
     @RequestMapping(value = "/orders", method = RequestMethod.GET)
     @ResponseBody
-    public String listOrders() {
-        List<ICustomerOrder> orders = service.findAll();
+    public String listOrders() throws Exception {
 
-        JSONObject ret = new JSONObject();
-        ret.put("success", "true");
-        ret.put("total", orders.size());
+        makeOrder();
 
-        JSONArray jsonOrders = new JSONArray();
-        ret.put("orders", jsonOrders);
+        List<CustomerOrderListEntry> orders = listService.list();
 
-        for (ICustomerOrder order : orders) {
-            JSONObject jsonOrder = new JSONObject();
-            jsonOrders.add(jsonOrder);
-            jsonOrder.put("orderNumber", order.getOrderNumber());
-            jsonOrder.put("reference", order.getCustomerReference());
-        }
+        Response response = new Response();
+        response.total = orders.size();
+        response.orders = orders;
 
-        return ret.toJSONString();
+        return new ObjectMapper().writeValueAsString(response);
+    }
+
+    private void makeOrder() {
+        ICustomerOrder order = orderService.create();
+        order.setOrderNumber("ORD" + count);
+        order.setCustomerReference("CREF" + count);
+        orderService.persist(order);
+        count++;
+    }
+
+    public static class Response {
+        public boolean success = true;
+        public int total = 0;
+        public List<CustomerOrderListEntry> orders;
     }
 
 }

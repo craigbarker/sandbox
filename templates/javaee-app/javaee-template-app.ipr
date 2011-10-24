@@ -74,7 +74,8 @@
             <element id="library" level="project" name="Maven: org.hibernate:hibernate-validator:4.0.2.GA" />
             <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:3.0.6.RELEASE" />
             <element id="library" level="project" name="Maven: org.springframework:spring-web:3.0.6.RELEASE" />
-            <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1" />
+            <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-lgpl:1.9.0" />
+            <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-lgpl:1.9.0" />
             <element id="library" level="project" name="Maven: com.h2database:h2:1.2.124" />
           </element>
         </element>
@@ -400,17 +401,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/beust/jcommander/1.12/jcommander-1.12-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.googlecode.json-simple:json-simple:1.1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: com.h2database:h2:1.2.124">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/h2database/h2/1.2.124/h2-1.2.124.jar!/" />
@@ -585,6 +575,28 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/beanshell/bsh/2.0b4/bsh-2.0b4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.codehaus.jackson:jackson-core-lgpl:1.9.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-lgpl/1.9.0/jackson-core-lgpl-1.9.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-lgpl/1.9.0/jackson-core-lgpl-1.9.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-lgpl/1.9.0/jackson-core-lgpl-1.9.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.codehaus.jackson:jackson-mapper-lgpl:1.9.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-mapper-lgpl/1.9.0/jackson-mapper-lgpl-1.9.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-mapper-lgpl/1.9.0/jackson-mapper-lgpl-1.9.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-mapper-lgpl/1.9.0/jackson-mapper-lgpl-1.9.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.0.Final">
