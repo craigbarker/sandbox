@@ -843,7 +843,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="latest changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switch to using jackson mapper instead of manually constructing JSON." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -861,6 +861,7 @@
     <MESSAGE value="refactored to implement model interfaces, and remove all unnecessary dependencies except for strange JPA one which I don't understand why aspectj still needs." />
     <MESSAGE value="Introduction of a simple application service." />
     <MESSAGE value="latest changes" />
+    <MESSAGE value="Switch to using jackson mapper instead of manually constructing JSON." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
