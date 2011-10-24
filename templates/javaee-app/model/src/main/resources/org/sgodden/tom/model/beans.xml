@@ -22,9 +22,6 @@
 
     <context:component-scan base-package="org.sgodden.tom.model"/>
 
-    <!-- begin and end transactions depending on annotations -->
-    <tx:annotation-driven/>
-
     <util:map id="stateObjects">
         <entry key="NEW" value-ref="customerOrderNewState"/>
     </util:map>

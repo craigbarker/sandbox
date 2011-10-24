@@ -18,9 +18,6 @@
     -->
     <context:spring-configured/>
 
-    <!-- begin and end transactions depending on annotations -->
-    <tx:annotation-driven/>
-
     <!-- entity manager factory -->
     <bean id="myEmf" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
         <property name="persistenceUnitName" value="tom-domain-pu"/>

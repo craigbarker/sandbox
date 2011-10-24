@@ -20,7 +20,7 @@
         <module>application-services-api</module>
         <module>application-services</module>
         <!--<module>flex-ui</module>-->
-        <module>webapp</module>
+        <!--<module>webapp</module>-->
         <module>integration-tests</module>
     </modules>
     <build>
