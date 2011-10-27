@@ -4,7 +4,7 @@ Ext.application({
     appFolder: 'app',
 
     controllers: [
-        'Users'
+        'CustomerOrders'
     ],
 
     launch: function() {
@@ -12,7 +12,7 @@ Ext.application({
             layout: 'fit',
             items: [
                 {
-                    xtype: 'userlist'
+                    xtype: 'customerorderlist'
                 }
             ]
         });

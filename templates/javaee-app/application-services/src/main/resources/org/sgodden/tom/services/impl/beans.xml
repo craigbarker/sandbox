@@ -9,10 +9,8 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
        " >
 
-    <!-- -->
     <context:annotation-config/>
 
-    <!-- begin and end transactions depending on annotations -->
     <tx:annotation-driven/>
 
     <bean class="org.sgodden.tom.services.customerorder.impl.CustomerOrderServiceImpl"/>

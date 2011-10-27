@@ -293,6 +293,8 @@
   <component name="ProjectDictionaryState">
     <dictionary name="simon">
       <words>
+        <w>customerorder</w>
+        <w>customerorderlist</w>
         <w>extjs</w>
         <w>sgodden</w>
         <w>springframework</w>
