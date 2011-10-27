@@ -65,19 +65,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Edit.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/user/Edit.js">
+      <file leaf-file-name="CustomerOrders.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/controller/CustomerOrders.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="3" selection-start="102" selection-end="102" vertical-scroll-proportion="0.02640845">
+            <state line="43" column="40" selection-start="990" selection-end="990" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Edit.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/Edit.js">
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="33" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
+            <state line="12" column="20" selection-start="229" selection-end="229" vertical-scroll-proportion="0.31690142">
               <folding />
             </state>
           </provider>
@@ -87,33 +87,6 @@
         <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/controller/Users.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="24" column="0" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerOrders.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/controller/CustomerOrders.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="28" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="List.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/List.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="35" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -146,9 +119,9 @@
         <option value="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderListController.java" />
         <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/store/CustomerOrders.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/controller/CustomerOrders.js" />
         <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/Edit.js" />
+        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/controller/CustomerOrders.js" />
+        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app.js" />
       </list>
     </option>
   </component>
@@ -1148,40 +1121,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/Edit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="33" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/controller/Users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/controller/CustomerOrders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="28" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/List.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="35" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
+        <state line="7" column="33" selection-start="191" selection-end="191" vertical-scroll-proportion="0.18485916">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/user/Edit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="3" selection-start="102" selection-end="102" vertical-scroll-proportion="0.02640845">
+        <state line="4" column="3" selection-start="102" selection-end="102" vertical-scroll-proportion="0.1056338">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/List.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="35" selection-start="396" selection-end="396" vertical-scroll-proportion="0.29049295">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/controller/CustomerOrders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="40" selection-start="990" selection-end="990" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/controller/Users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="20" selection-start="229" selection-end="229" vertical-scroll-proportion="0.31690142">
           <folding />
         </state>
       </provider>

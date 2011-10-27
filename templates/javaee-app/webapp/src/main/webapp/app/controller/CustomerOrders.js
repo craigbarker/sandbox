@@ -8,6 +8,10 @@ Ext.define('AM.controller.CustomerOrders', {
         {
             ref: 'container',
             selector: '#topContainer'
+        },
+        {
+            ref: 'viewport',
+            selector: 'viewport'
         }
     ],
 
@@ -20,14 +24,25 @@ Ext.define('AM.controller.CustomerOrders', {
         this.control({
             'customerorderlist': {
                 itemdblclick: this.editUser
+            },
+            'customerorderedit button[action=cancel]': {
+                click: this.goToList
             }
         });
     },
 
     editUser: function(grid, record) {
-        var container = this.getContainer();
+        this.switchView(Ext.widget('customerorderedit'));
+    },
+
+    goToList: function() {
+        this.switchView(Ext.widget('customerorderlist'));
+    },
+
+    switchView: function(widget) {
+        var container = this.getViewport();
         container.removeAll();
-        container.add(Ext.widget('customerorderedit'));
+        container.add(widget);
         container.doLayout();
     }
 });
