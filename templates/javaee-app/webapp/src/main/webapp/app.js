@@ -12,7 +12,14 @@ Ext.application({
             layout: 'fit',
             items: [
                 {
-                    xtype: 'customerorderlist'
+                    xtype: 'panel',
+                    layout: 'fit',
+                    id: 'topContainer',
+                    items: [
+                        {
+                            xtype: 'customerorderlist'
+                        }
+                    ]
                 }
             ]
         });

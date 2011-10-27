@@ -116,6 +116,11 @@
           <module name="flex-ui" />
         </modules>
       </facet-type>
+      <facet-type id="JRUBY">
+        <modules>
+          <module name="webapp" />
+        </modules>
+      </facet-type>
       <facet-type id="web">
         <modules>
           <module name="webapp" />

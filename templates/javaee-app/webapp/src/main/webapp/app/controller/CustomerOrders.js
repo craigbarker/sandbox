@@ -4,8 +4,16 @@ Ext.define('AM.controller.CustomerOrders', {
     stores: ['CustomerOrders'],
     models: ['CustomerOrder'],
 
+    refs: [
+        {
+            ref: 'container',
+            selector: '#topContainer'
+        }
+    ],
+
     views: [
-        'customerorder.List'
+        'customerorder.List',
+        'customerorder.Edit'
     ],
 
     init: function() {
@@ -17,6 +25,9 @@ Ext.define('AM.controller.CustomerOrders', {
     },
 
     editUser: function(grid, record) {
-        alert("Edit order!")
+        var container = this.getContainer();
+        container.removeAll();
+        container.add(Ext.widget('customerorderedit'));
+        container.doLayout();
     }
 });
