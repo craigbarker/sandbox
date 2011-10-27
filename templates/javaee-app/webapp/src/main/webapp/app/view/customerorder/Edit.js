@@ -6,6 +6,11 @@ Ext.define('AM.view.customerorder.Edit', {
     layout: 'fit',
 
     initComponent: function() {
+
+        this.initialConfig = {
+            url: '/services/order'
+        };
+
         this.items = [
             {
                 xtype: 'textfield',
