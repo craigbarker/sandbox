@@ -3,6 +3,7 @@ package org.sgodden.tom.integration.services;
 import org.sgodden.tom.integration.AbstractIntegrationTest;
 import org.sgodden.tom.model.CustomerOrderStatus;
 import org.sgodden.tom.model.ICustomerOrder;
+import org.sgodden.tom.services.customerorder.CustomerOrderListEntry;
 import org.sgodden.tom.services.customerorder.CustomerOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.AfterMethod;
@@ -18,7 +19,7 @@ public class CustomerServiceTest extends AbstractIntegrationTest {
 
     @AfterMethod
     public void afterTest() {
-        for (ICustomerOrder order : customerOrderService.list()) {
+        for (CustomerOrderListEntry order : customerOrderService.list()) {
             customerOrderService.remove(order.getId());
         }
     }
