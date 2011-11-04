@@ -8,9 +8,8 @@
         <groupId>org.sgodden.template.javaee</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <groupId>org.sgodden.template.javaee</groupId>
+    
     <artifactId>webapp</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>webapp Maven Webapp</name>
     <url>http://maven.apache.org</url>
@@ -25,6 +24,11 @@
             <artifactId>application-services</artifactId>
             <version>${project.parent.version}</version>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.5.10</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -46,6 +50,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

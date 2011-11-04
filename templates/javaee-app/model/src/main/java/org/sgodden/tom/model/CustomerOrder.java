@@ -1,11 +1,15 @@
 package org.sgodden.tom.model;
 
-import org.joda.time.LocalDate;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 import javax.validation.constraints.NotNull;
-import java.util.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
 
 /**
  * An order from a customer to transport goods from an origin
@@ -64,7 +68,7 @@ public class CustomerOrder extends AbstractIdentity implements ICustomerOrder {
 
     @Override
     public void setBookingDate(Calendar date) {
-        this.bookingDate = bookingDate;
+        this.bookingDate = date;
     }
 
     @Override

@@ -1,7 +1,5 @@
 package org.sgodden.tom.model;
 
-import org.joda.time.LocalDate;
-
 import java.util.Calendar;
 import java.util.Set;
 

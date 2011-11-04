@@ -1,10 +1,9 @@
 package org.sgodden.tom.model;
 
-import java.io.Serializable;
 
 /**
  */
-public class DeliveryDetails implements Serializable, IDeliveryDetails {
+public class DeliveryDetails implements IDeliveryDetails {
     private Address address;
 
     public Address getAddress() {

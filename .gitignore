@@ -6,3 +6,7 @@ target
 *.dll.mdb
 .idea
 extjs
+.classpath
+.project
+.settings
+.metadata

@@ -10,13 +10,19 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.sgodden.template.javaee</groupId>
     <artifactId>model-api</artifactId>
     <name>model-api</name>
 
     <url>http://maven.apache.org</url>
 
     <dependencies>
+        <!-- validation -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+        </dependency>
+
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>

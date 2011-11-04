@@ -51,11 +51,14 @@ Ext.define('AM.controller.CustomerOrders', {
     save: function(button) {
         var form = this.getForm().getForm();
         if (form.isValid()) {
-            form.submit({
-                success: function(form, action) {
-                    Ext.Msg.alert("Success!");
+            var model = form.getRecord();
+            model.set(form.getValues());
+            model.save({
+                scope: this,
+                success: function() {
+                    this.goToList();
                 },
-                failure: function(form, action) {
+                failure: function() {
                     Ext.Msg.alert("Failure!");
                 }
             });

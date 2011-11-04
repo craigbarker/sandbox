@@ -2,12 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a051938-416e-4455-996f-387874ffb76f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderUpdateController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/main/resources/logback.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/src/test/java/org/sgodden/test/JsonAnnotationTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderListController.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/ValidationException.java" afterPath="$PROJECT_DIR$/model-api/src/main/java/org/sgodden/tom/model/ValidationException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services-api/application-services-api.iml" afterPath="$PROJECT_DIR$/application-services-api/application-services-api.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services-api/pom.xml" afterPath="$PROJECT_DIR$/application-services-api/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderListEntry.java" afterPath="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderListEntry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderService.java" afterPath="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services/application-services.iml" afterPath="$PROJECT_DIR$/application-services/application-services.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services/pom.xml" afterPath="$PROJECT_DIR$/application-services/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/customerorder/impl/CustomerOrderServiceImpl.java" afterPath="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/customerorder/impl/CustomerOrderServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/integration-tests/integration-tests.iml" afterPath="$PROJECT_DIR$/integration-tests/integration-tests.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/integration-tests/pom.xml" afterPath="$PROJECT_DIR$/integration-tests/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java" afterPath="$PROJECT_DIR$/integration-tests/src/test/java/org/sgodden/tom/integration/services/CustomerServiceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.iml" afterPath="$PROJECT_DIR$/javaee-template-app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.ipr" afterPath="$PROJECT_DIR$/javaee-template-app.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javaee-template-app.iws" afterPath="$PROJECT_DIR$/javaee-template-app.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/webapp/app.js" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model-api/model-api.iml" afterPath="$PROJECT_DIR$/model-api/model-api.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model-api/pom.xml" afterPath="$PROJECT_DIR$/model-api/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model-api/src/main/java/org/sgodden/tom/model/ICustomerOrder.java" afterPath="$PROJECT_DIR$/model-api/src/main/java/org/sgodden/tom/model/ICustomerOrder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model-api/src/main/java/org/sgodden/tom/model/Identity.java" afterPath="$PROJECT_DIR$/model-api/src/main/java/org/sgodden/tom/model/Identity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/model.iml" afterPath="$PROJECT_DIR$/model/model.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/pom.xml" afterPath="$PROJECT_DIR$/model/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrder.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/DeliveryDetails.java" afterPath="$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/DeliveryDetails.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/persistence.iml" afterPath="$PROJECT_DIR$/persistence/persistence.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/pom.xml" afterPath="$PROJECT_DIR$/persistence/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/persistence/AbstractIdentityJpaRepositoryImpl.java" afterPath="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/persistence/AbstractIdentityJpaRepositoryImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/persistence/listener/ValidatorEntityListener.java" afterPath="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/persistence/listener/ValidatorEntityListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/pom.xml" afterPath="$PROJECT_DIR$/webapp/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderUpdateController.java" afterPath="$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderUpdateController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/beans-servlet.xml" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/beans-servlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/webapp/app/controller/CustomerOrders.js" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/app/controller/CustomerOrders.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/webapp/app/model/CustomerOrder.js" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/app/model/CustomerOrder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/webapp/app/store/CustomerOrders.js" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/app/store/CustomerOrders.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/Edit.js" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/Edit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/List.js" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/List.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/webapp.iml" afterPath="$PROJECT_DIR$/webapp/webapp.iml" />
     </list>
     <ignored path="javaee-template-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,31 +100,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="JsonAnnotationTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/src/test/java/org/sgodden/test/JsonAnnotationTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="87" selection-start="473" selection-end="552" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="OrderUpdateController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderUpdateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="30" selection-start="971" selection-end="971" vertical-scroll-proportion="0.3697183">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beans-servlet.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/beans-servlet.xml">
-          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="560" selection-end="560" vertical-scroll-proportion="-7.857143">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderListController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderListController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="29" selection-start="888" selection-end="888" vertical-scroll-proportion="0.0">
+            <state line="26" column="39" selection-start="894" selection-end="894" vertical-scroll-proportion="0.4225352">
               <folding />
             </state>
           </provider>
@@ -110,21 +132,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/persistence/src/main/resources/org/sgodden/tom/persistence/beans.xml" />
-        <option value="$PROJECT_DIR$/model/src/main/resources/org/sgodden/tom/model/beans.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/webapp/pom.xml" />
-        <option value="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/customerorder/impl/CustomerOrderListServiceImpl.java" />
-        <option value="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderListEntry.java" />
-        <option value="$PROJECT_DIR$/application-services/src/main/resources/org/sgodden/tom/services/impl/beans.xml" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/List.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/model/CustomerOrder.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderListController.java" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/store/CustomerOrders.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app.js" />
+        <option value="$PROJECT_DIR$/model-api/pom.xml" />
         <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/controller/CustomerOrders.js" />
-        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/Edit.js" />
+        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/store/CustomerOrders.js" />
+        <option value="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/beans-servlet.xml" />
+        <option value="$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/webapp/pom.xml" />
+        <option value="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/persistence/CustomerOrderJpaRepository.java" />
+        <option value="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderService.java" />
+        <option value="$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/customerorder/impl/CustomerOrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderListEntry.java" />
+        <option value="$PROJECT_DIR$/webapp/src/main/resources/logback.xml" />
+        <option value="$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/persistence/listener/ValidatorEntityListener.java" />
+        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/model/CustomerOrder.js" />
+        <option value="$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/List.js" />
+        <option value="$PROJECT_DIR$/webapp/src/test/java/org/sgodden/test/JsonAnnotationTest.java" />
         <option value="$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderUpdateController.java" />
       </list>
     </option>
@@ -193,7 +215,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -244,7 +265,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -263,18 +292,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -332,10 +349,11 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="109" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
@@ -364,7 +382,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="Errors" />
+    <property name="options.lastSelected" value="reference.projectsettings.compiler.javacompiler" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="dynamic.classpath" value="false" />
@@ -378,11 +396,11 @@
       <recent name="org.sgodden.tom.persistence" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapp/src/main/resources" />
       <recent name="$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder" />
       <recent name="$PROJECT_DIR$/webapp/src/main/webapp/app/store" />
       <recent name="$PROJECT_DIR$/webapp/src/main/webapp/app/model" />
       <recent name="$PROJECT_DIR$/webapp/src/main/webapp/app/controller" />
-      <recent name="$PROJECT_DIR$/application-services/src/main/resources/org/sgodden/tom/services/impl" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.sgodden.tom" />
@@ -391,42 +409,7 @@
       <recent name="org.sgodden.tom.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.org.sgodden.tom.integration.services">
-    <configuration default="false" name="CustomerOrderRepositoryTest" type="TestNG" factoryName="TestNG" temporary="true">
-      <extension name="coverage" enabled="false" merge="false">
-        <pattern>
-          <option name="PATTERN" value="org.sgodden.tom.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="persistence" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="org.sgodden.tom.domain" />
-      <option name="MAIN_CLASS_NAME" value="org.sgodden.tom.domain.CustomerOrderRepositoryTest" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Remote.Unnamed">
     <configuration default="false" name="FetchTest" type="TestNG" factoryName="TestNG" temporary="true">
       <extension name="coverage" enabled="false" merge="false">
         <pattern>
@@ -571,13 +554,40 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="PhingTarget" enabled="false" />
-      </method>
+    <configuration default="false" name="JsonAnnotationTest" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.sgodden.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="webapp" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="org.sgodden.test" />
+      <option name="MAIN_CLASS_NAME" value="org.sgodden.test.JsonAnnotationTest" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" value="" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -592,39 +602,7 @@
         <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="packagepath" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="PhingTarget" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" adl_options="" air_descriptor_path="" air_program_params="" air_publisher_id="" air_root_dir_path="" air_run_mode="AppDescriptor" browser_family="FIREFOX" class_name="" debugger_sdk="Module SDK" html_or_swf_file_path="" launcher_type="OSDefault" main_class_name="" method_name="" module_name="" output_log_level="" package_name="" player_path="/usr/bin/flashplayerdebugger" port="0" run_mode="HtmlOrSwfFile" run_trusted="false" scope="Class" socket_policy_port="0" url_to_launch="http://">
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="PhingTarget" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="SpecsRunConfiguration" factoryName="Specs">
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="packagepath" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <setting name="sysFilter" value=".*" />
-      <setting name="exampleFilter" value=".*" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -707,18 +685,6 @@
         <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="FtpUpload" enabled="false">
-          <server_id />
-          <server_name />
-        </option>
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="PhingTarget" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" />
       <module name="" />
@@ -746,28 +712,28 @@
         <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="version" value="false" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="PhingTarget" enabled="false" />
-      </method>
+    <configuration default="false" name="Unnamed" type="Remote" factoryName="Remote">
+      <module name="webapp" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8000" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="8000" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.CustomerOrderRepositoryTest" />
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Remote.Unnamed" />
       <item index="1" class="java.lang.String" itemvalue="TestNG.FetchTest" />
       <item index="2" class="java.lang.String" itemvalue="TestNG.org.sgodden.tom.model" />
       <item index="3" class="java.lang.String" itemvalue="TestNG.CustomerServiceTest" />
       <item index="4" class="java.lang.String" itemvalue="TestNG.org.sgodden.tom.integration.services" />
+      <item index="5" class="java.lang.String" itemvalue="TestNG.JsonAnnotationTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -787,28 +753,28 @@
     <frame x="-2" y="-1" width="1370" height="747" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.35402685" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23082764" sideWeight="0.6862416" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3137584" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3590604" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.35402685" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718122" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27355623" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3590604" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -866,114 +832,112 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/user/List.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderListEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="165" selection-end="165" vertical-scroll-proportion="0.1056338" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/store/CustomerOrders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="27" selection-start="212" selection-end="212" vertical-scroll-proportion="0.18485916" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/model/CustomerOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="46" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0528169" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/web.xml">
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="31" selection-start="498" selection-end="498" vertical-scroll-proportion="0.35648996" />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/user/Edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="3" selection-start="102" selection-end="102" vertical-scroll-proportion="0.1056338">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/List.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="35" selection-start="396" selection-end="396" vertical-scroll-proportion="0.29049295">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="20" selection-start="229" selection-end="229" vertical-scroll-proportion="0.31690142">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/Edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="8" selection-start="192" selection-end="192" vertical-scroll-proportion="0.2112676">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/controller/CustomerOrders.js">
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/controller/Users.js">
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/org/sgodden/tom/model/CustomerOrderFactoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="3" selection-start="313" selection-end="313" vertical-scroll-proportion="0.31338027">
+        <state line="5" column="24" selection-start="166" selection-end="166" vertical-scroll-proportion="0.13661203">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderListController.java">
+    <entry file="file://$PROJECT_DIR$/model-api/src/main/java/org/sgodden/tom/model/CustomerOrderFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="29" selection-start="888" selection-end="888" vertical-scroll-proportion="0.0">
+        <state line="4" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.10928962">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/beans-servlet.xml">
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/application-services/src/main/java/org/sgodden/tom/services/customerorder/impl/CustomerOrderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="560" selection-end="560" vertical-scroll-proportion="-7.857143">
+        <state line="28" column="25" selection-start="924" selection-end="924" vertical-scroll-proportion="0.4225352">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.0.6.RELEASE/spring-web-3.0.6.RELEASE.jar!/org/springframework/web/bind/annotation/ResponseBody.class">
+    <entry file="file://$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="10" selection-start="381" selection-end="381" vertical-scroll-proportion="0.22099447">
+        <state line="13" column="0" selection-start="300" selection-end="300" vertical-scroll-proportion="0.26408452">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence/src/main/java/org/sgodden/tom/persistence/listener/ValidatorEntityListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="40" selection-start="673" selection-end="673" vertical-scroll-proportion="0.34330985">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="42" selection-start="413" selection-end="413" vertical-scroll-proportion="0.34330985">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/model/CustomerOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="67" selection-start="152" selection-end="152" vertical-scroll-proportion="0.079225354">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/store/CustomerOrders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/store/Users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application-services-api/src/main/java/org/sgodden/tom/services/customerorder/CustomerOrderListEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence/src/main/resources/META-INF/orm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="436" selection-end="436" vertical-scroll-proportion="0.02640845">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="60" selection-start="903" selection-end="903" vertical-scroll-proportion="0.31690142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/main/webapp/app/view/customerorder/List.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="60" selection-start="470" selection-end="470" vertical-scroll-proportion="0.34330985">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/src/test/java/org/sgodden/test/JsonAnnotationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="87" selection-start="473" selection-end="552" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/src/main/java/org/sgodden/tom/web/OrderUpdateController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="30" selection-start="971" selection-end="971" vertical-scroll-proportion="0.3697183">
+        <state line="26" column="39" selection-start="894" selection-end="894" vertical-scroll-proportion="0.4225352">
           <folding />
         </state>
       </provider>
@@ -989,7 +953,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -997,7 +960,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Android</last-edited>
+          <last-edited>Spring (model)|Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

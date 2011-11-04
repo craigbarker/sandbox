@@ -8,9 +8,12 @@ Ext.define('AM.view.customerorder.List', {
     initComponent: function() {
         this.columns = [
             {header: 'Customer Reference',  dataIndex: 'customerReference',  flex: 1},
-            {header: 'Order Number', dataIndex: 'orderNumber', flex: 1}
+            {header: 'Order Number', dataIndex: 'orderNumber', flex: 1},
+            {header: 'Booking Date', dataIndex: 'bookingDate', flex: 1}
         ];
 
         this.callParent(arguments);
+
+        this.getStore().load();
     }
 });

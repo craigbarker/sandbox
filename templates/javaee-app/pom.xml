@@ -23,6 +23,8 @@
         <module>webapp</module>
         <module>integration-tests</module>
     </modules>
+    <dependencies>
+    </dependencies>
     <build>
         <plugins>
             <plugin>

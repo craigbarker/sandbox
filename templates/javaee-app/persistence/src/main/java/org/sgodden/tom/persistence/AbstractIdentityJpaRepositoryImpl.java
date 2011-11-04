@@ -1,13 +1,13 @@
 package org.sgodden.tom.persistence;
 
-import org.sgodden.tom.model.Identity;
-import org.springframework.transaction.annotation.Transactional;
+import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import java.io.Serializable;
-import java.util.List;
+
+import org.sgodden.tom.model.Identity;
 
 public abstract class AbstractIdentityJpaRepositoryImpl<T extends Identity> {
 
@@ -46,7 +46,8 @@ public abstract class AbstractIdentityJpaRepositoryImpl<T extends Identity> {
         return (Long) q.getSingleResult();
     }
 
-    public List<T> findAll() {
+    @SuppressWarnings("unchecked")
+	public List<T> findAll() {
         Query q = em.createQuery("from " + getEntityClass().getName());
         return q.getResultList();
     }

@@ -3,7 +3,6 @@ Ext.define('AM.view.customerorder.Edit', {
     alias : 'widget.customerorderedit',
 
     title : 'Edit Order',
-    layout: 'fit',
 
     initComponent: function() {
 
@@ -12,6 +11,10 @@ Ext.define('AM.view.customerorder.Edit', {
         };
 
         this.items = [
+            {
+                xtype: 'hidden',
+                name: 'id'
+            },
             {
                 xtype: 'textfield',
                 name : 'customerReference',

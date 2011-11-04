@@ -18,7 +18,7 @@ public class CustomerServiceTest extends AbstractIntegrationTest {
 
     @AfterMethod
     public void afterTest() {
-        for (ICustomerOrder order : customerOrderService.findAll()) {
+        for (ICustomerOrder order : customerOrderService.list()) {
             customerOrderService.remove(order.getId());
         }
     }
@@ -30,14 +30,14 @@ public class CustomerServiceTest extends AbstractIntegrationTest {
 
     public void testPersist() {
         createOrder(1);
-        assertEquals(customerOrderService.findAll().size(), 1);
+        assertEquals(customerOrderService.list().size(), 1);
     }
 
     public void testFindAll() {
         for (int i = 0; i < 10; i++) {
             createOrder(i + 1);
         }
-        assertEquals(customerOrderService.findAll().size(), 10);
+        assertEquals(customerOrderService.list().size(), 10);
     }
 
     private void createOrder(int seq) {

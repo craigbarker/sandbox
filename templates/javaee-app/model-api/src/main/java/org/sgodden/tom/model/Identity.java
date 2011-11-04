@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public interface Identity extends Serializable {
 
-    Serializable getId();
+    Long getId();
 
     Long getVersion();
 

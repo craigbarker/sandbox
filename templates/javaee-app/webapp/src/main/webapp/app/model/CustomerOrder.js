@@ -1,4 +1,8 @@
 Ext.define('AM.model.CustomerOrder', {
     extend: 'Ext.data.Model',
-    fields: ['customerReference', 'orderNumber']
+    fields: ['id', 'customerReference', 'orderNumber', 'bookingDate'],
+    proxy: {
+        type: 'rest',
+        url: '/services/orders'
+    }
 });

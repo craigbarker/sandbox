@@ -3,12 +3,15 @@ package org.sgodden.tom.services.customerorder.impl;
 import org.sgodden.tom.model.CustomerOrderFactory;
 import org.sgodden.tom.model.CustomerOrderRepository;
 import org.sgodden.tom.model.ICustomerOrder;
+import org.sgodden.tom.services.customerorder.CustomerOrderListEntry;
 import org.sgodden.tom.services.customerorder.CustomerOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -38,18 +41,22 @@ public class CustomerOrderServiceImpl implements CustomerOrderService {
     }
 
     @Override
-    public List<ICustomerOrder> findAll() {
-        return repository.findAll();
+    public List<CustomerOrderListEntry> list() {
+        List<CustomerOrderListEntry> ret = new ArrayList<CustomerOrderListEntry>();
+        for (ICustomerOrder order : repository.findAll()) {
+            ret.add(new CustomerOrderListEntry(order));
+        }
+        return Collections.unmodifiableList(ret);
     }
 
     @Override
-    public void merge(ICustomerOrder order) {
-        repository.merge(order);
+    public void merge(CustomerOrderListEntry order) {
+        repository.merge(order.merge(repository.findById(order.getId())));
     }
 
     @Override
-    public ICustomerOrder findById(Long id) {
-        return repository.findById(id);
+    public CustomerOrderListEntry findById(Long id) {
+        return new CustomerOrderListEntry(repository.findById(id));
     }
 
 }

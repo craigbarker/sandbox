@@ -7,14 +7,16 @@ import java.util.Calendar;
 
 public class CustomerOrderListEntry {
 
-    private Serializable id;
+    private Long id;
     private String customerReference;
     private String orderNumber;
     private Calendar bookingDate;
 
+    public CustomerOrderListEntry() {}
+
     public CustomerOrderListEntry(ICustomerOrder order) {
         // TODO - dozer
-        this.id = order.getId();
+        this.id = (Long) order.getId();
         this.customerReference = order.getCustomerReference();
         this.orderNumber = order.getOrderNumber();
         this.bookingDate = order.getBookingDate();
@@ -34,5 +36,12 @@ public class CustomerOrderListEntry {
 
     public Calendar getBookingDate() {
         return bookingDate;
+    }
+
+    public ICustomerOrder merge(ICustomerOrder order) {
+        order.setCustomerReference(getCustomerReference());
+        order.setBookingDate(getBookingDate());
+        order.setOrderNumber(getOrderNumber());
+        return order;
     }
 }
