@@ -62,7 +62,9 @@ public class OrderUpdateController {
 
     @RequestMapping(value = "/orders/{id}", method = RequestMethod.PUT)
     @ResponseBody
-    public String updateOrder(@RequestBody CustomerOrderListEntry entry) throws Exception {
+    public String updateOrder(@RequestBody String string) throws Exception {
+        LOG.info(string);
+        CustomerOrderListEntry entry = objectMapper().readValue(string, CustomerOrderListEntry.class);
         orderService.merge(entry);
         return "";
     }

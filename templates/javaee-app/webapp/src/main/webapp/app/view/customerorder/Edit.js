@@ -24,6 +24,12 @@ Ext.define('AM.view.customerorder.Edit', {
                 xtype: 'textfield',
                 name : 'orderNumber',
                 fieldLabel: 'Order number'
+            },
+            {
+                xtype: 'datefield',
+                name: 'bookingDate',
+                fieldLabel: 'Booking date',
+                submitFormat: 'c'
             }
         ];
 

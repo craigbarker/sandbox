@@ -27,7 +27,11 @@ Ext.define('AM.controller.CustomerOrders', {
     init: function() {
         this.control({
             'customerorderlist': {
-                itemdblclick: this.editUser
+                itemdblclick: this.editUser,
+                render: this.listRendered
+            },
+            'customerorderedit': {
+                render: this.editRendered
             },
             'customerorderedit button[action=cancel]': {
                 click: this.goToList
@@ -36,6 +40,14 @@ Ext.define('AM.controller.CustomerOrders', {
                 click: this.save
             }
         });
+    },
+
+    listRendered: function() {
+        Ext.util.History.add('customerorderlist');
+    },
+
+    editRendered: function() {
+        Ext.util.History.add('customerorderedit');
     },
 
     editUser: function(grid, record) {
