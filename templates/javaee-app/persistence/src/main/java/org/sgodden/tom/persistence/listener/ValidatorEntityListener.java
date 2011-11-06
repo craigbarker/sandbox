@@ -24,7 +24,7 @@ public class ValidatorEntityListener {
 		Set<ConstraintViolation<Serializable>> constraints = validator.validate(entity);
 		if (constraints.size() > 0) {
 //            if (LOG.isDebugEnabled()) {  TODO - logging config
-                for (ConstraintViolation violation : constraints) {
+                for (ConstraintViolation<Serializable> violation : constraints) {
                     LOG.severe(violation.toString());
                 }
 //            }
