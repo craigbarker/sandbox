@@ -1,3 +1,17 @@
+Ext.define("AM.AppCtx", {
+    statics: {
+        mode: 'test',
+
+        getStoreName: function(storeName) {
+            var ret = storeName;
+            if (this.mode == 'test') {
+                ret += "Test";
+            }
+            return ret;
+        }
+    }
+});
+
 Ext.application({
     name: 'AM',
 
@@ -7,7 +21,15 @@ Ext.application({
         'CustomerOrders'
     ],
 
+    refs: [
+        {
+            ref: 'viewport',
+            selector: 'viewport'
+        }
+    ],
+
     launch: function() {
+
         Ext.syncRequire("Ext.util.History");
         Ext.syncRequire("Ext.util.KeyMap");
 
@@ -18,12 +40,7 @@ Ext.application({
         });
 
         var viewport = Ext.create('Ext.container.Viewport', {
-            layout: 'fit',
-            items: [
-                {
-                    xtype: 'customerorderlist'
-                }
-            ]
+            layout: 'fit'
         });
 
         var map = new Ext.util.KeyMap(viewport.getEl(), [
@@ -32,8 +49,18 @@ Ext.application({
                 alt: true,
                 handler: this.navigateBack,
                 scope: this
+            },
+            {
+                key: Ext.EventObject.RIGHT,
+                alt: true,
+                handler: this.navigateForward,
+                scope: this
             }
         ]);
+
+//        Ext.util.History.add('customerorderlist');
+
+        this.switchView(Ext.widget('customerorderlist'));
 
     },
 
@@ -41,7 +68,23 @@ Ext.application({
         Ext.util.History.back();
     },
 
-    onHistoryChange: function() {
-        alert("History change");
+    navigateForward: function(key, eventObject) {
+        Ext.util.History.forward();
+    },
+
+    onHistoryChange: function(token, opts) {
+        if (token.match(/^customerorderlist/)) {
+            this.switchView(Ext.widget('customerorderlist'));
+        }
+        else if (token.match(/^customerorderedit/)) {
+            this.getController('CustomerOrders').editUser(token);
+        }
+    },
+
+    switchView: function(widget) {
+        var container = this.getViewport();
+        container.removeAll(true);
+        container.add(widget);
+        container.doLayout();
     }
 });

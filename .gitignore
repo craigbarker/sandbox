@@ -5,6 +5,9 @@ target
 *.dll
 *.dll.mdb
 .idea
+*.iws
+*.iml
+*.ipr
 extjs
 .classpath
 .project

@@ -5,9 +5,5 @@ Ext.define('AM.model.CustomerOrder', {
         {name: 'customerReference'},
         {name: 'orderNumber'},
         {name: 'bookingDate', type: Ext.data.Types.DATE, dateFormat: 'c'}
-    ],
-    proxy: {
-        type: 'rest',
-        url: '/services/orders'
-    }
+    ]
 });
