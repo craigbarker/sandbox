@@ -18,13 +18,18 @@ Ext.application({
     appFolder: 'app',
 
     controllers: [
-        'CustomerOrders'
+        'CustomerOrders',
+        'Viewport'
+    ],
+
+    views: [
+        'Welcome'
     ],
 
     refs: [
         {
-            ref: 'viewport',
-            selector: 'viewport'
+            ref: 'appContainer',
+            selector: '#appContainer'
         }
     ],
 
@@ -40,7 +45,26 @@ Ext.application({
         });
 
         var viewport = Ext.create('Ext.container.Viewport', {
-            layout: 'fit'
+            layout: 'fit',
+            items: [
+                {
+                    xtype: 'panel',
+                    itemId: 'appContainer',
+                    layout: 'fit',
+                    tbar: {
+                        items: [
+                            {
+                                text: 'Orders',
+                                itemId: 'ordersButton'
+                            },
+                            {
+                                text: 'Trips',
+                                itemId: 'tripsButton'
+                            }
+                        ]
+                    }
+                }
+            ]
         });
 
         var map = new Ext.util.KeyMap(viewport.getEl(), [
@@ -60,7 +84,7 @@ Ext.application({
 
 //        Ext.util.History.add('customerorderlist');
 
-        this.switchView(Ext.widget('customerorderlist'));
+        this.switchView(Ext.widget('welcome'));
 
     },
 
@@ -82,7 +106,7 @@ Ext.application({
     },
 
     switchView: function(widget) {
-        var container = this.getViewport();
+        var container = this.getAppContainer();
         container.removeAll(true);
         container.add(widget);
         container.doLayout();

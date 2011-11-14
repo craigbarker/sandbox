@@ -4,7 +4,7 @@ Ext.define('AM.store.CustomerOrders', {
     autoLoad: false,
     storeId: 'customerOrders',
     proxy: {
-        type: 'ajax',
+        type: 'rest',
         url: '/services/orders',
         reader: {
             type: 'json',

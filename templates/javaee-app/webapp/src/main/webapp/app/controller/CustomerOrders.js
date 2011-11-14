@@ -6,12 +6,8 @@ Ext.define('AM.controller.CustomerOrders', {
 
     refs: [
         {
-            ref: 'container',
-            selector: '#topContainer'
-        },
-        {
-            ref: 'viewport',
-            selector: 'viewport'
+            ref: 'appContainer',
+            selector: '#appContainer'
         },
         {
             ref: 'form',
@@ -98,7 +94,7 @@ Ext.define('AM.controller.CustomerOrders', {
     },
 
     switchView: function(widget) {
-        var container = this.getViewport();
+        var container = this.getAppContainer();
         container.removeAll(true);
         container.add(widget);
         container.doLayout();
