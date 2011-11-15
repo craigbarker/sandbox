@@ -1,8 +1,8 @@
 Ext.define('AM.view.trip.List', {
     extend: 'Ext.grid.Panel',
-    alias : 'widget.customerorderlist',
+    alias : 'widget.triplist',
 
-    title : 'All orders',
+    title : 'All trips',
     store: AM.AppCtx.getStoreName('CustomerOrders'),
 
     initComponent: function() {

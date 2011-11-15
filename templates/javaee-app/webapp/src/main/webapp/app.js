@@ -55,11 +55,11 @@ Ext.application({
                         items: [
                             {
                                 text: 'Orders',
-                                itemId: 'ordersButton'
+                                action: 'orders'
                             },
                             {
                                 text: 'Trips',
-                                itemId: 'tripsButton'
+                                action: 'trips'
                             }
                         ]
                     }
@@ -84,6 +84,7 @@ Ext.application({
 
 //        Ext.util.History.add('customerorderlist');
 
+        Ext.syncRequire('AM.view.Welcome');
         this.switchView(Ext.widget('welcome'));
 
     },

@@ -15,13 +15,21 @@ Ext.define('AM.controller.Viewport', {
 
     init: function() {
         this.control({
-            '#ordersButton': {
-                click: this.switchView(Ext.widget('customerorderlist'))
+            '#appContainer button[action=orders]': {
+                click: this.goToOrders
             },
-            '#tripsButton': {
-                click: this.switchView(Ext.widget('triplist'))
+            '#appContainer button[action=trips]': {
+                click: this.goToTrips
             }
         });
+    },
+
+    goToOrders: function() {
+        this.switchView(Ext.widget('customerorderlist'));
+    },
+
+    goToTrips: function() {
+        this.switchView(Ext.widget('triplist'));
     },
 
     switchView: function(widget) {
