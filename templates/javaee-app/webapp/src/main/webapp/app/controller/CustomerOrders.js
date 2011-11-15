@@ -1,5 +1,6 @@
 Ext.define('AM.controller.CustomerOrders', {
-    extend: 'Ext.app.Controller',
+
+    extend: 'AM.controller.AbstractController',
 
     stores: [AM.AppCtx.getStoreName('CustomerOrders')],
     models: ['CustomerOrder'],
@@ -29,7 +30,7 @@ Ext.define('AM.controller.CustomerOrders', {
                 click: this.handleNew
             },
             'customerorderedit button[action=cancel]': {
-                click: this.goToList
+                click: function(){this.switchViewByName('customerorderlist')}
             },
             'customerorderedit button[action=save]': {
                 click: this.save
@@ -69,11 +70,6 @@ Ext.define('AM.controller.CustomerOrders', {
         this.switchView(view);
     },
 
-    goToList: function() {
-//        Ext.util.History.back();
-        this.switchView(Ext.widget('customerorderlist'));
-    },
-
     save: function(button) {
         var form = this.getForm().getForm();
         if (form.isValid()) {
@@ -89,15 +85,8 @@ Ext.define('AM.controller.CustomerOrders', {
 
             store.sync();
 
-            this.goToList();
+            this.switchViewByName('customerorderlist');
         }
-    },
-
-    switchView: function(widget) {
-        var container = this.getAppContainer();
-        container.removeAll(true);
-        container.add(widget);
-        container.doLayout();
     },
 
     getTheStore: function() {
