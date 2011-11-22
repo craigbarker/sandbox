@@ -9,9 +9,15 @@
     <name>javaee-template-app</name>
     <url>http://maven.apache.org</url>
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <surefire.version>2.7.2</surefire.version>
         <org.springframework.version>3.0.6.RELEASE</org.springframework.version>
         <org.hibernate.version>3.6.7.Final</org.hibernate.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <slf4j.version>1.5.10</slf4j.version>
+        <jackson.version>1.9.0</jackson.version>
+        <h2.version>1.2.124</h2.version>
+        <testng.version>6.2</testng.version>
+        <httpclient.version>4.1.2</httpclient.version>
     </properties>
     <modules>
         <module>model-api</module>
