@@ -55,8 +55,8 @@ public class OrderUpdateController {
 
     @RequestMapping(value="/orders", method = RequestMethod.POST)
     @ResponseBody
-    public String saveOrder(@RequestBody String requestBody) {
-        LOG.info(requestBody);
+    public String saveOrder(@RequestBody CustomerOrderListEntry requestBody) {
+        LOG.info(requestBody.toString());
         return "";
     }
 

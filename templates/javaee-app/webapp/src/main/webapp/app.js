@@ -1,6 +1,6 @@
 Ext.define("AM.AppCtx", {
     statics: {
-        mode: 'test',
+        mode: 'prod',
 
         getStoreName: function(storeName) {
             var ret = storeName;
