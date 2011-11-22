@@ -5,5 +5,9 @@ Ext.define('AM.model.CustomerOrder', {
         {name: 'customerReference'},
         {name: 'orderNumber'},
         {name: 'bookingDate', type: Ext.data.Types.DATE, dateFormat: 'c'}
+    ],
+    validations: [
+        {type: 'presence', field: 'customerReference'},
+        {type: 'presence', field: 'bookingDate'}
     ]
 });

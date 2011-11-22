@@ -8,6 +8,7 @@ import java.util.Date;
 
 import static org.testng.Assert.*;
 
+@Test(groups = "unit")
 public class JsonAnnotationTest {
 
     @Test
