@@ -25,26 +25,13 @@ public class OrderUpdateController {
     @RequestMapping(value = "/orders", method = RequestMethod.GET)
     @ResponseBody
     public String listOrders() throws Exception {
-
-        makeOrder();
-
         List<CustomerOrderListEntry> orders = orderService.list();
-
         Response response = new Response();
         response.total = orders.size();
         response.orders = orders;
-
         String responseString = objectMapper().writeValueAsString(response);
-
-        LOG.info(responseString);
-
+        LOG.info("List orders");
         return responseString;
-    }
-
-    private ObjectMapper objectMapper() {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS, false);
-        return mapper;
     }
 
     @RequestMapping(value="/orders/{id}", method = RequestMethod.GET)
@@ -55,26 +42,27 @@ public class OrderUpdateController {
 
     @RequestMapping(value="/orders", method = RequestMethod.POST)
     @ResponseBody
-    public String saveOrder(@RequestBody CustomerOrderListEntry requestBody) {
+    public String saveOrder(@RequestBody CustomerOrderListEntry requestBody) throws Exception{
         LOG.info(requestBody.toString());
-        return "";
+        ICustomerOrder order = orderService.create();
+        requestBody.merge(order);
+        Long id = orderService.persist(order);
+        LOG.info("Saved order");
+        return objectMapper().writeValueAsString(orderService.findById(id));
     }
 
     @RequestMapping(value = "/orders/{id}", method = RequestMethod.PUT)
     @ResponseBody
     public String updateOrder(@RequestBody String string) throws Exception {
-        LOG.info(string);
         CustomerOrderListEntry entry = objectMapper().readValue(string, CustomerOrderListEntry.class);
         orderService.merge(entry);
         return "";
     }
 
-    private void makeOrder() {
-        ICustomerOrder order = orderService.create();
-        order.setOrderNumber("ORD" + count);
-        order.setCustomerReference("CREF" + count);
-        orderService.persist(order);
-        count++;
+    private ObjectMapper objectMapper() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS, false);
+        return mapper;
     }
 
     public static class Response {

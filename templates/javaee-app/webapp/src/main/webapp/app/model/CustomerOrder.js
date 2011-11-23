@@ -9,5 +9,12 @@ Ext.define('AM.model.CustomerOrder', {
     validations: [
         {type: 'presence', field: 'customerReference'},
         {type: 'presence', field: 'bookingDate'}
-    ]
+    ],
+    proxy: {
+        type: 'rest',
+        url: '/webapp/services/orders',
+        reader: {
+            type: 'json'
+        }
+    }
 });

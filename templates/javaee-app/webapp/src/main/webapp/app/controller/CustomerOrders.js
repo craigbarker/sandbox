@@ -80,10 +80,14 @@ Ext.define('AM.controller.CustomerOrders', {
 
             var recordId = formRecord.get('id');
             if (recordId == '') {
-                store.insert(0, formRecord);
+                formRecord.save({
+                    success: function() {
+                        store.sync();
+                    }
+                });
+            } else {
+                store.sync();
             }
-
-            store.sync();
 
             this.switchViewByName('customerorderlist');
         }

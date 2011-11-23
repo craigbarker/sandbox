@@ -15,7 +15,7 @@ public class CustomerOrderListEntry {
     public CustomerOrderListEntry() {}
 
     public CustomerOrderListEntry(ICustomerOrder order) {
-        // TODO - dozer
+        // TODO - dozer?
         this.id = (Long) order.getId();
         this.customerReference = order.getCustomerReference();
         this.orderNumber = order.getOrderNumber();
