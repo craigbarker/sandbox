@@ -11,12 +11,4 @@ Ext.define('AM.model.CustomerOrder', {
         {type: 'presence', field: 'bookingDate'}
     ],
     proxy: AM.AppCtx.getProxy('customerOrders')
-//    storeId: 'customerOrders'
-//    proxy: {
-//        type: 'rest',
-//        url: '/webapp/services/orders',
-//        reader: {
-//            type: 'json'
-//        }
-//    }
 });
