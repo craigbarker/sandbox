@@ -3,12 +3,5 @@ Ext.define('AM.store.CustomerOrders', {
     model: 'AM.model.CustomerOrder',
     autoLoad: false,
     storeId: 'customerOrders',
-    proxy: {
-        type: 'rest',
-        url: '/webapp/services/orders',
-        reader: {
-            type: 'json',
-            root: 'orders'
-        }
-    }
+    proxy: AM.AppCtx.getProxy('customerOrders')
 });

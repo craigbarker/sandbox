@@ -2,7 +2,7 @@ Ext.define('AM.controller.CustomerOrders', {
 
     extend: 'AM.controller.AbstractController',
 
-    stores: [AM.AppCtx.getStoreName('CustomerOrders')],
+    stores: ['CustomerOrders'],
     models: ['CustomerOrder'],
 
     refs: [
@@ -72,6 +72,7 @@ Ext.define('AM.controller.CustomerOrders', {
 
     save: function(button) {
         var form = this.getForm().getForm();
+        form.getRecord().validate();
         if (form.isValid()) {
             var store = this.getTheStore();
             var formRecord = form.getRecord();
@@ -98,6 +99,6 @@ Ext.define('AM.controller.CustomerOrders', {
     },
 
     getStoreName: function() {
-        return AM.AppCtx.getStoreName('CustomerOrders');
+        return 'CustomerOrders';
     }
 });

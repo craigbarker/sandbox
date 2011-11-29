@@ -3,7 +3,7 @@ Ext.define('AM.view.customerorder.List', {
     alias : 'widget.customerorderlist',
 
     title : 'All orders',
-    store: AM.AppCtx.getStoreName('CustomerOrders'),
+    store: 'CustomerOrders',
 
     initComponent: function() {
         this.columns = [

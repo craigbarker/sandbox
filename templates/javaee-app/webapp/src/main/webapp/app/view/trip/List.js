@@ -3,7 +3,7 @@ Ext.define('AM.view.trip.List', {
     alias : 'widget.triplist',
 
     title : 'All trips',
-    store: AM.AppCtx.getStoreName('CustomerOrders'),
+    store: 'CustomerOrders',
 
     initComponent: function() {
         this.columns = [
