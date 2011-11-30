@@ -53,23 +53,6 @@ Ext.application({
             ]
         });
 
-        var map = new Ext.util.KeyMap(viewport.getEl(), [
-            {
-                key: Ext.EventObject.LEFT,
-                alt: true,
-                handler: this.navigateBack,
-                scope: this
-            },
-            {
-                key: Ext.EventObject.RIGHT,
-                alt: true,
-                handler: this.navigateForward,
-                scope: this
-            }
-        ]);
-
-//        Ext.util.History.add('customerorderlist');
-
         Ext.syncRequire('AM.view.Welcome');
         this.switchView(Ext.widget('welcome'));
 

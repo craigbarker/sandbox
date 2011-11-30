@@ -33,7 +33,10 @@ Ext.define('AM.controller.CustomerOrders', {
                 click: function(){this.switchViewByName('customerorderlist')}
             },
             'customerorderedit button[action=save]': {
-                click: this.save
+                click: this.handleSave
+            },
+            'customerorderedit button[action=delete]': {
+                click: this.handleDelete
             }
         });
     },
@@ -70,7 +73,7 @@ Ext.define('AM.controller.CustomerOrders', {
         this.switchView(view);
     },
 
-    save: function(button) {
+    handleSave: function(button) {
         var form = this.getForm().getForm();
         form.getRecord().validate();
         if (form.isValid()) {
@@ -90,8 +93,18 @@ Ext.define('AM.controller.CustomerOrders', {
                 store.sync();
             }
 
-            this.switchViewByName('customerorderlist');
+            this.goToList();
         }
+    },
+
+    handleDelete: function(button) {
+        this.getForm().getForm().getRecord().destroy();
+        this.getTheStore().sync();
+        this.goToList();
+    },
+
+    goToList: function() {
+        this.switchViewByName('customerorderlist');
     },
 
     getTheStore: function() {

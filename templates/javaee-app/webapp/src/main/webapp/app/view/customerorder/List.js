@@ -12,12 +12,32 @@ Ext.define('AM.view.customerorder.List', {
             {header: 'Booking Date', dataIndex: 'bookingDate', flex: 1, xtype: 'datecolumn', format: 'd/m/y'}
         ];
 
+        var newButton = new Ext.button.Button({
+            text: 'New',
+            action: 'new'
+        });
+
         this.buttons = [
-            {
-                text: 'New',
-                action: 'new'
-            }
+            newButton
         ];
+
+        this.on(
+            'render',
+            function(){
+                var map = new Ext.util.KeyMap(this.getEl(), [
+                    {
+                        key: Ext.EventObject.N,
+                        alt: true,
+                        handler: function() {
+                            newButton.fireEvent('click');
+                        },
+                        scope: this
+                    }
+                ]);
+                newButton.focus(false, true);
+            },
+            this
+        );
 
         this.callParent(arguments);
 
