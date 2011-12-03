@@ -8,6 +8,7 @@ Ext.define('AM.model.CustomerOrder', {
     ],
     validations: [
         {type: 'presence', field: 'customerReference'},
+        {type: 'length', field: 'customerReference', min: 1},
         {type: 'presence', field: 'bookingDate'}
     ],
     proxy: AM.AppCtx.getProxy('customerOrders')

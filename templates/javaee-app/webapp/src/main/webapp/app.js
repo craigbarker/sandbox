@@ -21,6 +21,8 @@ Ext.application({
 
     launch: function() {
 
+        Ext.QuickTips.init();
+
         Ext.syncRequire("Ext.util.History");
         Ext.syncRequire("Ext.util.KeyMap");
 
@@ -54,7 +56,7 @@ Ext.application({
         });
 
         Ext.syncRequire('AM.view.Welcome');
-        this.switchView(Ext.widget('welcome'));
+        this.switchView(Ext.widget('customerorderlist'));
 
     },
 

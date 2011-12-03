@@ -4,6 +4,10 @@ Ext.define('AM.view.customerorder.Edit', {
 
     title : 'Edit Order',
 
+    fieldDefaults: {
+        msgTarget: 'side'
+    },
+
     initComponent: function() {
 
         this.initialConfig = {
@@ -19,7 +23,9 @@ Ext.define('AM.view.customerorder.Edit', {
                 xtype: 'textfield',
                 name : 'customerReference',
                 fieldLabel: 'Customer reference',
-                itemId: 'customerReferenceField'
+                itemId: 'customerReferenceField',
+                form: this,
+                validator: this.validateField
             },
             {
                 xtype: 'textfield',
@@ -80,7 +86,30 @@ Ext.define('AM.view.customerorder.Edit', {
             this
         );
 
-
         this.callParent(arguments);
+    },
+
+    validateField: function(value) {
+        var model = this.form.getRecord();
+        if (!model) {
+            return;
+        }
+        model.beginEdit();
+        model.set(this.name, value);
+        var modelErrors = model.validate();
+        var errors = modelErrors.getByField(this.name);
+        if (errors && errors.length > 0) {
+            var msgs = [];
+            Ext.Array.each(
+                errors,
+                function(msg) {
+                    msgs.push(msg.message);
+                }
+            );
+            this.markInvalid(msgs);
+        } else {
+            this.clearInvalid();
+        }
+        model.cancelEdit();
     }
 });
