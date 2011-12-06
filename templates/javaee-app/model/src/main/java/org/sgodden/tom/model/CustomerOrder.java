@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,22 +23,15 @@ public class CustomerOrder extends AbstractIdentity implements ICustomerOrder {
 
     @NotNull
     private String customerReference;
-
     @NotNull
     private String orderNumber;
-
     @NotNull
     private CustomerOrderStatus status;
-
     @NotNull
     private Calendar bookingDate;
-
     private CollectionDetails collectionDetails;
-
     private DeliveryDetails deliveryDetails;
-
     private Set<CustomerOrderLine> orderLines = new HashSet<CustomerOrderLine>();
-
     @Autowired
     private Map<String, CustomerOrderState> stateObjects;
 
@@ -132,7 +126,7 @@ public class CustomerOrder extends AbstractIdentity implements ICustomerOrder {
      */
     @Override
     public void addOrderLine(ICustomerOrderLine line) {
-        orderLines.add((CustomerOrderLine)line);
+        orderLines.add((CustomerOrderLine) line);
     }
 
     /**
@@ -141,7 +135,7 @@ public class CustomerOrder extends AbstractIdentity implements ICustomerOrder {
      */
     @Override
     public void removeOrderLine(ICustomerOrderLine line) {
-        orderLines.remove(line);
+        orderLines.remove((CustomerOrderLine) line);
     }
 
     @Override
@@ -165,4 +159,5 @@ public class CustomerOrder extends AbstractIdentity implements ICustomerOrder {
     public void setStateObjects(Map<String, CustomerOrderState> stateObjects) {
         this.stateObjects = stateObjects;
     }
+
 }

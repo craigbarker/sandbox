@@ -49,6 +49,15 @@ public class CustomerOrderRepositoryTest extends AbstractIntegrationTest {
         assertEquals(violations.size(), 2, "Wrong number of violations");
     }
 
+    public void testExtraValidation() {
+        CustomerOrder order = new CustomerOrder();
+        order.setCustomerReference("YIKES");
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        Validator validator = factory.getValidator();
+        Set<ConstraintViolation<CustomerOrder>> violations = validator.validate(order);
+        assertEquals(violations.size(), 2, "Wrong number of violations");
+    }
+
     public void testValidationException() {
         CustomerOrder order = new CustomerOrder();
         rep.persist(order);
