@@ -92,24 +92,29 @@ Ext.define('AM.view.customerorder.Edit', {
     validateField: function(value) {
         var model = this.form.getRecord();
         if (!model) {
-            return;
+            return true;
         }
+        
         model.beginEdit();
         model.set(this.name, value);
         var modelErrors = model.validate();
         var errors = modelErrors.getByField(this.name);
+        model.cancelEdit();
+        
         if (errors && errors.length > 0) {
-            var msgs = [];
+            var errorTxt = '';
             Ext.Array.each(
                 errors,
                 function(msg) {
-                    msgs.push(msg.message);
+                    if (errorTxt != '') {
+                        errorTxt += '<br/>';
+                    }
+                    errorTxt += msg.message;
                 }
             );
-            this.markInvalid(msgs);
+            return errorTxt;
         } else {
-            this.clearInvalid();
+            return true;
         }
-        model.cancelEdit();
     }
 });

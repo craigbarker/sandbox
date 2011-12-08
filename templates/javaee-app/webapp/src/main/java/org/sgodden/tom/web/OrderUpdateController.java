@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Controller
+@RequestMapping(value="/customerOrders")
 public class OrderUpdateController {
 
     private static final Logger LOG = Logger.getLogger(OrderUpdateController.class.getName());
@@ -22,7 +23,7 @@ public class OrderUpdateController {
 
     private int count = 1;
 
-    @RequestMapping(value = "/orders", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public String listOrders() throws Exception {
         List<CustomerOrderListEntry> orders = orderService.list();
@@ -34,13 +35,13 @@ public class OrderUpdateController {
         return responseString;
     }
 
-    @RequestMapping(value="/orders/{id}", method = RequestMethod.GET)
+    @RequestMapping(value="/{id}", method = RequestMethod.GET)
     @ResponseBody
     public String getOrder(@RequestParam("id") Long id) throws Exception {
         return new ObjectMapper().writeValueAsString(orderService.findById(id));
     }
 
-    @RequestMapping(value="/orders", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public String saveOrder(@RequestBody CustomerOrderListEntry requestBody) throws Exception{
         LOG.info(requestBody.toString());
@@ -51,7 +52,7 @@ public class OrderUpdateController {
         return objectMapper().writeValueAsString(orderService.findById(id));
     }
 
-    @RequestMapping(value = "/orders/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     @ResponseBody
     public String updateOrder(@RequestBody String string) throws Exception {
         CustomerOrderListEntry entry = objectMapper().readValue(string, CustomerOrderListEntry.class);
