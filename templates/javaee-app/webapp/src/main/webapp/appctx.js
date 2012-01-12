@@ -1,6 +1,6 @@
 Ext.define("AM.AppCtx", {
     statics: {
-        mode: 'local',
+        mode: 'remote',
 
         getProxy: function(storeName) {
             if (this.mode == 'local') {
@@ -9,7 +9,7 @@ Ext.define("AM.AppCtx", {
                     id: storeName
                 };
             }
-            else {
+            else if (this.mode == 'remote') {
                 return {
                     type: 'rest',
                     url: '/webapp/services/' + storeName,
@@ -19,6 +19,7 @@ Ext.define("AM.AppCtx", {
                     }
                 }
             }
+            else throw new Error("Incorrect mode: " + mode)
         }
     }
 });

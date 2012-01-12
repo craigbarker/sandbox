@@ -10,18 +10,13 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig;
 import org.sgodden.tom.model.CustomerOrder;
-import org.sgodden.tom.services.customerorder.CustomerOrderListEntry;
-import org.sgodden.tom.web.OrderUpdateController;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.sgodden.tom.web.CustomerOrderController;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.StringReader;
 import java.util.Calendar;
-import java.util.List;
 
 @Test(groups = "integration")
 public class OrdersRestServiceTest {
@@ -30,8 +25,8 @@ public class OrdersRestServiceTest {
 
     @Test(priority = 1)
     public void shouldBeNoOrders() throws Exception {
-        OrderUpdateController.Response response = listOrders();
-        Assert.assertEquals(response.orders.size(), 0);
+        CustomerOrderController.ListResponse response = listOrders();
+        Assert.assertEquals(response.customerOrders.size(), 0);
     }
 
     @Test(priority = 2)
@@ -50,9 +45,9 @@ public class OrdersRestServiceTest {
         System.out.println("Create order:" + response.toString());
     }
 
-    private OrderUpdateController.Response listOrders() throws Exception {
+    private CustomerOrderController.ListResponse listOrders() throws Exception {
         String ordersString = getListOrdersResponse();
-        OrderUpdateController.Response response = objectMapper().reader(OrderUpdateController.Response.class)
+        CustomerOrderController.ListResponse response = objectMapper().reader(CustomerOrderController.ListResponse.class)
                 .readValue(ordersString);
         return response;
     }

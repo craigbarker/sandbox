@@ -3,6 +3,7 @@ package org.sgodden.tom.integration.services;
 import org.sgodden.tom.integration.AbstractIntegrationTest;
 import org.sgodden.tom.model.CustomerOrderStatus;
 import org.sgodden.tom.model.ICustomerOrder;
+import org.sgodden.tom.model.ValidationException;
 import org.sgodden.tom.services.customerorder.CustomerOrderListEntry;
 import org.sgodden.tom.services.customerorder.CustomerOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,12 @@ public class CustomerServiceTest extends AbstractIntegrationTest {
             createOrder(i + 1);
         }
         assertEquals(customerOrderService.list().size(), 10);
+    }
+    
+    @Test(expectedExceptions={ValidationException.class})
+    public void shouldFailWithNullOrderNumber() {
+        ICustomerOrder order = customerOrderService.create();
+        customerOrderService.persist(order);
     }
 
     private void createOrder(int seq) {

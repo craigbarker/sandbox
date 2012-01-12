@@ -77,25 +77,33 @@ Ext.define('AM.controller.CustomerOrders', {
         var form = this.getForm().getForm();
         var record = form.getRecord();
         if (form.isValid()) {
-            var store = this.getTheStore();
-
             form.updateRecord(record);
-
+            
+            var me = this;
+            
+            var successFunction = function() {
+                me.getTheStore().sync();
+                me.goToList();
+            }
+            
+            var failureFunction = function() {
+                alert('There were validation errors');
+            }
+            
             var recordId = record.get('id');
             if (recordId == '') {
                 record.save({
-                    success: function() {
-                        store.sync();
-                    }
+                    success: successFunction,
+                    failure: failureFunction
                 });
             } else {
-                store.sync();
+                record.save({
+                    success: successFunction,
+                    failure: failureFunction
+                });
             }
-
-            this.goToList();
         } else {
-            alert('errors');
-            Ext.Alert('The form contains errors - please correct and re-submit');
+            new Ext.window.MessageBox().alert('Errors', 'The form contains errors - please correct and re-submit');
         }
     },
 
