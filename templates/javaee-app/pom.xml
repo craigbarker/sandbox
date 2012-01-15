@@ -19,16 +19,6 @@
         <testng.version>6.2</testng.version>
         <httpclient.version>4.1.2</httpclient.version>
     </properties>
-    <modules>
-        <module>model-api</module>
-        <module>model</module>
-        <module>persistence</module>
-        <module>application-services-api</module>
-        <module>application-services</module>
-        <!--<module>flex-ui</module>-->
-        <module>webapp</module>
-        <module>integration-tests</module>
-    </modules>
     <dependencies>
     </dependencies>
     <build>
@@ -44,6 +34,19 @@
         </plugins>
     </build>
     <profiles>
+        <profile>
+            <id>default</id>
+            <modules>
+                <module>model-api</module>
+                <module>model</module>
+                <module>persistence</module>
+                <module>application-services-api</module>
+                <module>application-services</module>
+                <module>webapp</module>
+                <!--<module>flex-ui</module>-->
+                <module>integration-tests</module>
+            </modules>
+        </profile>
         <profile>
             <id>javaBuild</id>
             <modules>

@@ -1,9 +1,6 @@
 package org.sgodden.tom.web;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.logging.Level;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig;
 import org.sgodden.tom.model.ICustomerOrder;
@@ -29,8 +26,6 @@ public class CustomerOrderController {
     @Autowired
     private CustomerOrderService orderService;
 
-    private int count = 1;
-
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public String listOrders() throws Exception {
@@ -39,13 +34,13 @@ public class CustomerOrderController {
         ListResponse response = new ListResponse();
         response.total = orders.size();
         response.customerOrders = orders;
-        return objectMapper().writeValueAsString(response);
+        return toJson(response);
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
     @ResponseBody
     public String getOrder(@RequestParam("id") Long id) throws Exception {
-        return objectMapper().writeValueAsString(orderService.findById(id));
+        return toJson(orderService.findById(id));
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -70,16 +65,23 @@ public class CustomerOrderController {
             }
         }
         response.customerOrders.add(responseOrder);
-        return objectMapper().writeValueAsString(response);
-        
+        return toJson(response);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     @ResponseBody
     public String updateOrder(@RequestBody String string) throws Exception {
-        CustomerOrderListEntry entry = objectMapper().readValue(string, CustomerOrderListEntry.class);
+        CustomerOrderListEntry entry = fromJson(string, CustomerOrderListEntry.class);
         orderService.merge(entry);
         return "";
+    }
+    
+    private String toJson(Object o) throws Exception {
+        return objectMapper().writeValueAsString(o);
+    }
+    
+    private <T extends Object> T fromJson(String s, Class<T> type) throws Exception {
+        return objectMapper().readValue(s, type);
     }
 
     private ObjectMapper objectMapper() {

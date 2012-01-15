@@ -39,9 +39,16 @@ public class CustomerOrderListEntry {
     }
 
     public ICustomerOrder merge(ICustomerOrder order) {
-        order.setCustomerReference(getCustomerReference());
+        order.setCustomerReference(nullIfEmpty(getCustomerReference()));
         order.setBookingDate(getBookingDate());
         order.setOrderNumber(getOrderNumber());
         return order;
+    }
+    
+    private <T extends Object> T nullIfEmpty(T value) {
+        if (value instanceof String && ((String)value).equals("")) {
+            return null;
+        }
+        return value;
     }
 }

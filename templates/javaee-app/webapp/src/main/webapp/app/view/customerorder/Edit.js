@@ -30,7 +30,9 @@ Ext.define('AM.view.customerorder.Edit', {
             {
                 xtype: 'textfield',
                 name : 'orderNumber',
-                fieldLabel: 'Order number'
+                fieldLabel: 'Order number',
+                form: this,
+                validator: this.validateField
             },
             {
                 xtype: 'datefield',
