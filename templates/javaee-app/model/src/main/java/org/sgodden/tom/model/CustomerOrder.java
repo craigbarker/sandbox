@@ -6,7 +6,11 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import javax.validation.Valid;
+import javax.validation.constraints.AssertFalse;
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -21,6 +25,7 @@ import org.springframework.beans.factory.annotation.Configurable;
 public class CustomerOrder extends AbstractIdentity implements ICustomerOrder {
 
     @NotNull
+    @Pattern(regexp = "cr.*")
     private String customerReference;
     @NotNull
     private String orderNumber;
