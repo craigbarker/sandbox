@@ -22,7 +22,7 @@ public class CustomerOrderListEntry {
         this.bookingDate = order.getBookingDate();
     }
 
-    public Serializable getId() {
+    public Long getId() {
         return id;
     }
 
@@ -41,7 +41,7 @@ public class CustomerOrderListEntry {
     public ICustomerOrder merge(ICustomerOrder order) {
         order.setCustomerReference(nullIfEmpty(getCustomerReference()));
         order.setBookingDate(getBookingDate());
-        order.setOrderNumber(getOrderNumber());
+        order.setOrderNumber(nullIfEmpty(getOrderNumber()));
         return order;
     }
     

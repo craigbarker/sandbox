@@ -10,7 +10,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig;
 import org.sgodden.tom.model.CustomerOrder;
-import org.sgodden.tom.web.CustomerOrderController;
+import org.sgodden.tom.webold.CustomerOrderController;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

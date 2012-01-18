@@ -17,9 +17,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.sgodden.template.javaee</groupId>
+            <groupId>${project.parent.groupId}</groupId>
             <artifactId>model-api</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 
