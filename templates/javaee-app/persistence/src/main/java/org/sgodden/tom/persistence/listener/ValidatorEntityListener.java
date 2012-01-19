@@ -1,6 +1,8 @@
 package org.sgodden.tom.persistence.listener;
 
 import org.sgodden.tom.model.ValidationException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
@@ -9,11 +11,10 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import java.io.Serializable;
 import java.util.Set;
-import java.util.logging.Logger;
 
 public class ValidatorEntityListener {
-
-    private static final Logger LOG = Logger.getLogger(ValidatorEntityListener.class.getName());
+    
+    private static final Logger LOG = LoggerFactory.getLogger(ValidatorEntityListener.class);
 
 	private static Validator validator = Validation
 			.buildDefaultValidatorFactory().getValidator();
@@ -23,11 +24,11 @@ public class ValidatorEntityListener {
 	public void validate(Serializable entity) {
 		Set<ConstraintViolation<Serializable>> constraints = validator.validate(entity);
 		if (constraints.size() > 0) {
-//            if (LOG.isDebugEnabled()) {  TODO - logging config
+            if (LOG.isDebugEnabled()) {
                 for (ConstraintViolation<Serializable> violation : constraints) {
-                    LOG.severe(violation.toString());
+                    LOG.debug(violation.toString());
                 }
-//            }
+            }
 			throw new ValidationException(constraints);
 		}
 	}

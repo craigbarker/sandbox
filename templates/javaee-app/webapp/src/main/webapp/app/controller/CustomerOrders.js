@@ -86,24 +86,25 @@ Ext.define('AM.controller.CustomerOrders', {
                 me.goToList();
             }
             
-            var failureFunction = function() {
-                alert('There were validation errors');
+            var failureFunction = function(rec, op) {
+                var errors = op.request.scope.reader.jsonData["errors"];
+                var formErrors = [];
+                Ext.Array.each(
+                    errors,
+                    function(error) {
+                        formErrors.push({id: error.path, msg: error.message});
+                    }
+                );
+                form.markInvalid(formErrors);
             }
-            
-            var recordId = record.get('id');
-            if (recordId == '') {
-                record.save({
-                    success: successFunction,
-                    failure: failureFunction
-                });
-            } else {
-                record.save({
-                    success: successFunction,
-                    failure: failureFunction
-                });
-            }
+
+            record.save({
+                success: successFunction,
+                failure: failureFunction
+            });
+
         } else {
-            new Ext.window.MessageBox().alert('Errors', 'The form contains errors - please correct and re-submit');
+            Ext.Msg.alert('Errors', 'The form contains errors - please correct and re-submit');
         }
     },
 

@@ -49,7 +49,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: ch.qos.logback:logback-classic:0.9.15" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: ch.qos.logback:logback-core:0.9.15" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: commons-lang:commons-lang:2.4" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.sgodden.template.javaee:persistence:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="persistence" scope="RUNTIME" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework:spring-orm:3.0.6.RELEASE" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework:spring-jdbc:3.0.6.RELEASE" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.hibernate:hibernate-core:3.6.7.Final" level="project" />

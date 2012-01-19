@@ -3,7 +3,6 @@ package org.sgodden.tom.web
 import org.springframework.stereotype.Controller
 import org.springframework.beans.factory.annotation.Autowired
 import org.sgodden.tom.services.customerorder.{CustomerOrderListEntry, CustomerOrderService}
-import org.apache.http.HttpStatus
 import scala.collection.JavaConversions._
 import org.springframework.web.bind.annotation._
 import javax.servlet.http.HttpServletResponse
@@ -41,7 +40,7 @@ class CustomerOrdersController {
   @ResponseBody def saveOrUpdate(@RequestBody entry: CustomerOrderListEntry, httpResponse: HttpServletResponse): String = {
     var responseOrder: CustomerOrderListEntry = null
     var success: Boolean = true;
-    val errors: Buffer[Error] = ArrayBuffer()
+    var errors: Buffer[Error] = ArrayBuffer()
 
     try {
       var id = entry.getId
@@ -55,15 +54,27 @@ class CustomerOrdersController {
       responseOrder = orderService.findById(id)
     }
     catch {
-      case e: ValidationException => {
-        httpResponse.setStatus(HttpStatus.SC_NOT_ACCEPTABLE)
+      case e: Exception => {
+        e.printStackTrace()
         success = false
         responseOrder = entry
-        for (cv <- e.getViolations) errors.add(new Error(cv.getPropertyPath.toString, cv.getMessage))
+        errors = getErrors(e)
       }
     }
     val orders = ArrayBuffer(responseOrder)
-    generate(new ListResponse(true, orders.size, errors, orders))
+    generate(new ListResponse(success, orders.size, errors, orders))
+  }
+  
+  private def getErrors(e: Exception): Buffer[Error] = {
+    val ve: ValidationException = {
+      if (e.isInstanceOf[ValidationException])
+        e.asInstanceOf[ValidationException]
+      else
+        e.getCause.getCause.asInstanceOf[ValidationException]
+    }
+    val errors = new ArrayBuffer[Error]
+    for (cv <- ve.getViolations) errors.add(new Error(cv.getPropertyPath.toString, cv.getMessage))
+    errors
   }
 }
 

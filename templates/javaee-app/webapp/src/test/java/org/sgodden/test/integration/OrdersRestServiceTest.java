@@ -10,7 +10,8 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig;
 import org.sgodden.tom.model.CustomerOrder;
-import org.sgodden.tom.webold.CustomerOrderController;
+import org.sgodden.tom.web.CustomerOrdersController;
+import org.sgodden.tom.web.ListResponse;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,8 +26,8 @@ public class OrdersRestServiceTest {
 
     @Test(priority = 1)
     public void shouldBeNoOrders() throws Exception {
-        CustomerOrderController.ListResponse response = listOrders();
-        Assert.assertEquals(response.customerOrders.size(), 0);
+        ListResponse response = listOrders();
+        Assert.assertEquals(response.customerOrders().size(), 0);
     }
 
     @Test(priority = 2)
@@ -45,9 +46,9 @@ public class OrdersRestServiceTest {
         System.out.println("Create order:" + response.toString());
     }
 
-    private CustomerOrderController.ListResponse listOrders() throws Exception {
+    private ListResponse listOrders() throws Exception {
         String ordersString = getListOrdersResponse();
-        CustomerOrderController.ListResponse response = objectMapper().reader(CustomerOrderController.ListResponse.class)
+        ListResponse response = objectMapper().reader(ListResponse.class)
                 .readValue(ordersString);
         return response;
     }
