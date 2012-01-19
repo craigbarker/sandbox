@@ -55,7 +55,6 @@ class CustomerOrdersController {
     }
     catch {
       case e: Exception => {
-        e.printStackTrace()
         success = false
         responseOrder = entry
         errors = getErrors(e)

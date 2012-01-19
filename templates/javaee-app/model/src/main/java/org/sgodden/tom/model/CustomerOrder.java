@@ -25,7 +25,7 @@ import org.springframework.beans.factory.annotation.Configurable;
 public class CustomerOrder extends AbstractIdentity implements ICustomerOrder {
 
     @NotNull
-    @Pattern(regexp = "cr.*", message = "customerReferenceMustBeginWithCr")
+    @Pattern(regexp = "cr.*", message = "{customerReferenceMustBeginWithCr}")
     private String customerReference;
     @NotNull
     private String orderNumber;

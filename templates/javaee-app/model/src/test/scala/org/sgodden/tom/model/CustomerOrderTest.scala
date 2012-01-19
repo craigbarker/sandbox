@@ -25,10 +25,10 @@ class CustomerOrderTest {
       setBookingDate(Calendar.getInstance)
     }
     // TODO - message should be i18nd
-    assertTrue(containsViolation(getViolations(order), "customerReference", "customerReferenceMustBeginWithCr"))
+    assertTrue(containsViolation(getViolations(order), "customerReference", "Customer reference must begin with 'cr'"))
 
     order.setCustomerReference("cr001")
-    assertFalse(containsViolation(getViolations(order), "customerReference", "customerReferenceMustBeginWithCr"))
+    assertFalse(containsViolation(getViolations(order), "customerReference", "Customer reference must begin with 'cr'"))
   }
 
   private def getViolations(order: CustomerOrder) = {
