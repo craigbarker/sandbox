@@ -38,6 +38,22 @@ public class CustomerOrderListEntry {
         return bookingDate;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setCustomerReference(String customerReference) {
+        this.customerReference = customerReference;
+    }
+
+    public void setOrderNumber(String orderNumber) {
+        this.orderNumber = orderNumber;
+    }
+
+    public void setBookingDate(Calendar bookingDate) {
+        this.bookingDate = bookingDate;
+    }
+
     public ICustomerOrder merge(ICustomerOrder order) {
         order.setCustomerReference(nullIfEmpty(getCustomerReference()));
         order.setBookingDate(getBookingDate());

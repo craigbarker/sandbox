@@ -1,5 +1,6 @@
 package org.sgodden.test.integration;
 
+import com.fasterxml.jackson.module.scala.DefaultScalaModule;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -10,6 +11,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig;
 import org.sgodden.tom.model.CustomerOrder;
+import org.sgodden.tom.services.customerorder.CustomerOrderListEntry;
 import org.sgodden.tom.web.CustomerOrdersController;
 import org.sgodden.tom.web.ListResponse;
 import org.testng.Assert;
@@ -22,7 +24,7 @@ import java.util.Calendar;
 @Test(groups = "integration")
 public class OrdersRestServiceTest {
 
-    private String baseUri = "http://localhost:8080/webapp/services/orders";
+    private String baseUri = "http://localhost:8080/webapp/services/customerOrders";
 
     @Test(priority = 1)
     public void shouldBeNoOrders() throws Exception {
@@ -32,7 +34,7 @@ public class OrdersRestServiceTest {
 
     @Test(priority = 2)
     public void testCreateOrder() throws Exception {
-        CustomerOrder order = new CustomerOrder();
+        CustomerOrderListEntry order = new CustomerOrderListEntry();
         order.setBookingDate(Calendar.getInstance());
         order.setCustomerReference("CREF001");
         order.setOrderNumber("ORD001");
@@ -56,6 +58,7 @@ public class OrdersRestServiceTest {
     private ObjectMapper objectMapper() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS, false);
+        mapper.withModule(new DefaultScalaModule());
         return mapper;
     }
 

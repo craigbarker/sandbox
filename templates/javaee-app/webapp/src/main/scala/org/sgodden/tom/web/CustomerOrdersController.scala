@@ -65,15 +65,15 @@ class CustomerOrdersController {
   }
   
   private def getErrors(e: Exception): Buffer[Error] = {
-    val ve: ValidationException = {
-      if (e.isInstanceOf[ValidationException])
-        e.asInstanceOf[ValidationException]
-      else
-        e.getCause.getCause.asInstanceOf[ValidationException]
-    }
+    val ve = getRootCause(e).asInstanceOf[ValidationException]
     val errors = new ArrayBuffer[Error]
     for (cv <- ve.getViolations) errors.add(new Error(cv.getPropertyPath.toString, cv.getMessage))
     errors
+  }
+  
+  private def getRootCause(e: Throwable): Throwable = {
+    if (e.getCause == null) e
+    else getRootCause(e.getCause)
   }
 }
 
