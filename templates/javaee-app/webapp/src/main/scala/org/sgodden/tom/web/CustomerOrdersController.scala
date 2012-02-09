@@ -18,26 +18,20 @@ class CustomerOrdersController {
 
   @Autowired private val orderService: CustomerOrderService = null
 
-  // TODO - jackson generator configuration to not use millisecond timestamps, and scala config
-  private final val mapper = {
-    val om: ObjectMapper = new ObjectMapper()
-    om.configure(SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS, false)
-    om.withModule(DefaultScalaModule)
-    om
-  }
-  private def generate(o: AnyRef) = mapper.writeValueAsString(o)
-
   @RequestMapping(method = Array(RequestMethod.GET))
-  @ResponseBody def list: String = {
+  @ResponseBody
+  def list: String = {
     val orders = orderService.list
     generate(new ListResponse(true, orders.size, null, orderService.list))
   }
 
   @RequestMapping(value = Array("/{id}"), method = Array(RequestMethod.GET))
-  @ResponseBody def get(@RequestParam("id") id: Long): String = generate(orderService.findById(id))
+  @ResponseBody
+  def get(@RequestParam("id") id: Long): String = generate(orderService.findById(id))
 
   @RequestMapping(method = Array(RequestMethod.POST, RequestMethod.PUT))
-  @ResponseBody def saveOrUpdate(@RequestBody entry: CustomerOrderListEntry, httpResponse: HttpServletResponse): String = {
+  @ResponseBody
+  def saveOrUpdate(@RequestBody entry: CustomerOrderListEntry, httpResponse: HttpServletResponse): String = {
     var responseOrder: CustomerOrderListEntry = null
     var success: Boolean = true;
     var errors: Buffer[Error] = ArrayBuffer()
@@ -75,6 +69,16 @@ class CustomerOrdersController {
     if (e.getCause == null) e
     else getRootCause(e.getCause)
   }
+
+  // TODO - jackson generator configuration to not use millisecond timestamps, and scala config
+  private final val mapper = {
+    new ObjectMapper() {
+      configure(SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS, false)
+      withModule(DefaultScalaModule)
+    }
+  }
+
+  private def generate(o: AnyRef) = mapper.writeValueAsString(o)
 }
 
 case class ListResponse ( success: Boolean = true,
