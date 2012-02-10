@@ -32,7 +32,7 @@ public class CustomerOrderServiceImpl implements CustomerOrderService {
     @Override
     public Long persist(ICustomerOrder customerOrder) {
         repository.persist(customerOrder);
-        return (Long) customerOrder.getId();
+        return customerOrder.getId();
     }
 
     @Override
@@ -41,22 +41,18 @@ public class CustomerOrderServiceImpl implements CustomerOrderService {
     }
 
     @Override
-    public List<CustomerOrderListEntry> list() {
-        List<CustomerOrderListEntry> ret = new ArrayList<CustomerOrderListEntry>();
-        for (ICustomerOrder order : repository.findAll()) {
-            ret.add(new CustomerOrderListEntry(order));
-        }
-        return Collections.unmodifiableList(ret);
+    public List<ICustomerOrder> findAll() {
+        return repository.findAll();
     }
 
     @Override
-    public void merge(CustomerOrderListEntry order) {
-        repository.merge(order.merge(repository.findById(order.getId())));
+    public void merge(ICustomerOrder order) {
+        repository.merge(order);
     }
 
     @Override
-    public CustomerOrderListEntry findById(Long id) {
-        return new CustomerOrderListEntry(repository.findById(id));
+    public ICustomerOrder findById(Long id) {
+        return repository.findById(id);
     }
 
 }

@@ -42,7 +42,7 @@ class CustomerOrdersServiceTest {
 
     val returned = response.customerOrders(0)
     Assert.assertNotNull(returned)
-    Assert.assertEquals(1l, returned.getId)
+    Assert.assertEquals(1l, returned.id)
   }
 
   @Test(priority = 2)

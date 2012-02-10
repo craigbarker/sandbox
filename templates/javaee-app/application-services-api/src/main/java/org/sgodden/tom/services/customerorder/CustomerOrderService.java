@@ -30,13 +30,13 @@ public interface CustomerOrderService {
      * Returns all customer orders.
      * @return all customer orders.
      */
-    List<CustomerOrderListEntry> list();
+    List<ICustomerOrder> findAll();
 
     /**
      * Merges the passed order in to the persistent state.
      * @param order the order to merge.
      */
-    void merge(CustomerOrderListEntry order);
+    void merge(ICustomerOrder order);
 
     /**
      * Returns the {@link ICustomerOrder} instance
@@ -44,6 +44,6 @@ public interface CustomerOrderService {
      * @param id the id.
      * @return the customer order instance, or <code>null</code> if one does not exist.
      */
-    CustomerOrderListEntry findById(Long id);
+    ICustomerOrder findById(Long id);
 
 }
