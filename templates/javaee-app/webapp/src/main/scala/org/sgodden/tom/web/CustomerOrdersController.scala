@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse
 import collection.mutable.{ArrayBuffer, Buffer}
 import org.codehaus.jackson.map.{SerializationConfig, ObjectMapper}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import scala.Predef._
 import org.sgodden.tom.model.{ICustomerOrder, ValidationException}
 import java.util.Calendar
 import org.sgodden.tom.services.customerorder.CustomerOrderService
@@ -31,11 +30,9 @@ class CustomerOrdersController {
 
   @RequestMapping(method = Array(RequestMethod.GET))
   @ResponseBody
-  def list: String = {
-    val entries = for (order <- service.findAll.asScala) yield {
-      orderToListEntry(order)
-    }
-    generate(new ListResponse(true, entries.size, null, entries))
+  def list: String ={
+    generate(new ListResponse(true, null,
+      service.findAll().asScala.map(orderToListEntry(_))))
   }
 
   @RequestMapping(value = Array("/{id}"), method = Array(RequestMethod.GET))
@@ -49,7 +46,7 @@ class CustomerOrdersController {
     val entry: ListEntry = mapper.readValue(entryString, classOf[ListEntry])
     var responseOrder: ListEntry = null
     var success: Boolean = true;
-    var errors: Buffer[Error] = ArrayBuffer()
+    var errors: Set[Error] = null
 
     try {
       var id = entry.id
@@ -72,17 +69,14 @@ class CustomerOrdersController {
       }
     }
     val orders = ArrayBuffer(responseOrder)
-    generate(new ListResponse(success, orders.size, errors, orders))
+    generate(new ListResponse(success, errors, orders))
   }
   
   private def getErrors(e: Exception) = {
     val ve = getRootCause(e).asInstanceOf[ValidationException]
-    // TODO - how do I do this elegantly and return a set
-    val errors = new ArrayBuffer[Error]
-    for (cv <- ve.getViolations.asScala) errors += new Error(cv.getPropertyPath.toString, cv.getMessage)
-    errors
+    ve.getViolations.asScala.map(cv => new Error(cv.getPropertyPath.toString, cv.getMessage)).toSet
   }
-  
+
   private def getRootCause(e: Throwable): Throwable = {
     if (e.getCause == null) e
     else getRootCause(e.getCause)
@@ -112,8 +106,9 @@ case class ListEntry(
 }
 
 case class ListResponse ( success: Boolean = true,
-                    total:Int = 0,
-                    errors: Buffer[Error],
-                    customerOrders: Buffer[ListEntry])
+                    errors: Set[Error],
+                    customerOrders: Seq[ListEntry]) {
+  def total = customerOrders.size
+}
 
 case class Error(path: String,  message:String)
