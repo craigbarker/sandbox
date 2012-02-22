@@ -1,6 +1,0 @@
-Refactor the model so that it consists of two parts:
-1) A shipping domain
-2) An invoicing domain
-
-It would be the job of the invoicing domain to report which shipments were invoiced, not invoiced, paid etc.  Shipping
-domain has no interest in that.
