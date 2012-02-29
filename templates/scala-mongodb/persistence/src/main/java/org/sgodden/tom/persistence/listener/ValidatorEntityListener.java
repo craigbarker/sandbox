@@ -29,7 +29,7 @@ public class ValidatorEntityListener {
                     LOG.debug(violation.toString());
                 }
             }
-			throw new ValidationException(constraints);
+			//throw new ValidationException(constraints);
 		}
 	}
 

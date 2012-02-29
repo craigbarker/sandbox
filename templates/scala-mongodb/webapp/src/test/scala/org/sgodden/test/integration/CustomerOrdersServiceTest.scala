@@ -1,10 +1,7 @@
 package org.sgodden.test.integration
 
-import org.sgodden.tom.web.ListResponse
 import org.testng.Assert
-import org.sgodden.tom.services.customerorder.CustomerOrderListEntry
 import java.util.Calendar
-import org.apache.http.client.HttpClient
 import org.apache.http.impl.client.DefaultHttpClient
 import org.apache.http.entity.StringEntity
 import org.codehaus.jackson.map.{SerializationConfig, ObjectMapper}
@@ -15,6 +12,7 @@ import java.io.{InputStreamReader, BufferedReader}
 import org.testng.annotations.Test
 import org.slf4j.LoggerFactory
 import collection.mutable.Buffer
+import org.sgodden.tom.web.{ListEntry, ListResponse}
 
 @Test(groups = Array("integration"))
 class CustomerOrdersServiceTest {
@@ -30,11 +28,11 @@ class CustomerOrdersServiceTest {
 
   @Test(priority = 2)
   def testCreateOrder: Unit = {
-    val order = new CustomerOrderListEntry {
-      setBookingDate(Calendar.getInstance)
-      setCustomerReference("cr001")
-      setOrderNumber("ORD001")
-    }
+    val order = new ListEntry(
+      id = null,
+      customerReference = "cr001",
+      orderNumber = "ORD001",
+      bookingDate = Calendar.getInstance())
 
     val response = postOrder(order)
     printErrorsIfExist(response)
@@ -47,11 +45,11 @@ class CustomerOrdersServiceTest {
 
   @Test(priority = 2)
   def customerReferenceMustBeginWithCrOnCreate: Unit = {
-    val order = new CustomerOrderListEntry {
-      setBookingDate(Calendar.getInstance)
-      setCustomerReference("CREF001")
-      setOrderNumber("ORD001")
-    }
+    val order = new ListEntry(
+      id = null,
+      customerReference = "CREF001",
+      orderNumber = "ORD001",
+      bookingDate = Calendar.getInstance())
 
     val response = postOrder(order)
     Assert.assertFalse(response.success)
@@ -59,10 +57,10 @@ class CustomerOrdersServiceTest {
   }
   
   private def printErrorsIfExist(response: ListResponse) {
-    if (!response.success) println(response.errors(0).message)
+    if (!response.success) println(response.errors.head.message)
   }
 
-  private def postOrder(order: CustomerOrderListEntry): ListResponse = {
+  private def postOrder(order: ListEntry): ListResponse = {
     val client = new DefaultHttpClient
     val post = new HttpPost(baseUri) {
       setEntity(new StringEntity(objectMapper.writeValueAsString(order)) {
@@ -112,7 +110,7 @@ class CustomerOrdersServiceTest {
 
 
   private def containsError(
-                                 errors: Buffer[org.sgodden.tom.web.Error],
+                                 errors: Set[org.sgodden.tom.web.Error],
                                  path: String,
                                  message: String): Boolean = {
     errors.filter(error => path == error.path && message == error.message).size > 0

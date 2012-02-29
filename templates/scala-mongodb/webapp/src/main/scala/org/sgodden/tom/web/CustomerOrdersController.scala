@@ -21,7 +21,7 @@ class CustomerOrdersController {
 
   implicit def orderToListEntry(order: ICustomerOrder): ListEntry = {
     new ListEntry (
-      id = order.getId.asInstanceOf[Long],
+      id = order.getId,
       customerReference = order.getCustomerReference,
       orderNumber = order.getOrderNumber,
       bookingDate = order.getBookingDate
@@ -32,12 +32,12 @@ class CustomerOrdersController {
   @ResponseBody
   def list: String ={
     generate(new ListResponse(true, null,
-      service.findAll().asScala.map(orderToListEntry(_))))
+      service.findAll.map(orderToListEntry(_)).toSet))
   }
 
   @RequestMapping(value = Array("/{id}"), method = Array(RequestMethod.GET))
   @ResponseBody
-  def get(@RequestParam("id") id: Long): String =
+  def get(@RequestParam("id") id: String): String =
     generate(service.findById(id).asInstanceOf[ListEntry])
 
   @RequestMapping(method = Array(RequestMethod.POST, RequestMethod.PUT))
@@ -50,10 +50,12 @@ class CustomerOrdersController {
 
     try {
       var id = entry.id
-      if (id == 0) {
+      println("id is: " + id)
+      if (id == null || id == "") {
         val order = service.create
         entry merge order
         id = service persist order
+        println("new id is: " + id)
       } else {
         val order = service findById id
         entry merge order
@@ -63,18 +65,19 @@ class CustomerOrdersController {
     }
     catch {
       case e: Exception => {
-        success = false
         responseOrder = entry
-        errors = getErrors(e)
+        if (e.getCause.isInstanceOf[ValidationException])
+          errors = getErrors(e.getCause.asInstanceOf[ValidationException])
+        else
+          throw new RuntimeException(e)
       }
     }
     val orders = ArrayBuffer(responseOrder)
-    generate(new ListResponse(success, errors, orders))
+    generate(new ListResponse(success, errors, orders.toSet))
   }
   
-  private def getErrors(e: Exception) =
-    getRootCause(e).asInstanceOf[ValidationException]
-      .getViolations.map(cv => new Error(cv.getPropertyPath.toString, cv.getMessage)).toSet
+  private def getErrors(e: ValidationException) =
+    e.getViolations.map(cv => new Error(cv.getPropertyPath.toString, cv.getMessage)).toSet
 
   private def getRootCause(e: Throwable): Throwable = {
     if (e.getCause == null) e
@@ -93,7 +96,7 @@ class CustomerOrdersController {
 }
 
 case class ListEntry(
-                    id: Long,
+                    id: String,
                     customerReference: String,
                     orderNumber: String,
                     bookingDate: Calendar) {
@@ -106,7 +109,7 @@ case class ListEntry(
 
 case class ListResponse ( success: Boolean = true,
                     errors: Set[Error],
-                    customerOrders: Seq[ListEntry]) {
+                    customerOrders: Set[ListEntry]) {
   def total = customerOrders.size
 }
 

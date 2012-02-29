@@ -1,30 +1,35 @@
 package org.sgodden.tom.model
 
-import java.util.{Collections, Calendar}
+import java.util.{Map => JavaMap, Calendar}
 import javax.validation.constraints.{Pattern,NotNull}
-import org.springframework.beans.factory.annotation.Autowired
 import collection.mutable.{HashSet, Set => MutableSet}
+import org.springframework.beans.factory.annotation.{Configurable, Autowired}
 
 // TODO - modify to use joda time
+@Configurable
 class CustomerOrder extends ICustomerOrder {
+  
+  private var id: String = null
+  
   @NotNull
   @Pattern(regexp = "cr.*", message = "{customerReferenceMustBeginWithCr}")
   private var customerReference: String = null
   @NotNull
   private var orderNumber: String = null
   @NotNull
-  private var status: CustomerOrderStatus.Value = null
+  private var status: CustomerOrderStatus.Value = CustomerOrderStatus.NEW
   @NotNull
-  private var bookingDate: Calendar = null
+  private var bookingDate: Calendar = Calendar.getInstance()
   private var collectionDetails: CollectionDetails = null
   private var deliveryDetails: DeliveryDetails = null
   private val orderLines: MutableSet[CustomerOrderLine] = new HashSet[CustomerOrderLine]
   @Autowired
-  private var stateObjects: Map[String, CustomerOrderState] = null
+  private var stateObjects: JavaMap[String, CustomerOrderState] = null
 
-  def CustomerOrder() {
-    status = CustomerOrderStatus.NEW
-    bookingDate = Calendar.getInstance
+  def getId = id
+
+  def setId(_id: String) {
+    this.id = _id;
   }
 
   override def cancel = {
@@ -63,10 +68,10 @@ class CustomerOrder extends ICustomerOrder {
     orderLines.remove(line.asInstanceOf[CustomerOrderLine])
 
   override def getStatus: CustomerOrderStatus.Value = status
-  private[model] def setStatus(status: CustomerOrderStatus.Value) = this.status = status
+  def setStatus(status: CustomerOrderStatus.Value) = this.status = status
 
-  private def getStateObject: CustomerOrderState = stateObjects.get(getStatus.toString).get
+  private def getStateObject: CustomerOrderState = stateObjects.get(getStatus.toString)
 
-  def getStateObjects: Map[String, CustomerOrderState] = stateObjects
-  def setStateObjects(stateObjects: Map[String, CustomerOrderState]) = this.stateObjects = stateObjects
+  def getStateObjects: JavaMap[String, CustomerOrderState] = stateObjects
+  def setStateObjects(stateObjects: JavaMap[String, CustomerOrderState]) = this.stateObjects = stateObjects
 }

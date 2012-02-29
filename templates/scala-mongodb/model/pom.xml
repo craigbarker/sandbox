@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.sgodden.template.javaee</groupId>
+        <groupId>org.sgodden.template.scalamongo</groupId>
         <artifactId>javaee-template-app</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>

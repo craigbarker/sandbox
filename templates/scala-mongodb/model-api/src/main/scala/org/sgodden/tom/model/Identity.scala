@@ -4,10 +4,8 @@ import org.apache.commons.lang.builder.{HashCodeBuilder, EqualsBuilder}
 
 
 trait Identity[T] extends Serializable {
-  
-  private var id: Long = 0
 
-  def getId = id
+  def getId: String
 
   override def equals(other: Any): Boolean = {
     if (other == null
@@ -26,7 +24,7 @@ trait Identity[T] extends Serializable {
   }
 
   override def hashCode: Int = {
-    if (getId == 0) {
+    if (getId == null) {
       return super.hashCode
     }
     return new HashCodeBuilder(23, 61).append(getId).toHashCode

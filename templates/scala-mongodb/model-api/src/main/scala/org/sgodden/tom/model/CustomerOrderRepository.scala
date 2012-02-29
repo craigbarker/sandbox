@@ -10,7 +10,7 @@ trait CustomerOrderRepository {
 
   def merge(order: ICustomerOrder)
 
-  def findById(id: Serializable): ICustomerOrder
+  def findById(id: String): ICustomerOrder
 
   def count: Long
 }

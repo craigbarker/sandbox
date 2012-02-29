@@ -14,7 +14,7 @@ import org.sgodden.tom.services.customerorder.CustomerOrderService
 
 @Controller
 @RequestMapping(value = Array("/customerOrders"))
-class CustomerOrdersController {
+class CustomerOrdersControllers {
 
   @Autowired
   private val service: CustomerOrderService = null
