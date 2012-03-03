@@ -64,12 +64,13 @@ class CustomerOrdersController {
       responseOrder = service findById id
     }
     catch {
-      case e: Exception => {
+      case ve: ValidationException => {
+        success = false
         responseOrder = entry
-        if (e.getCause.isInstanceOf[ValidationException])
-          errors = getErrors(e.getCause.asInstanceOf[ValidationException])
-        else
-          throw new RuntimeException(e)
+        errors = getErrors(ve)
+      }
+      case e: Exception => {
+        throw new RuntimeException(e)
       }
     }
     val orders = ArrayBuffer(responseOrder)
