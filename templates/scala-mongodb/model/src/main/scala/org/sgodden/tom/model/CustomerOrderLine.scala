@@ -1,11 +1,7 @@
 package org.sgodden.tom.model
 
-import com.novus.salat.annotations.raw.Persist
-
-case class CustomerOrderLine() {
-  @Persist
+class CustomerOrderLine {
   private var packageType: String = null
-  @Persist
   private var descriptionOfGoods: String = null
 
   def getPackageType = packageType

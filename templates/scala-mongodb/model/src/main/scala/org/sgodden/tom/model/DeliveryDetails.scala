@@ -1,9 +1,7 @@
 package org.sgodden.tom.model
 
-import com.novus.salat.annotations.raw.Persist
+class DeliveryDetails extends IDeliveryDetails {
 
-case class DeliveryDetails() extends IDeliveryDetails {
-  @Persist
   private var address: Address = null
 
   def getAddress = address

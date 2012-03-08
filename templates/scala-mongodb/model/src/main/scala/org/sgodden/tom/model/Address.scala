@@ -1,20 +1,14 @@
 package org.sgodden.tom.model
 
 import javax.validation.constraints.NotNull
-import com.novus.salat.annotations.raw.Persist
 
-case class Address() extends IAddress {
-  @Persist
+class Address extends IAddress {
   @NotNull
   private var line1: String = null
-  @Persist
   @NotNull
   private var line2: String = null
-  @Persist
   private var line3: String = null
-  @Persist
   private var line4: String = null
-  @Persist
   @NotNull private var town: String = null
   private var postalCode: String = null
 
