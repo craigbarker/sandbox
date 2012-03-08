@@ -11,7 +11,7 @@
 
     <artifactId>persistence</artifactId>
     <packaging>jar</packaging>
-    <name>persistence</name>
+    <name>MongoDB Persistence</name>
 
     <url>http://maven.apache.org</url>
 

@@ -1,7 +1,6 @@
 package org.sgodden.test.integration
 
 import org.testng.Assert
-import java.util.Calendar
 import org.apache.http.impl.client.DefaultHttpClient
 import org.apache.http.entity.StringEntity
 import org.codehaus.jackson.map.{SerializationConfig, ObjectMapper}
@@ -11,8 +10,8 @@ import org.apache.http.{HttpEntity, HttpResponse}
 import java.io.{InputStreamReader, BufferedReader}
 import org.testng.annotations.Test
 import org.slf4j.LoggerFactory
-import collection.mutable.Buffer
 import org.sgodden.tom.web.{ListEntry, ListResponse}
+import org.joda.time.DateTime
 
 @Test(groups = Array("integration"))
 class CustomerOrdersServiceTest {
@@ -32,15 +31,14 @@ class CustomerOrdersServiceTest {
       id = null,
       customerReference = "cr001",
       orderNumber = "ORD001",
-      bookingDate = Calendar.getInstance())
+      bookingDate = new DateTime)
 
     val response = postOrder(order)
     printErrorsIfExist(response)
     Assert.assertTrue(response.success)
 
-    val returned = response.customerOrders(0)
+    val returned = response.customerOrders.head
     Assert.assertNotNull(returned)
-    Assert.assertEquals(1l, returned.id)
   }
 
   @Test(priority = 2)
@@ -49,7 +47,7 @@ class CustomerOrdersServiceTest {
       id = null,
       customerReference = "CREF001",
       orderNumber = "ORD001",
-      bookingDate = Calendar.getInstance())
+      bookingDate = new DateTime)
 
     val response = postOrder(order)
     Assert.assertFalse(response.success)

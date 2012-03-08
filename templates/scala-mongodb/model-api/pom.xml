@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>model-api</artifactId>
-    <name>model-api</name>
+    <name>Model API</name>
 
     <url>http://maven.apache.org</url>
 
