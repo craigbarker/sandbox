@@ -1,7 +1,10 @@
 package org.sgodden.tom.model
 
-class CollectionDetails extends ICollectionDetails {
-  
+import com.novus.salat.annotations.raw.Persist
+
+case class CollectionDetails() extends ICollectionDetails {
+
+  @Persist
   private var address: Address = null
 
   def getAddress = address

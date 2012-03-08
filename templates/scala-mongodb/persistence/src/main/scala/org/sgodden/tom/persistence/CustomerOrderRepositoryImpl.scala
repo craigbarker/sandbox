@@ -1,12 +1,10 @@
 package org.sgodden.tom.persistence
 
+import com.novus.salat._
+import com.novus.salat.global._
 import com.mongodb.casbah.Imports._
 import com.mongodb.casbah.commons.conversions.scala._
-import org.codehaus.jackson.map.ObjectMapper
-import de.undercouch.bson4jackson.BsonFactory
-import java.io.{ByteArrayInputStream, ByteArrayOutputStream}
-import org.codehaus.jackson.`type`.{JavaType, TypeReference}
-import org.bson.{BSON, BSONEncoder, BSONDecoder}
+import model.CustomerOrderP
 import org.slf4j.{LoggerFactory, Logger}
 import javax.validation.{Validation, Validator, ConstraintViolation}
 import collection.JavaConverters
@@ -17,38 +15,36 @@ class CustomerOrderRepositoryImpl extends CustomerOrderRepository {
   private final val LOG: Logger = LoggerFactory.getLogger(classOf[CustomerOrderRepositoryImpl])
   private final val validator: Validator = Validation.buildDefaultValidatorFactory.getValidator
 
-  RegisterJodaTimeConversionHelpers()
-
   val conn = MongoConnection()
   val db = conn("orderManagement")
   val coll = db("customerOrders")
 
-  private val mapper = new ObjectMapper(new BsonFactory())
+  RegisterConversionHelpers()
+  RegisterJodaTimeConversionHelpers()
 
   def remove(order: ICustomerOrder) {
-    coll.remove(MongoDBObject("_id" -> order.getId))
+    coll.remove(MongoDBObject("_id" -> new ObjectId(order.getId)))
   }
 
   def findAll = {
     coll.map(dbo => {
-      CustomerOrderAdapter(dbo)
+      grater[CustomerOrderP].asObject(dbo).asObject
     }).toList
   }
 
   def persist(order: ICustomerOrder) {
     validate(order)
-    coll.save(CustomerOrderAdapter(order))
+    coll.save(grater[CustomerOrderP].asDBObject(CustomerOrderP(order)))
     order.asInstanceOf[CustomerOrder].setId(coll.last.get("_id").toString)
   }
 
   def merge(order: ICustomerOrder) {
     validate(order)
-    coll.save(CustomerOrderAdapter(order))
+    coll.save(grater[CustomerOrderP].asDBObject(CustomerOrderP(order)))
   }
 
-  def findById(id: String) = {
-    CustomerOrderAdapter(coll.findOne(MongoDBObject("_id" -> new ObjectId(id))).get)
-  }
+  def findById(id: String) =
+    grater[CustomerOrderP].asObject(coll.findOne(MongoDBObject("_id" -> new ObjectId(id))).get).asObject
 
   def count = {
     coll.size

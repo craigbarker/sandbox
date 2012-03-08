@@ -19,6 +19,7 @@
         <testng.version>6.2</testng.version>
         <httpclient.version>4.1.2</httpclient.version>
         <scala.version>2.9.1</scala.version>
+        <jodatime.version>1.6.2</jodatime.version>
     </properties>
 
     <repositories>

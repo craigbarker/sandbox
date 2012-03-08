@@ -9,8 +9,8 @@ import collection.mutable.{ArrayBuffer, Buffer}
 import org.codehaus.jackson.map.{SerializationConfig, ObjectMapper}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import org.sgodden.tom.model.{ICustomerOrder, ValidationException}
-import java.util.Calendar
 import org.sgodden.tom.services.customerorder.CustomerOrderService
+import org.joda.time.{DateTime, LocalDate}
 
 @Controller
 @RequestMapping(value = Array("/customerOrders"))
@@ -100,7 +100,7 @@ case class ListEntry(
                     id: String,
                     customerReference: String,
                     orderNumber: String,
-                    bookingDate: Calendar) {
+                    bookingDate: DateTime) {
   def merge(order: ICustomerOrder) = {
     order.setOrderNumber(orderNumber)
     order.setCustomerReference(customerReference)

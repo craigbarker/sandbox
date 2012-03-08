@@ -1,7 +1,6 @@
 package org.sgodden.tom.model
 
-import java.util.Calendar
-import org.apache.commons.lang.builder.EqualsBuilder
+import org.joda.time.DateTime
 
 trait ICustomerOrder extends Identity[ICustomerOrder] {
 
@@ -11,8 +10,8 @@ trait ICustomerOrder extends Identity[ICustomerOrder] {
 
   def ship
 
-  def getBookingDate: Calendar
-  def setBookingDate(cal: Calendar)
+  def getBookingDate: DateTime
+  def setBookingDate(cal: DateTime)
 
   def getCustomerReference: String
   def setCustomerReference(reference: String)

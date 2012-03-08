@@ -6,6 +6,7 @@ import org.sgodden.tom.model._
 import java.util.Calendar
 import java.text.SimpleDateFormat
 import org.bson.types.ObjectId
+import org.joda.time.{DateTime, LocalDate}
 
 object CustomerOrderAdapter extends BaseAdapter {
 
@@ -98,12 +99,10 @@ class BaseAdapter {
 
   final val sdf: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd")
 
-  def calendarToString(cal: Calendar)= sdf format cal.getTime
+  def calendarToString(cal: DateTime)= "FIX JODA TIME"
 
   def stringToCalendar(s: String) = {
-    val c: Calendar = Calendar.getInstance()
-    c.setTime(sdf parse s)
-    c
+    new DateTime
   }
 
   def getString(dbo: DBObject, field: String) = {

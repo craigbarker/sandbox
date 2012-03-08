@@ -5,9 +5,11 @@ import org.testng.Assert._
 import org.sgodden.tom.model.{ValidationException, CustomerOrderStatus, ICustomerOrder}
 import org.springframework.beans.factory.annotation.Autowired
 import org.testng.annotations.{AfterMethod, Test}
+import org.sgodden.tom.integration.AbstractIntegrationTest
 
 @Test
-class CustomerServiceTest {
+class CustomerServiceTest extends AbstractIntegrationTest {
+
   @Autowired private var customerOrderService: CustomerOrderService = null
 
   @AfterMethod def afterTest {
@@ -44,7 +46,7 @@ class CustomerServiceTest {
 
   private def createOrder(seq: Int): Unit = {
     var order: ICustomerOrder = customerOrderService.create
-    order.setCustomerReference("REFERENCE: " + seq)
+    order.setCustomerReference("crREFERENCE: " + seq)
     order.setOrderNumber("ORDER NUMBER: " + seq)
     customerOrderService.persist(order)
   }

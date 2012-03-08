@@ -4,6 +4,7 @@ import org.testng.annotations.Test
 import org.testng.Assert._
 import java.util.Calendar
 import javax.validation.{ConstraintViolation, Validation}
+import org.joda.time.{DateTime, LocalDate}
 
 @Test
 class CustomerOrderTest {
@@ -22,7 +23,7 @@ class CustomerOrderTest {
     val order = new CustomerOrder {
       setOrderNumber("ordnum")
       setCustomerReference("foo")
-      setBookingDate(Calendar.getInstance)
+      setBookingDate(new DateTime)
     }
     // TODO - message should be i18nd
     assertTrue(containsViolation(getViolations(order), "customerReference", "Customer reference must begin with 'cr'"))

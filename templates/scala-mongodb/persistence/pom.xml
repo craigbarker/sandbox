@@ -28,6 +28,10 @@
             <id>Scala Tools</id>
             <url>http://scala-tools.org/repo-releases/</url>
         </repository>
+        <repository>
+            <id>Novus snapshots</id>
+            <url>http://repo.novus.com/snapshots/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -36,6 +40,11 @@
             <groupId>${project.parent.groupId}</groupId>
             <artifactId>model</artifactId>
             <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.novus</groupId>
+            <artifactId>salat-core_2.9.1</artifactId>
+            <version>0.0.8-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.undercouch</groupId>

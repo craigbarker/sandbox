@@ -15,6 +15,13 @@
 
     <url>http://maven.apache.org</url>
 
+    <repositories>
+        <repository>
+            <id>Novus snapshots</id>
+            <url>http://repo.novus.com/snapshots/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.scala-lang</groupId>
@@ -23,9 +30,19 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>com.novus</groupId>
+            <artifactId>salat-core_2.9.1</artifactId>
+            <version>0.0.8-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>${project.parent.groupId}</groupId>
             <artifactId>model-api</artifactId>
             <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${jodatime.version}</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>

@@ -1,35 +1,39 @@
 package org.sgodden.tom.model
 
-import java.util.{Map => JavaMap, Calendar}
 import javax.validation.constraints.{Pattern,NotNull}
 import collection.mutable.{HashSet, Set => MutableSet}
 import org.springframework.beans.factory.annotation.{Configurable, Autowired}
+import com.novus.salat.annotations._
+import java.util.{Date, Map => JavaMap}
+import org.joda.time.{DateTime}
+import org.bson.types.ObjectId
 
 // TODO - modify to use joda time
 @Configurable
-class CustomerOrder extends ICustomerOrder {
-  
-  private var id: String = null
-  
+class CustomerOrder() extends ICustomerOrder {
+
+  var _id: String = null
+
   @NotNull
   @Pattern(regexp = "cr.*", message = "{customerReferenceMustBeginWithCr}")
-  private var customerReference: String = null
+  var customerReference: String = null
   @NotNull
-  private var orderNumber: String = null
+  var orderNumber: String = null
   @NotNull
-  private var status: CustomerOrderStatus.Value = CustomerOrderStatus.NEW
+  var status: CustomerOrderStatus.Value = CustomerOrderStatus.NEW
   @NotNull
-  private var bookingDate: Calendar = Calendar.getInstance()
-  private var collectionDetails: CollectionDetails = null
-  private var deliveryDetails: DeliveryDetails = null
-  private val orderLines: MutableSet[CustomerOrderLine] = new HashSet[CustomerOrderLine]
+  var bookingDate: DateTime = new DateTime(new Date().getTime)
+  var collectionDetails: CollectionDetails = null
+  var deliveryDetails: DeliveryDetails = null
+  val orderLines: MutableSet[CustomerOrderLine] = new HashSet[CustomerOrderLine]
+
   @Autowired
   private var stateObjects: JavaMap[String, CustomerOrderState] = null
 
-  def getId = id
+  def getId = _id
 
-  def setId(_id: String) {
-    this.id = _id;
+  def setId(id: String) {
+    this._id = id
   }
 
   override def cancel = {
@@ -45,7 +49,7 @@ class CustomerOrder extends ICustomerOrder {
   }
 
   override def getBookingDate = bookingDate
-  override def setBookingDate(date: Calendar) = this.bookingDate = date
+  override def setBookingDate(date: DateTime) = this.bookingDate = date
 
   override def getCustomerReference = customerReference
   override def setCustomerReference(customerReference: String) = this.customerReference = customerReference
