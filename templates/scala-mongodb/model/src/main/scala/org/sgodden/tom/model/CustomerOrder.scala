@@ -3,10 +3,12 @@ package org.sgodden.tom.model
 import javax.validation.constraints.{Pattern,NotNull}
 import collection.mutable.{HashSet, Set => MutableSet}
 import org.springframework.beans.factory.annotation.{Configurable, Autowired}
-import com.novus.salat.annotations._
 import java.util.{Date, Map => JavaMap}
 import org.joda.time.{DateTime}
-import org.bson.types.ObjectId
+import collection.JavaConverters
+import JavaConverters._
+import javax.validation.{ConstraintViolation, Validation}
+import org.slf4j.{LoggerFactory, Logger}
 
 // TODO - modify to use joda time
 @Configurable
@@ -48,6 +50,28 @@ class CustomerOrder() extends ICustomerOrder {
     getStateObject.ship(this)
   }
 
+  def approveRemove(onApprove: () => Unit) = {
+    onApprove()
+  }
+
+  def approvePersist(onApprove: () => Unit) = {
+    validate
+    onApprove()
+  }
+
+  def validate = {
+    val constraints = CustomerOrder.validator.validate(this).asScala.toSet
+    if (constraints.size > 0) {
+      if (CustomerOrder.LOG.isDebugEnabled) {
+        for (violation <- constraints) {
+          CustomerOrder.LOG.debug(violation.toString)
+        }
+      }
+      throw new ValidationException(constraints.asInstanceOf[Set[ConstraintViolation[AnyRef]]])
+    }
+
+  }
+
   override def getBookingDate = bookingDate
   override def setBookingDate(date: DateTime) = this.bookingDate = date
 
@@ -78,4 +102,9 @@ class CustomerOrder() extends ICustomerOrder {
 
   def getStateObjects: JavaMap[String, CustomerOrderState] = stateObjects
   def setStateObjects(stateObjects: JavaMap[String, CustomerOrderState]) = this.stateObjects = stateObjects
+}
+
+object CustomerOrder {
+  private final val LOG: Logger = LoggerFactory.getLogger(classOf[CustomerOrder])
+  val validator = Validation.buildDefaultValidatorFactory.getValidator
 }

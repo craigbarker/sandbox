@@ -173,6 +173,7 @@
                     <ajdtVersion>1.5</ajdtVersion>
                 </configuration>
             </plugin>
+            <!--
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
@@ -192,10 +193,49 @@
                     <execution>
                         <goals>
                             <goal>compile</goal>
-							<!-- <goal>test-compile</goal> -->
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties"
+                                         classpathref="maven.plugin.classpath"/>
+                                <iajc
+                                    srcDir="src/main/scala"
+                                    destDir="target/classes"
+                                    inpath="target/classes"
+                                    source="1.6"
+                                    aspectPath="${org.springframework:spring-aspects:jar}"
+                                    classpathRef="maven.compile.classpath"
+                                    Xlint="ignore"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjrt</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjtools</artifactId>
+                        <version>1.6.11</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

@@ -4,15 +4,15 @@ import org.sgodden.tom.services.customerorder.CustomerOrderService
 import org.testng.Assert._
 import org.sgodden.tom.model.{ValidationException, CustomerOrderStatus, ICustomerOrder}
 import org.springframework.beans.factory.annotation.Autowired
-import org.testng.annotations.{AfterMethod, Test}
 import org.sgodden.tom.integration.AbstractIntegrationTest
+import org.testng.annotations.{BeforeMethod, Test}
 
 @Test
 class CustomerServiceTest extends AbstractIntegrationTest {
 
   @Autowired private var customerOrderService: CustomerOrderService = null
 
-  @AfterMethod def afterTest {
+  @BeforeMethod def beforeTest {
     for (order <- customerOrderService.findAll) {
       customerOrderService.remove(order.getId)
     }
@@ -26,6 +26,17 @@ class CustomerServiceTest extends AbstractIntegrationTest {
   def testPersist {
     createOrder(1)
     assertEquals(customerOrderService.findAll.size, 1)
+  }
+
+  def testInvalidOrderIsNotPersisted {
+    val order = makeOrder(1);
+    order.setCustomerReference("wrong")
+    try {
+      customerOrderService.persist(order)
+    } catch {
+      case ve: ValidationException => {}
+    }
+    assertEquals(customerOrderService.findAll.size, 0)
   }
 
   def testFindAll {
@@ -45,9 +56,13 @@ class CustomerServiceTest extends AbstractIntegrationTest {
   }
 
   private def createOrder(seq: Int): Unit = {
+    customerOrderService.persist(makeOrder(seq))
+  }
+
+  private def makeOrder(seq: Int) = {
     var order: ICustomerOrder = customerOrderService.create
     order.setCustomerReference("crREFERENCE: " + seq)
     order.setOrderNumber("ORDER NUMBER: " + seq)
-    customerOrderService.persist(order)
+    order
   }
 }

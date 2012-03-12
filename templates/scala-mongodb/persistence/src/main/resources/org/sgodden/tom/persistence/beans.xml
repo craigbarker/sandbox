@@ -18,6 +18,10 @@
     -->
     <context:spring-configured/>
 
-    <bean id="customerOrderRepository" class="org.sgodden.tom.persistence.CustomerOrderRepositoryImpl"/>
+    <context:property-placeholder system-properties-mode="OVERRIDE"/>
+
+    <bean id="customerOrderRepository" class="org.sgodden.tom.persistence.CustomerOrderRepositoryImpl">
+        <constructor-arg value="orderManagement-${env}"/>
+    </bean>
 
 </beans>

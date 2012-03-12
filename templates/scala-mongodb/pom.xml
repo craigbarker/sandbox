@@ -20,6 +20,7 @@
         <httpclient.version>4.1.2</httpclient.version>
         <scala.version>2.9.1</scala.version>
         <jodatime.version>1.6.2</jodatime.version>
+        <aspectj.version>1.6.7</aspectj.version>
     </properties>
 
     <repositories>
