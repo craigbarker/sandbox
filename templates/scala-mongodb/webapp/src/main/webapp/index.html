@@ -1,15 +1,31 @@
 <html>
 <head>
-    <title>Account Manager</title>
-    <link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css">
-    <script type="text/javascript" src="extjs/ext-debug.js"></script>
-    <script type="text/javascript" src="appctx.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <title>Dojo sample</title>
+    <script src="dojo/dojo.js" data-dojo-config="async: true"></script>
+    <!--
+    <script type="text/javascript">
+        require(["demo/myModule"], function(myModule) {
+            myModule.setText("greeting", "Hello Dojo!");
+            setTimeout(function() {
+                myModule.restoreText("greeting");
+            }, 3000);
+        });
+    </script>
+    -->
+    <script type="text/javascript">
+        require(["dojo/_base/xhr"], function(xhr){
+            xhr.get({
+                url: "services/customerOrders",
+                handleAs: "json",
+                load: function(result) {
+                    alert("Response is: " + result.success);
+                }
+            });
+        });
+    </script>
 </head>
 <body>
-<form id="history-form" class="x-hide-display">
-    <input type="hidden" id="x-history-field" />
-    <iframe id="x-history-frame"></iframe>
-</form>
+<h1 id="greeting">Hello</h1>
 </body>
+
 </html>

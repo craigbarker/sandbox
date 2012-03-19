@@ -8,6 +8,8 @@ target
 *.iws
 *.iml
 *.ipr
+*~
+dojo
 extjs
 .classpath
 .project
