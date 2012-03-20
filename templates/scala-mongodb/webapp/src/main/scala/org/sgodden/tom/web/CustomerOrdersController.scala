@@ -30,9 +30,12 @@ class CustomerOrdersController {
 
   @RequestMapping(method = Array(RequestMethod.GET))
   @ResponseBody
-  def list: String ={
-    generate(new ListResponse(true, null,
-      service.findAll.map(orderToListEntry(_)).toSet))
+  def list: String = {
+    // for ext
+//    generate(new ListResponse(true, null,
+//      service.findAll.map(orderToListEntry(_)).toSet))
+    // for dojo
+    generate(service.findAll.map(orderToListEntry(_)).toSet)
   }
 
   @RequestMapping(value = Array("/{id}"), method = Array(RequestMethod.GET))
@@ -68,6 +71,7 @@ class CustomerOrdersController {
         success = false
         responseOrder = entry
         errors = getErrors(ve)
+        httpResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST)
       }
       case e: Exception => {
         throw new RuntimeException(e)
