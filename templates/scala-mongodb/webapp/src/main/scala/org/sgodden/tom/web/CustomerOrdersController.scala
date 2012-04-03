@@ -13,7 +13,6 @@ import org.sgodden.tom.services.customerorder.CustomerOrderService
 import org.joda.time.{DateTime, LocalDate}
 
 @Controller
-@RequestMapping(value = Array("/customerOrders"))
 class CustomerOrdersController {
 
   @Autowired
@@ -28,7 +27,7 @@ class CustomerOrdersController {
     )
   }
 
-  @RequestMapping(method = Array(RequestMethod.GET))
+  @RequestMapping(value = Array("/customerOrders"), method = Array(RequestMethod.GET))
   @ResponseBody
   def list: String = {
     // for ext
@@ -38,10 +37,15 @@ class CustomerOrdersController {
     generate(service.findAll.map(orderToListEntry(_)).toSet)
   }
 
-  @RequestMapping(value = Array("/{id}"), method = Array(RequestMethod.GET))
+  @RequestMapping(value = Array("/customerOrders/{id}"), method = Array(RequestMethod.GET))
   @ResponseBody
   def get(@RequestParam("id") id: String): String =
     generate(service.findById(id).asInstanceOf[ListEntry])
+
+  @RequestMapping(value = Array("/customerOrders/{id}"), method = Array(RequestMethod.DELETE))
+  def delete(@RequestParam("id") id: String) {
+    service.remove(id)
+  }
 
   @RequestMapping(method = Array(RequestMethod.POST, RequestMethod.PUT))
   @ResponseBody
@@ -50,6 +54,7 @@ class CustomerOrdersController {
     var responseOrder: ListEntry = null
     var success: Boolean = true;
     var errors: Set[Error] = null
+    var response: String = null
 
     try {
       var id = entry.id
@@ -58,27 +63,30 @@ class CustomerOrdersController {
         val order = service.create
         entry merge order
         id = service persist order
-        println("new id is: " + id)
       } else {
         val order = service findById id
         entry merge order
         service merge order
       }
       responseOrder = service findById id
+      response = generate(responseOrder) // dojo
     }
     catch {
       case ve: ValidationException => {
         success = false
         responseOrder = entry
         errors = getErrors(ve)
-        httpResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST)
+        httpResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST) // dojo
+        response = generate(errors) // dojo
       }
       case e: Exception => {
         throw new RuntimeException(e)
       }
     }
-    val orders = ArrayBuffer(responseOrder)
-    generate(new ListResponse(success, errors, orders.toSet))
+    // ext
+//    val orders = ArrayBuffer(responseOrder)
+//    generate(new ListResponse(success, errors, orders.toSet))
+    response // dojo
   }
   
   private def getErrors(e: ValidationException) =

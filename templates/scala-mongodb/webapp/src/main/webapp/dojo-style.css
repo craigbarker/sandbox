@@ -1,5 +1,10 @@
-div#container {
+table#dataTable {
     padding: 0.5em;
     border: 1px #000000 solid;
     margin-bottom: 1em;
+}
+
+table#dataTable tr {
+    cursor: hand;
+
 }

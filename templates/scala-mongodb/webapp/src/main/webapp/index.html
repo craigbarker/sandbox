@@ -68,8 +68,19 @@
                 }, true);
 
                 function insertRow(item, i) {
-                    var row = domConstruct.create("div", {
+                    var row = domConstruct.create("tr");
+                    domConstruct.create("td", {
                         innerHTML: item.orderNumber
+                    }, row);
+                    domConstruct.create("td", {
+                        innerHTML: item.customerReference
+                    }, row);
+                    var removeLink = domConstruct.create("td", {
+                        id: 'id-' + item.id,
+                        innerHTML: 'Remove'
+                    }, row);
+                    on(removeLink, "click", function(){
+                        coStore.remove(item.id);
                     });
                     rows.splice(i, 0, container.insertBefore(row, rows[i]));
                 }
@@ -85,9 +96,18 @@
 <body>
 <h1 id="greeting">Hello</h1>
 
-<div id="container">
+<table id="dataTable">
+    <thead>
+        <tr>
+            <th>Order number</th>
+            <th>Customer reference</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody id="container">
 
-</div>
+    </tbody>
+</table>
 
 <div id="controls">
     <input type="button" id="addButton" value="Add"/>
