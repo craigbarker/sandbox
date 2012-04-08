@@ -1,0 +1,39 @@
+body {
+    padding: 2em;
+}
+
+div#header {
+    font-size: 20pt;
+    margin-bottom: 2em;
+}
+
+div#title {
+    float: left;
+    font-style: italic;
+}
+
+div#logo {
+    float: right;
+}
+
+.expander-anchor {
+    color: black;
+    text-decoration: none;
+}
+
+table#dataTable {
+    margin-bottom: 1em;
+}
+
+table#dataTable th.content {
+    padding-right: 1em;
+    text-decoration: underline;
+}
+
+table#dataTable td.content, td.expander {
+    padding: 0.2em;
+}
+
+table#dataTable div.expanded-div {
+    padding-left: 2em;
+}

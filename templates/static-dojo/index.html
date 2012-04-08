@@ -1,0 +1,118 @@
+<html>
+<head>
+    <title>Dojo sample</title>
+    <link rel="stylesheet" href="dojo-style.css"/>
+    <script src="dojo/dojo.js" data-dojo-config="async: true"></script>
+    <!--
+    <script type="text/javascript">
+        require(["demo/myModule"], function(myModule) {
+            myModule.setText("greeting", "Hello Dojo!");
+            setTimeout(function() {
+                myModule.restoreText("greeting");
+            }, 3000);
+        });
+    </script>
+    -->
+    <script type="text/javascript">
+//        require(["dojo/_base/xhr"], function(xhr){
+//            xhr.get({
+//                url: "services/customerOrders",
+//                handleAs: "json",
+//                load: function(result) {
+//                    alert("Response is: " + result[0].orderNumber);
+//                }
+//            });
+//        });
+
+        require(["dojo/store/JsonRest", "dojo/store/Memory", "dojo/store/Cache",
+                "dojo/store/Observable", "dojo/dom", "dojo/on",
+                "dojo/dom-construct"], function(JsonRest, Memory, Cache, Observable, dom, on, domConstruct) {
+            var nextId = 1;
+
+            masterStore = new JsonRest({
+                target: "services/customerOrders/",
+                idProperty: "id"
+            });
+            masterStore = Observable(masterStore);
+
+            cacheStore = new Memory({idProperty: "id"});
+            coStore = Cache(masterStore, cacheStore);
+
+            var results = coStore.query();
+            viewResults(results);
+
+            on(dom.byId("addButton"), "click", doAdd);
+
+            function doAdd() {
+                coStore.add({
+                    orderNumber: "order number " + nextId,
+                    customerReference: "cr00" + nextId,
+                    bookingDate: new Date()
+                });
+                nextId++;
+            }
+
+            function viewResults(results) {
+                var container = dom.byId("container");
+                var rows = [];
+
+                results.forEach(insertRow);
+
+                results.observe(function(item, removedIndex, insertedIndex){
+                    if (removedIndex > -1) {
+                        removeRow(removedIndex);
+                    }
+                    if (insertedIndex > -1) {
+                        insertRow(item, insertedIndex);
+                    }
+                }, true);
+
+                function insertRow(item, i) {
+                    var row = domConstruct.create("tr");
+                    domConstruct.create("td", {
+                        innerHTML: item.orderNumber
+                    }, row);
+                    domConstruct.create("td", {
+                        innerHTML: item.customerReference
+                    }, row);
+                    var removeLink = domConstruct.create("td", {
+                        id: 'id-' + item.id,
+                        innerHTML: 'Remove'
+                    }, row);
+                    on(removeLink, "click", function(){
+                        coStore.remove(item.id);
+                    });
+                    rows.splice(i, 0, container.insertBefore(row, rows[i]));
+                }
+
+                function removeRow(i) {
+                    domConstruct.destroy(rows.splice(i, 1)[0]);
+                }
+            }
+        });
+
+    </script>
+</head>
+<body>
+<h1 id="greeting">Hello</h1>
+
+<table id="dataTable">
+    <thead>
+        <tr>
+            <th>Order number</th>
+            <th>Customer reference</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody id="container">
+
+    </tbody>
+</table>
+
+<div id="controls">
+    <input type="button" id="addButton" value="Add"/>
+</div>
+
+</body>
+
+</html>
