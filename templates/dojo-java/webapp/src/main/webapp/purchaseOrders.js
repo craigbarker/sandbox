@@ -25,17 +25,17 @@ require(["dojo/store/JsonRest",
             ids.push(item.id);
 
             var td = domConstruct.create("td", {
-                class: "expander"
+                "class": "expander"
             }, row);
 
             var expanderDiv = domConstruct.create("div", {
-                class: "expander"
+                "class": "expander"
             }, td);
 
             var expanderAnchor = domConstruct.create("a", {
-                href: '#',
-                class: 'expander-anchor',
-                innerHTML: "+"
+                "href": '#',
+                "class": 'expander-anchor',
+                "innerHTML": "+"
             }, expanderDiv);
 
             on(expanderAnchor, "click", function(){
@@ -43,20 +43,20 @@ require(["dojo/store/JsonRest",
             });
 
             domConstruct.create("td", {
-                innerHTML: item.orderNumber,
-                class: "content"
+                "innerHTML": item.orderNumber,
+                "class": "content"
             }, row);
             domConstruct.create("td", {
-                innerHTML: item.customerReference,
-                class: "content"
+                "innerHTML": item.customerReference,
+                "class": "content"
             }, row);
 
 
             td = domConstruct.create("td", {}, row);
 
             var removeLink = domConstruct.create("a", {
-                href: '#',
-                innerHTML: 'Remove'
+                "href": '#',
+                "innerHTML": 'Remove'
             }, td);
             on(removeLink, "click", function(){
                 alert("Remove");
@@ -82,16 +82,16 @@ require(["dojo/store/JsonRest",
             var detailRow = domConstruct.create("tr");
 
             var td = domConstruct.create("td", {
-                class: "content",
-                colSpan: 4
+                "class": "content",
+                "colSpan": 4
             }, detailRow);
 
             var div = domConstruct.create("div", {
-                id: "expanded-div-" + item.id,
-                class: "expanded-div",
-                innerHTML: "Some content for id: " + item.id,
-                style: {display: "none"},
-                colSpan: 4
+                "id": "expanded-div-" + item.id,
+                "class": "expanded-div",
+                "innerHTML": "Some content for id: " + item.id,
+                "style": {display: "none"},
+                "colSpan": 4
             }, td);
 
             var nextSummaryRow = rows[ids[i+1]];
@@ -101,14 +101,14 @@ require(["dojo/store/JsonRest",
             detailRows[item.id] = detailRow;
 
             fx.wipeIn({
-                node: div
+                "node": div
             }).play();
         }
 
         function collapseRow(item, i, expanderAnchor) {
             fx.wipeOut({
-                node: "expanded-div-" + item.id,
-                onEnd: function() {
+                "node": "expanded-div-" + item.id,
+                "onEnd": function() {
                     domConstruct.destroy(container.removeChild(detailRows[item.id]));
                     delete detailRows[item.id];
                     expanderAnchor.innerHTML = "+";
