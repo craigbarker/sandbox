@@ -28,14 +28,18 @@ require(["dojo/store/JsonRest",
                 class: "expander"
             }, row);
 
+            var expanderDiv = domConstruct.create("div", {
+                class: "expander"
+            }, td);
+
             var expanderAnchor = domConstruct.create("a", {
                 href: '#',
                 class: 'expander-anchor',
                 innerHTML: "+"
-            }, td);
+            }, expanderDiv);
 
             on(expanderAnchor, "click", function(){
-                expandOrCollapseRow(item, i);
+                expandOrCollapseRow(item, i, expanderAnchor);
             });
 
             domConstruct.create("td", {
@@ -62,19 +66,18 @@ require(["dojo/store/JsonRest",
         function removeRow(i) {
         }
 
-        function expandOrCollapseRow(item, i) {
+        function expandOrCollapseRow(item, i, expanderAnchor) {
             var summaryRow = rows[item.id];
-            var expanderTd = summaryRow.childNodes[0].childNodes[0];
 
-            if (expanderTd.innerHTML == "+") {
-                expandRow(item, i, expanderTd);
+            if (expanderAnchor.innerHTML == "+") {
+                expandRow(item, i, expanderAnchor);
             } else {
-                collapseRow(item, i, expanderTd);
+                collapseRow(item, i, expanderAnchor);
             }
         }
 
-        function expandRow(item, i, expanderTd) {
-            expanderTd.innerHTML = "-";
+        function expandRow(item, i, expanderAnchor) {
+            expanderAnchor.innerHTML = "-";
 
             var detailRow = domConstruct.create("tr");
 
@@ -102,13 +105,13 @@ require(["dojo/store/JsonRest",
             }).play();
         }
 
-        function collapseRow(item, i, expanderTd) {
+        function collapseRow(item, i, expanderAnchor) {
             fx.wipeOut({
                 node: "expanded-div-" + item.id,
                 onEnd: function() {
                     domConstruct.destroy(container.removeChild(detailRows[item.id]));
                     delete detailRows[item.id];
-                    expanderTd.innerHTML = "+";
+                    expanderAnchor.innerHTML = "+";
                 }
             }).play();
         }

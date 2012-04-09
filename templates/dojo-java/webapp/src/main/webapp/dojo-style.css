@@ -1,10 +1,17 @@
 body {
-    padding: 2em;
+    text-align: center;
+}
+
+div#wrapper {
+    background-color: #eeeeee;
+    padding: 0.5em;
 }
 
 div#header {
+    display: table;
+    width: 100%;
     font-size: 20pt;
-    margin-bottom: 2em;
+    margin-bottom: 0.5em;
 }
 
 div#title {
@@ -14,6 +21,10 @@ div#title {
 
 div#logo {
     float: right;
+}
+
+br.divider {
+    height: 20px;
 }
 
 .expander-anchor {
@@ -34,6 +45,15 @@ table#dataTable th.content {
 
 table#dataTable td.content, td.expander {
     padding: 0.2em;
+}
+
+table#dataTable div.expander {
+    background-color: #ffffff;
+    border: 1px solid #aaaaaa;
+    text-align: center;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
 }
 
 table#dataTable div.expanded-div {
