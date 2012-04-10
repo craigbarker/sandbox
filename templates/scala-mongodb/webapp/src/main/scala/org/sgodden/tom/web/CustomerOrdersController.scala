@@ -1,18 +1,18 @@
 package org.sgodden.tom.web
 
-import org.springframework.stereotype.Controller
 import org.springframework.beans.factory.annotation.Autowired
-import scala.collection.JavaConverters._
-import org.springframework.web.bind.annotation._
-import javax.servlet.http.HttpServletResponse
-import collection.mutable.{ArrayBuffer, Buffer}
 import org.codehaus.jackson.map.{SerializationConfig, ObjectMapper}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import org.sgodden.tom.model.{ICustomerOrder, ValidationException}
 import org.sgodden.tom.services.customerorder.CustomerOrderService
-import org.joda.time.{DateTime, LocalDate}
+import org.joda.time.DateTime
+import org.springframework.stereotype.Component
+import javax.ws.rs._
+import core.Response
 
-@Controller
+@Component
+@Consumes(Array("application/json"))
+@Produces(Array("application/json"))
 class CustomerOrdersController {
 
   @Autowired
@@ -27,8 +27,7 @@ class CustomerOrdersController {
     )
   }
 
-  @RequestMapping(value = Array("/customerOrders"), method = Array(RequestMethod.GET))
-  @ResponseBody
+  @GET
   def list: String = {
     // for ext
 //    generate(new ListResponse(true, null,
@@ -37,24 +36,25 @@ class CustomerOrdersController {
     generate(service.findAll.map(orderToListEntry(_)).toSet)
   }
 
-  @RequestMapping(value = Array("/customerOrders/{id}"), method = Array(RequestMethod.GET))
-  @ResponseBody
-  def get(@RequestParam("id") id: String): String =
-    generate(service.findById(id).asInstanceOf[ListEntry])
+  @GET
+  @Path("/{id}")
+  def get(@PathParam("id") id: String): String =
+    generate(orderToListEntry(service.findById(id)))
 
-  @RequestMapping(value = Array("/customerOrders/{id}"), method = Array(RequestMethod.DELETE))
-  def delete(@RequestParam("id") id: String) {
+  @DELETE
+  @Path("/{id}")
+  def delete(@PathParam("id") id: String) {
     service.remove(id)
   }
 
-  @RequestMapping(method = Array(RequestMethod.POST, RequestMethod.PUT))
-  @ResponseBody
-  def saveOrUpdate(@RequestBody entryString: String, httpResponse: HttpServletResponse): String = {
+  @PUT
+  @POST
+  def saveOrUpdate(entryString: String): Response = {
     val entry: ListEntry = mapper.readValue(entryString, classOf[ListEntry])
     var responseOrder: ListEntry = null
     var success: Boolean = true;
     var errors: Set[Error] = null
-    var response: String = null
+    var responseEntity: String = null
 
     try {
       var id = entry.id
@@ -69,15 +69,15 @@ class CustomerOrdersController {
         service merge order
       }
       responseOrder = service findById id
-      response = generate(responseOrder) // dojo
+      responseEntity = generate(responseOrder) // dojo
     }
     catch {
       case ve: ValidationException => {
         success = false
         responseOrder = entry
         errors = getErrors(ve)
-        httpResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST) // dojo
-        response = generate(errors) // dojo
+        responseEntity = generate(errors) // dojo
+        return Response.status(Response.Status.BAD_REQUEST).entity(responseEntity).build()
       }
       case e: Exception => {
         throw new RuntimeException(e)
@@ -86,7 +86,7 @@ class CustomerOrdersController {
     // ext
 //    val orders = ArrayBuffer(responseOrder)
 //    generate(new ListResponse(success, errors, orders.toSet))
-    response // dojo
+    Response.ok(responseEntity).build() // dojo
   }
   
   private def getErrors(e: ValidationException) =
