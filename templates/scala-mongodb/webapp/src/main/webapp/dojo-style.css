@@ -1,10 +1,21 @@
+h1 {
+    font-style: italic;
+}
+
 table#dataTable {
     padding: 0.5em;
-    border: 1px #000000 solid;
+    border: 1px #aaaaaa solid;
     margin-bottom: 1em;
 }
 
-table#dataTable tr {
-    cursor: hand;
+table#dataTable a {
+    color: black;
+}
 
+table#dataTable th {
+    text-align: left;
+}
+
+table#dataTable td, th {
+    padding-right: 1em;
 }

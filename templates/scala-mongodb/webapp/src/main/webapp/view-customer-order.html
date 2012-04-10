@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>View order</title>
+    <link rel="stylesheet" href="dojo-style.css"/>
+    <script src="dojo/dojo.js" data-dojo-config="async: true"></script>
+    <script type="text/javascript">
+//        require(["dojo/_base/xhr"], function(xhr){
+//            xhr.get({
+//                url: "services/customerOrders",
+//                handleAs: "json",
+//                load: function(result) {
+//                    alert("Response is: " + result[0].orderNumber);
+//                }
+//            });
+//        });
+
+        require(["dojo/store/JsonRest", "dojo/dom", "dojo/on",
+                "dojo/dom-construct", "dojo/date/stamp"], function(JsonRest, dom, on, domConstruct, stamp) {
+
+            masterStore = new JsonRest({
+                "target": "services/customer-orders/",
+                "idProperty": "id"
+            });
+
+            var order = masterStore.get(window.location.href);
+
+        });
+
+    </script>
+</head>
+<body>
+<h1 id="greeting">Customer Orders</h1>
+
+<table id="dataTable">
+    <thead>
+        <tr>
+            <th>Order number</th>
+            <th>Customer reference</th>
+            <th>Booking date</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody id="container">
+
+    </tbody>
+</table>
+
+<div id="controls">
+    <input type="button" id="addButton" value="Add"/>
+</div>
+
+</body>
+
+</html>

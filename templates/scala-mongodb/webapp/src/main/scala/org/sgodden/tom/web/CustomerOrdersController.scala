@@ -28,10 +28,6 @@ class CustomerOrdersController {
 
   @GET
   def list: String = {
-    // for ext
-//    generate(new ListResponse(true, null,
-//      service.findAll.map(orderToListEntry(_)).toSet))
-    // for dojo
     generate(service.findAll.map(orderToListEntry(_)).toSet)
   }
 
@@ -79,24 +75,22 @@ class CustomerOrdersController {
         service merge order
       }
       responseOrder = service findById id
-      responseEntity = generate(responseOrder) // dojo
+      responseEntity = generate(responseOrder)
     }
     catch {
       case ve: ValidationException => {
         success = false
         responseOrder = entry
         errors = getErrors(ve)
-        responseEntity = generate(errors) // dojo
+        responseEntity = generate(errors)
         return Response.status(Response.Status.BAD_REQUEST).entity(responseEntity).build()
       }
       case e: Exception => {
         throw new RuntimeException(e)
       }
     }
-    // ext
-//    val orders = ArrayBuffer(responseOrder)
-//    generate(new ListResponse(success, errors, orders.toSet))
-    Response.ok(responseEntity).build() // dojo
+    // ok if we got here
+    Response.ok(responseEntity).build()
   }
   
   private def getErrors(e: ValidationException) =
