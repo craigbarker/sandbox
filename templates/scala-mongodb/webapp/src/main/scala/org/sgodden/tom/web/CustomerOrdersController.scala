@@ -11,7 +11,6 @@ import javax.ws.rs._
 import core.Response
 
 @Component
-@Consumes(Array("application/json"))
 @Produces(Array("application/json"))
 class CustomerOrdersController {
 
@@ -45,10 +44,21 @@ class CustomerOrdersController {
   @Path("/{id}")
   def delete(@PathParam("id") id: String) {
     service.remove(id)
+    println("DELETE: " + id)
   }
 
   @PUT
+  def put(entryString: String) = {
+    println("PUT: " + entryString)
+    saveOrUpdate(entryString)
+  }
+
   @POST
+  def post(entryString: String) = {
+    println("POST: " + entryString)
+    saveOrUpdate(entryString)
+  }
+
   def saveOrUpdate(entryString: String): Response = {
     val entry: ListEntry = mapper.readValue(entryString, classOf[ListEntry])
     var responseOrder: ListEntry = null
