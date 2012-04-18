@@ -1,11 +1,21 @@
 require(["dojo/store/JsonRest",
     "dojo/store/Observable", "dojo/dom", "dojo/on",
-    "dojo/dom-construct", "dojo/fx"], function(JsonRest, Observable, dom, on, domConstruct, fx) {
+    "dojo/dom-construct", "dojo/fx", "dojo/date/stamp",
+    "dojo/date/locale", "dojo/date"],
+    function(JsonRest, Observable, dom, on, domConstruct, fx, stamp, locale, dojoDate) {
+
     var nextId = 1;
 
+    /*
+     * This object loads the orders over the network using
+     * a xhr request.  In practise, it makes more sense to
+     * define the order data on the server side as the
+     * purchaseOrders.jsp page is rendered.  Doing it this
+     * way involves a second round trip to the server.
+     */
     poStore = new JsonRest({
-        target: "services/purchase-orders/",
-        idProperty: "id"
+        "target": "services/purchase-orders/",
+        "idProperty": "id"
     });
 
     var results = poStore.query();
@@ -43,24 +53,54 @@ require(["dojo/store/JsonRest",
             });
 
             domConstruct.create("td", {
-                "innerHTML": item.orderNumber,
+                "innerHTML": item.part,
                 "class": "content"
             }, row);
             domConstruct.create("td", {
-                "innerHTML": item.customerReference,
+                "innerHTML": item.description,
+                "class": "content"
+            }, row);
+            domConstruct.create("td", {
+                "innerHTML": item.poNumber,
+                "class": "content"
+            }, row);
+            domConstruct.create("td", {
+                "innerHTML": item.committedQuantity,
                 "class": "content"
             }, row);
 
+            /*
+             * Dojo has powerful date parsing and formatting
+             * functions. If you return dates in ISO format it's
+             * this easy, but it's not that hard no matter what
+             * format you return them in.
+             */
+            var committedDate = stamp.fromISOString(item.committedDate);
+            domConstruct.create("td", {
+                "innerHTML": locale.format(committedDate, {
+                    "formatLength": "medium",
+                    "selector": "date"
+                })
+            }, row);
+            domConstruct.create("td", {
+                "innerHTML": item.forecastQuantity,
+                "class": "content"
+            }, row);
 
-            td = domConstruct.create("td", {}, row);
+            var forecastDate = stamp.fromISOString(item.forecastDate);
+            var cssClass = "";
+            if (dojoDate.compare(forecastDate, committedDate) > 0) {
+                cssClass="late";
+            }
+            domConstruct.create("td", {
+                "class": cssClass,
+                "innerHTML": locale.format(forecastDate, {
+                    "formatLength": "medium",
+                    "selector": "date"
+                })
+            }, row);
 
-            var removeLink = domConstruct.create("a", {
-                "href": '#',
-                "innerHTML": 'Remove'
-            }, td);
-            on(removeLink, "click", function(){
-                alert("Remove");
-            });
+
         }
 
         function removeRow(i) {

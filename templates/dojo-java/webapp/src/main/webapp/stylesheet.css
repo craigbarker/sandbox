@@ -1,0 +1,101 @@
+@import "dojo/dojox/grid/resources/Grid.css";
+@import "dojo/dojox/grid/resources/claroGrid.css";
+
+a {
+    color: white;
+    font-weight: bold;
+}
+
+#wrapper {
+    font-family: Arial;
+    background-color: #cccccc;
+    border: 2px #000000 !important;
+    padding: 1px;
+}
+
+#header {
+    display: table;
+    width: 100%;
+    font-size: 20pt;
+    margin-bottom: 0.5em;
+    vertical-align: middle;
+    min-height: 51px;
+    height: 51px;
+}
+
+#title {
+    float: left;
+}
+
+#logo {
+    float: right;
+}
+
+#top-menu {
+    display: inline-block;
+    height: 47px;
+    padding-top: 1em;
+    padding-left: 1em;
+    color: white;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+#page-title {
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+#main-body {
+    clear: both;
+}
+
+#grid-div {
+    font-weight: normal;
+    font-size: 10pt;
+    width: 100%;
+    padding: 1px;
+}
+
+br.divider {
+    height: 20px;
+}
+
+.expander-anchor {
+    color: black;
+    text-decoration: none;
+}
+
+#dataTable {
+    font-size: 11pt;
+    margin-bottom: 1em;
+}
+
+#dataTable th.content {
+    padding-right: 1em;
+    text-decoration: underline;
+    text-align: left;
+}
+
+#dataTable td.content {
+    padding-right: 1em;
+}
+
+table#dataTable div.expander {
+    background-color: #ffffff;
+    border: 1px solid #aaaaaa;
+    text-align: center;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+}
+
+.late {
+    color: red !important;
+}
+
+table#dataTable div.expanded-div {
+    padding-left: 2em;
+}

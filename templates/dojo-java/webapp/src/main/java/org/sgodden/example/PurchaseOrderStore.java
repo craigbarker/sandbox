@@ -1,14 +1,19 @@
 package org.sgodden.example;
 
+import org.codehaus.jackson.JsonParser;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Component
 public class PurchaseOrderStore {
+
+    private static final DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
     private int nextId = 1;
     private Map<Integer, PurchaseOrder> orders = populate();
@@ -24,11 +29,11 @@ public class PurchaseOrderStore {
     }
     
     public PurchaseOrder saveOrUpdate(PurchaseOrder order) {
-        if (order.id == null) {
-            order.id = nextId;
+        if (order.getId() == null) {
+            order.setId(nextId);
             nextId++;
         }
-        orders.put(order.id, order);
+        orders.put(order.getId(), order);
         return order;
     }
 
@@ -37,23 +42,41 @@ public class PurchaseOrderStore {
     }
     
     private Map<Integer, PurchaseOrder> populate() {
-        List<PurchaseOrder> orders = new ArrayList<PurchaseOrder>();
-        for (int i = 0; i < 10; i++) {
-            orders.add(makePurchaseOrder(nextId));
-            nextId++;
+        ObjectMapper mapper = new ObjectMapper();
+        PurchaseOrder[] orders = new PurchaseOrder[0];
+        try {
+            orders = mapper.readValue(
+                    getClass().getClassLoader().getResource("/purchase-orders.json"),
+                    PurchaseOrder[].class);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
         Map<Integer, PurchaseOrder> ret = new HashMap<Integer, PurchaseOrder>();
         for (PurchaseOrder order : orders) {
-            ret.put(order.id, order);
+            ret.put(order.getId(), order);
         }
+        for (int i = 10000; i < 10010; i++) {
+            PurchaseOrder po = makePurchaseOrder(i);
+            ret.put(po.getId(), po);
+            nextId = i;
+        }
+        nextId++;
         return ret;
     }
     
     private PurchaseOrder makePurchaseOrder(int id) {
         PurchaseOrder ret = new PurchaseOrder();
-        ret.id = id;
-        ret.orderNumber = "PO " + id;
-        ret.customerReference = "Customer Ref " + id;
+        ret.setId(id);
+        ret.setPart("PART-" + id);
+        ret.setDescription("Exhaust Set MRL");
+        try {
+            ret.setCommittedDate(df.parse("2012-08-01"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        ret.setCommittedQuantity(5);
+        ret.setForecastDate(new Date());
+        ret.setForecastQuantity(5);
         return ret;
     }
     
