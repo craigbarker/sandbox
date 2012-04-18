@@ -38,7 +38,7 @@ require(["dojo/store/JsonRest",
             'store': new ObjectStore({'objectStore': poStore}),
             'structure': layout,
             'rowSelector': '20px',
-            'autoHeight': 20,
+            'autoHeight': 16,
             'loadingMessage': 'Loading'
         }, document.createElement('div'));
 
