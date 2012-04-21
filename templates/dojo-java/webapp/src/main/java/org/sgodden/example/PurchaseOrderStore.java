@@ -67,6 +67,7 @@ public class PurchaseOrderStore {
     private PurchaseOrder makePurchaseOrder(int id) {
         PurchaseOrder ret = new PurchaseOrder();
         ret.setId(id);
+        ret.setPoNumber("PO " + id);
         ret.setPart("PART-" + id);
         ret.setDescription("Exhaust Set MRL");
         try {
