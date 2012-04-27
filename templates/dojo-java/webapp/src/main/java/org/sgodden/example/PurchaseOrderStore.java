@@ -55,7 +55,7 @@ public class PurchaseOrderStore {
         for (PurchaseOrder order : orders) {
             ret.put(order.getId(), order);
         }
-        for (int i = 10000; i < 10010; i++) {
+        for (int i = 10000; i < 10020; i++) {
             PurchaseOrder po = makePurchaseOrder(i);
             ret.put(po.getId(), po);
             nextId = i;

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <style type="text/css">html, body {
+        @import "dojo/dojox/grid/resources/Grid.css";
+        @import "dojo/dojox/grid/resources/claroGrid.css";
+
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow:hidden;
+    }
+
+    #borderContainer {
+        width: 100%;
+        height: 100%;
+    }</style>
+    <link rel="stylesheet" href="dojo/dojox/grid/resources/Grid.css">
+    <link rel="stylesheet" href="dojo/dojox/grid/resources/claroGrid.css">
+    <script src='dojo/dojo/dojo.js' data-dojo-config='async: true'></script>
+    <script>
+        require(["dojo/data/ItemFileWriteStore", "dojo/parser",
+            "dijit/layout/ContentPane", "dijit/layout/BorderContainer", "dojox/grid/DataGrid",
+            "dojo/dom", "dojo/dom-construct"],
+            function(ItemFileWriteStore, parser, ContentPane, BorderContainer, DataGrid){
+                    var data = {
+                        identifier: 'id',
+                        items: []
+                    };
+                    var data_list = [
+                        { col1: "normal", col2: false, col3: 'But are not followed by two hexadecimal', col4: 29.91},
+                        { col1: "important", col2: false, col3: 'Because a % sign always indicates', col4: 9.33},
+                        { col1: "important", col2: false, col3: 'Signs can be selectively', col4: 19.34}
+                    ];
+                    var rows = 60;
+                    for(var i=0, l=data_list.length; i<rows; i++){
+                        data.items.push(dojo.mixin({ id: i+1 }, data_list[i%l]));
+                    }
+                    var store = new ItemFileWriteStore({data: data});
+
+                    /*set up layout*/
+                    var layout = [[
+                        {'name': 'Column 1', 'field': 'id', 'width': '100px'},
+                        {'name': 'Column 2', 'field': 'col2', 'width': '100px'},
+                        {'name': 'Column 3', 'field': 'col3', 'width': '20em'},
+                        {'name': 'Column 4', 'field': 'col4', 'width': '150px'}
+                    ]];
+
+                    var grid = new DataGrid({
+                                id: 'grid',
+                                store: store,
+                                structure: layout,
+                                rowSelector: '20px'},
+                            document.createElement('div'));
+//
+//                    /*append the new grid to the div*/
+                    dojo.byId("gridDiv").appendChild(grid.domNode);
+
+                    grid.startup();
+
+                parser.parse();
+
+                });
+    </script>
+</head>
+<body class="claro">
+<div data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'sidebar', gutters:true, liveSplitters:true" id="borderContainer">
+    <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'top'" style="height: 2em; background-color: #eeeeee;">Hi, I'm top pane</div>
+    <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'leading'" style="width: 100px; background-color: #aaaaaa">Hi, I'm leading pane</div>
+    <div id="gridDiv" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'center'" style="background-color: #999999">
+    </div>
+    <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'bottom'" style="height: 20px; background-color: #eeeeee;">Hi, I'm bottom pane</div>
+</div>
+</body>
+</html>
