@@ -1,7 +1,13 @@
 @import "dojo/dojox/grid/resources/Grid.css";
 @import "dojo/dojox/grid/resources/claroGrid.css";
 
-body, html { width:100%; height:100%; margin:0; padding:0; overflow:hidden; }
+body, html {
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
 
 a {
     color: white;
@@ -9,23 +15,25 @@ a {
 }
 
 #wrapper {
+    padding: 10px;
     height: 100%;
     width: 100%;
     font-family: Arial;
-    background-color: #cccccc;
 }
 
 #header {
     display: table;
     font-size: 20pt;
-    margin-bottom: 0.5em;
     vertical-align: middle;
     min-height: 51px;
     height: 51px;
+    background-color: #cccccc;
 }
 
 #footer {
-    height: 2em;
+    font-size: 8pt;
+    background-color: #cccccc;
+    padding: 0.25em;
 }
 
 #title {
